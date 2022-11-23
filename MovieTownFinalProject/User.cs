@@ -14,7 +14,6 @@ namespace MovieTownFinalProject
         /// </summary>
         public User()
         {
-
         }
 
         /// <summary>
