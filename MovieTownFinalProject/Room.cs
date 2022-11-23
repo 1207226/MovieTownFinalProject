@@ -1,35 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="Room.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MovieTownFinalProject
 {
     /// <summary>
-    /// A Room.
+    /// A room.
     /// </summary>
     internal class Room
     {
         /// <summary>
-        /// System's name for the room.
+        /// Initializes a new instance of the <see cref="Room"/> class.
+        /// A room.
+        /// </summary>
+        /// <param name="roomName">Visible name for the room.</param>
+        /// <param name="numberOfSeats">Number of seats in the room.</param>
+        public Room(string roomName, int numberOfSeats)
+        {
+            this.RoomName = roomName;
+            this.NumberOfSeats = numberOfSeats;
+        }
+
+        /// <summary>
+        /// Gets system's name for the room.
         /// </summary>
         public int RoomId { get; }
+
         /// <summary>
-        /// Visible name for the room.
+        /// Gets or sets visible name for the room.
         /// </summary>
         public string RoomName { get; set; }
+
         /// <summary>
-        /// Number of seats in the room.
+        /// Gets or sets number of seats in the room.
         /// </summary>
         public int NumberOfSeats { get; set; }
-
-        /// <summary>
-        /// A Room.
-        /// </summary>
-        public Room()
-        {
-
-        }
     }
 }
