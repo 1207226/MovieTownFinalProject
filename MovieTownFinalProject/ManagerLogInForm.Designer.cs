@@ -102,6 +102,7 @@
             this.clientLoginButton.TabIndex = 6;
             this.clientLoginButton.Text = "Client Log-In";
             this.clientLoginButton.UseVisualStyleBackColor = false;
+            this.clientLoginButton.Click += new System.EventHandler(this.clientLoginButton_Click);
             // 
             // ManagerLogInForm
             // 

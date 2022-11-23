@@ -58,15 +58,22 @@
     <Compile Include="ManagerLogInForm.Designer.cs">
       <DependentUpon>ManagerLogInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerSelectMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerSelectMenuForm.Designer.cs">
+      <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Room.cs" />
-    <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogInForm.resx">
       <DependentUpon>ManagerLogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerSelectMenuForm.resx">
+      <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
