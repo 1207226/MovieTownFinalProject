@@ -16,10 +16,5 @@ namespace MovieTownFinalProject
         {
             InitializeComponent();
         }
-
-        private void ManagerSelectMenuForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
