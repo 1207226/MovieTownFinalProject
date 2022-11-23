@@ -14,9 +14,7 @@ namespace MovieTownFinalProject
     {
         public HomePage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
-
-
     }
 }
