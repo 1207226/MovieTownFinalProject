@@ -16,5 +16,13 @@ namespace MovieTownFinalProject
         {
             this.InitializeComponent();
         }
+
+        private void employeeButton_Click(object sender, EventArgs e)
+        {
+            
+            ManagerLogInForm mLForm = new ManagerLogInForm();
+            mLForm.ShowDialog();
+        
+        }
     }
 }
