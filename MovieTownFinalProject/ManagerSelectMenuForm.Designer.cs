@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerSelectMenuForm));
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.openMovieButton = new System.Windows.Forms.Button();
-            this.openShowRoomButton = new System.Windows.Forms.Button();
+            this.openMoviesButton = new System.Windows.Forms.Button();
+            this.openShowRoom = new System.Windows.Forms.Button();
             this.openShowTimeButton = new System.Windows.Forms.Button();
             this.openClientButton = new System.Windows.Forms.Button();
-            this.employeeLogOutButton = new System.Windows.Forms.Button();
+            this.employeeLogoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,35 +50,35 @@
             this.pictureBoxLogo.TabIndex = 2;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // openMovieButton
+            // openMoviesButton
             // 
-            this.openMovieButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.openMovieButton.FlatAppearance.BorderSize = 0;
-            this.openMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openMovieButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openMovieButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openMovieButton.Location = new System.Drawing.Point(319, 357);
-            this.openMovieButton.Margin = new System.Windows.Forms.Padding(4);
-            this.openMovieButton.Name = "openMovieButton";
-            this.openMovieButton.Size = new System.Drawing.Size(127, 38);
-            this.openMovieButton.TabIndex = 6;
-            this.openMovieButton.Text = "Movies";
-            this.openMovieButton.UseVisualStyleBackColor = false;
+            this.openMoviesButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.openMoviesButton.FlatAppearance.BorderSize = 0;
+            this.openMoviesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openMoviesButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.openMoviesButton.Location = new System.Drawing.Point(307, 370);
+            this.openMoviesButton.Margin = new System.Windows.Forms.Padding(4);
+            this.openMoviesButton.Name = "openMoviesButton";
+            this.openMoviesButton.Size = new System.Drawing.Size(127, 38);
+            this.openMoviesButton.TabIndex = 6;
+            this.openMoviesButton.Text = "Movies";
+            this.openMoviesButton.UseVisualStyleBackColor = false;
             // 
-            // openShowRoomButton
+            // openShowRoom
             // 
-            this.openShowRoomButton.BackColor = System.Drawing.Color.MidnightBlue;
-            this.openShowRoomButton.FlatAppearance.BorderSize = 0;
-            this.openShowRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openShowRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openShowRoomButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openShowRoomButton.Location = new System.Drawing.Point(319, 441);
-            this.openShowRoomButton.Margin = new System.Windows.Forms.Padding(4);
-            this.openShowRoomButton.Name = "openShowRoomButton";
-            this.openShowRoomButton.Size = new System.Drawing.Size(127, 38);
-            this.openShowRoomButton.TabIndex = 7;
-            this.openShowRoomButton.Text = "Show Rooms";
-            this.openShowRoomButton.UseVisualStyleBackColor = false;
+            this.openShowRoom.BackColor = System.Drawing.Color.MidnightBlue;
+            this.openShowRoom.FlatAppearance.BorderSize = 0;
+            this.openShowRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openShowRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openShowRoom.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.openShowRoom.Location = new System.Drawing.Point(307, 458);
+            this.openShowRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.openShowRoom.Name = "openShowRoom";
+            this.openShowRoom.Size = new System.Drawing.Size(127, 38);
+            this.openShowRoom.TabIndex = 7;
+            this.openShowRoom.Text = "Show Rooms";
+            this.openShowRoom.UseVisualStyleBackColor = false;
             // 
             // openShowTimeButton
             // 
@@ -87,7 +87,7 @@
             this.openShowTimeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openShowTimeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openShowTimeButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openShowTimeButton.Location = new System.Drawing.Point(319, 525);
+            this.openShowTimeButton.Location = new System.Drawing.Point(307, 546);
             this.openShowTimeButton.Margin = new System.Windows.Forms.Padding(4);
             this.openShowTimeButton.Name = "openShowTimeButton";
             this.openShowTimeButton.Size = new System.Drawing.Size(127, 38);
@@ -102,7 +102,7 @@
             this.openClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openClientButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openClientButton.Location = new System.Drawing.Point(319, 609);
+            this.openClientButton.Location = new System.Drawing.Point(307, 634);
             this.openClientButton.Margin = new System.Windows.Forms.Padding(4);
             this.openClientButton.Name = "openClientButton";
             this.openClientButton.Size = new System.Drawing.Size(127, 38);
@@ -110,20 +110,20 @@
             this.openClientButton.Text = "Clients";
             this.openClientButton.UseVisualStyleBackColor = false;
             // 
-            // employeeLogOutButton
+            // employeeLogoutButton
             // 
-            this.employeeLogOutButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.employeeLogOutButton.FlatAppearance.BorderSize = 0;
-            this.employeeLogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.employeeLogOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeLogOutButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.employeeLogOutButton.Location = new System.Drawing.Point(319, 693);
-            this.employeeLogOutButton.Margin = new System.Windows.Forms.Padding(4);
-            this.employeeLogOutButton.Name = "employeeLogOutButton";
-            this.employeeLogOutButton.Size = new System.Drawing.Size(127, 38);
-            this.employeeLogOutButton.TabIndex = 10;
-            this.employeeLogOutButton.Text = "Log-Out";
-            this.employeeLogOutButton.UseVisualStyleBackColor = false;
+            this.employeeLogoutButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.employeeLogoutButton.FlatAppearance.BorderSize = 0;
+            this.employeeLogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeeLogoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeLogoutButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.employeeLogoutButton.Location = new System.Drawing.Point(307, 722);
+            this.employeeLogoutButton.Margin = new System.Windows.Forms.Padding(4);
+            this.employeeLogoutButton.Name = "employeeLogoutButton";
+            this.employeeLogoutButton.Size = new System.Drawing.Size(127, 38);
+            this.employeeLogoutButton.TabIndex = 10;
+            this.employeeLogoutButton.Text = "Log-Out";
+            this.employeeLogoutButton.UseVisualStyleBackColor = false;
             // 
             // ManagerSelectMenuForm
             // 
@@ -131,15 +131,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
-            this.Controls.Add(this.employeeLogOutButton);
+            this.Controls.Add(this.employeeLogoutButton);
             this.Controls.Add(this.openClientButton);
             this.Controls.Add(this.openShowTimeButton);
-            this.Controls.Add(this.openShowRoomButton);
-            this.Controls.Add(this.openMovieButton);
+            this.Controls.Add(this.openShowRoom);
+            this.Controls.Add(this.openMoviesButton);
             this.Controls.Add(this.pictureBoxLogo);
             this.Name = "ManagerSelectMenuForm";
             this.Text = "ManagerSelectMenuForm";
-            this.Load += new System.EventHandler(this.ManagerSelectMenuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 
@@ -148,10 +147,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.Button openMovieButton;
-        private System.Windows.Forms.Button openShowRoomButton;
+        private System.Windows.Forms.Button openMoviesButton;
+        private System.Windows.Forms.Button openShowRoom;
         private System.Windows.Forms.Button openShowTimeButton;
         private System.Windows.Forms.Button openClientButton;
-        private System.Windows.Forms.Button employeeLogOutButton;
+        private System.Windows.Forms.Button employeeLogoutButton;
     }
 }
