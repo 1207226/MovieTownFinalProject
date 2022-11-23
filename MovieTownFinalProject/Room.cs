@@ -27,9 +27,10 @@ namespace MovieTownFinalProject
         /// <summary>
         /// A Room.
         /// </summary>
-        public Room()
+        public Room(string roomName, int numberOfSeats)
         {
-
+            RoomName = roomName;
+            NumberOfSeats = numberOfSeats;
         }
     }
 }
