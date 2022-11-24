@@ -20,5 +20,10 @@ namespace MovieTownFinalProject
         /// Gets the system's name for the employee.
         /// </summary>
         public int EmployeeId { get; }
+
+        /// <summary>
+        /// Gets or sets the employee's number.
+        /// </summary>
+        public int EmployeeNumber { get; set; }
     }
 }

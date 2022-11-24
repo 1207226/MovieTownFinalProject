@@ -17,11 +17,6 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Gets or sets the user's username.
-        /// </summary>
-        public string UserName { get; set; }
-
-        /// <summary>
         /// Gets or sets the user's first name.
         /// </summary>
         public string FirstName { get; set; }
