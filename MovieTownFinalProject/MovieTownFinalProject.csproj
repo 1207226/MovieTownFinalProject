@@ -64,6 +64,12 @@
     <Compile Include="ManagerSelectMenuForm.Designer.cs">
       <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieManagerForm.Designer.cs">
+      <DependentUpon>MovieManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerSelectMenuForm.resx">
       <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieManagerForm.resx">
+      <DependentUpon>MovieManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
