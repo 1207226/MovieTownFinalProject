@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MovieTownFinalProject
 {
-    public partial class ManageShowTimeForm : Form
+    public partial class ManageClientForm : Form
     {
-        public ManageShowTimeForm()
+        public ManageClientForm()
         {
             InitializeComponent();
         }
@@ -21,10 +21,11 @@ namespace MovieTownFinalProject
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ManageShowTimeForm_Load(object sender, EventArgs e)
+        private void ManageClientForm_Load(object sender, EventArgs e)
         {
             backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
+
         /// <summary>
         /// Opens Selection Menu Form Form and Closes the Show Time Manager Form.
         /// </summary>
@@ -32,10 +33,12 @@ namespace MovieTownFinalProject
         /// <param name="e"></param>
         private void backButton_Click(object sender, EventArgs e)
         {
-            ManagerSelectMenuForm SelectMenu = new ManagerSelectMenuForm();
+            ManagerSelectMenuForm frm = new ManagerSelectMenuForm();
             this.Hide();
-            SelectMenu.ShowDialog();
+            frm.ShowDialog();
             this.Close();
         }
+
+ 
     }
 }
