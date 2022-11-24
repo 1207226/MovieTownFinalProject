@@ -18,7 +18,7 @@ namespace MovieTownFinalProject
         }
        
         /// <summary>
-        /// 
+        /// Opens the Movie Manager Form, and Closes the Select Menu Form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -31,13 +31,16 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Opens the Client Log-In Form and Closes the Selection Menu Form.
+        /// Opens the Show Room Manager Form and Closes the Selection Menu Form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void openShowRoom_Click(object sender, EventArgs e)
         {
-
+            ShowRoomManagerForm showRoom = new ShowRoomManagerForm();
+            this.Hide();
+            showRoom.ShowDialog();
+            this.Close();
         }
 
         /// <summary>

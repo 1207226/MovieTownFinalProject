@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MovieTownFinalProject
 {
-    public partial class MovieManagerForm : Form
+    public partial class ShowRoomManagerForm : Form
     {
-        public MovieManagerForm()
+        public ShowRoomManagerForm()
         {
             InitializeComponent();
         }
@@ -21,13 +21,13 @@ namespace MovieTownFinalProject
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MovieManagerForm_Load(object sender, EventArgs e)
+        private void ShowRoomManagerForm_Load(object sender, EventArgs e)
         {
             backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         /// <summary>
-        /// Opens the Show Room Manager Form and Closes the Selection Menu Form.
+        /// Opens Selection Menu Form Form and Closes the Show Room Manager Form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -38,5 +38,7 @@ namespace MovieTownFinalProject
             SelectMenu.ShowDialog();
             this.Close();
         }
+
+
     }
 }
