@@ -24,7 +24,10 @@ namespace MovieTownFinalProject
         /// <param name="e"></param>
         private void openMoviesButton_Click(object sender, EventArgs e)
         {
-
+            MovieManagerForm movieManager = new MovieManagerForm();
+            this.Hide();
+            movieManager.ShowDialog();
+            this.Close();
         }
 
         /// <summary>
