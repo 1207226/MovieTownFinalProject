@@ -20,5 +20,10 @@ namespace MovieTownFinalProject
         /// Gets the system's name for the client.
         /// </summary>
         public int ClientId { get; }
+
+        /// <summary>
+        /// Gets or sets the client's username.
+        /// </summary>
+        public string Username { get; set; }
     }
 }
