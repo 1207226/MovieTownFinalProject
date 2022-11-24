@@ -16,5 +16,17 @@ namespace MovieTownFinalProject
         {
             this.InitializeComponent();
         }
+        /// <summary>
+        /// Opens the Empoloyee Log-In Form and Closes the Client Log-In Form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void employeeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManagerLogInForm mLForm = new ManagerLogInForm();
+            mLForm.ShowDialog();
+            this.Close();
+        }
     }
 }

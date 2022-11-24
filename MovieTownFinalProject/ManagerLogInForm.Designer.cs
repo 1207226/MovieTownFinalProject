@@ -71,7 +71,7 @@
             this.employeeNumberInput.Name = "employeeNumberInput";
             this.employeeNumberInput.Size = new System.Drawing.Size(295, 23);
             this.employeeNumberInput.TabIndex = 3;
-            this.employeeNumberInput.Text = "Enter User Name";
+            this.employeeNumberInput.Text = "Enter Employee Number";
             // 
             // employeeLoginButton
             // 
@@ -87,6 +87,7 @@
             this.employeeLoginButton.TabIndex = 5;
             this.employeeLoginButton.Text = "Log-In";
             this.employeeLoginButton.UseVisualStyleBackColor = false;
+            this.employeeLoginButton.Click += new System.EventHandler(this.employeeLoginButton_Click);
             // 
             // clientLoginButton
             // 
@@ -102,6 +103,7 @@
             this.clientLoginButton.TabIndex = 6;
             this.clientLoginButton.Text = "Client Log-In";
             this.clientLoginButton.UseVisualStyleBackColor = false;
+            this.clientLoginButton.Click += new System.EventHandler(this.clientLoginButton_Click);
             // 
             // ManagerLogInForm
             // 
@@ -115,6 +117,7 @@
             this.Controls.Add(this.employeeNumberInput);
             this.Controls.Add(this.pictureBoxLogo);
             this.Name = "ManagerLogInForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerLogInForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
