@@ -43,7 +43,7 @@
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.InitialImage")));
             this.pictureBoxLogo.Location = new System.Drawing.Point(121, 63);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(501, 236);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -56,7 +56,7 @@
             this.homePageUserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePageUserNameInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePageUserNameInput.Location = new System.Drawing.Point(228, 394);
-            this.homePageUserNameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.homePageUserNameInput.Margin = new System.Windows.Forms.Padding(4);
             this.homePageUserNameInput.Name = "homePageUserNameInput";
             this.homePageUserNameInput.Size = new System.Drawing.Size(295, 23);
             this.homePageUserNameInput.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.homePagePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePagePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePagePasswordInput.Location = new System.Drawing.Point(228, 457);
-            this.homePagePasswordInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.homePagePasswordInput.Margin = new System.Windows.Forms.Padding(4);
             this.homePagePasswordInput.Name = "homePagePasswordInput";
             this.homePagePasswordInput.Size = new System.Drawing.Size(295, 23);
             this.homePagePasswordInput.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.signupButton.Location = new System.Drawing.Point(453, 558);
-            this.signupButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.signupButton.Margin = new System.Windows.Forms.Padding(4);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(129, 38);
             this.signupButton.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.loginButton.Location = new System.Drawing.Point(169, 558);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(127, 38);
             this.loginButton.TabIndex = 4;
@@ -112,7 +112,7 @@
             this.employeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.employeeButton.Location = new System.Drawing.Point(304, 734);
-            this.employeeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.employeeButton.Margin = new System.Windows.Forms.Padding(4);
             this.employeeButton.Name = "employeeButton";
             this.employeeButton.Size = new System.Drawing.Size(127, 38);
             this.employeeButton.TabIndex = 5;
@@ -135,6 +135,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HomePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movie Town";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);

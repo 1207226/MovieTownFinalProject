@@ -64,6 +64,7 @@
             this.openMoviesButton.TabIndex = 6;
             this.openMoviesButton.Text = "Movies";
             this.openMoviesButton.UseVisualStyleBackColor = false;
+            this.openMoviesButton.Click += new System.EventHandler(this.openMoviesButton_Click);
             // 
             // openShowRoom
             // 
@@ -79,6 +80,7 @@
             this.openShowRoom.TabIndex = 7;
             this.openShowRoom.Text = "Show Rooms";
             this.openShowRoom.UseVisualStyleBackColor = false;
+            this.openShowRoom.Click += new System.EventHandler(this.openShowRoom_Click);
             // 
             // openShowTimeButton
             // 
@@ -94,6 +96,7 @@
             this.openShowTimeButton.TabIndex = 8;
             this.openShowTimeButton.Text = "Show Times";
             this.openShowTimeButton.UseVisualStyleBackColor = false;
+            this.openShowTimeButton.Click += new System.EventHandler(this.openShowTimeButton_Click);
             // 
             // openClientButton
             // 
@@ -109,6 +112,7 @@
             this.openClientButton.TabIndex = 9;
             this.openClientButton.Text = "Clients";
             this.openClientButton.UseVisualStyleBackColor = false;
+            this.openClientButton.Click += new System.EventHandler(this.openClientButton_Click);
             // 
             // employeeLogoutButton
             // 
@@ -124,6 +128,7 @@
             this.employeeLogoutButton.TabIndex = 10;
             this.employeeLogoutButton.Text = "Log-Out";
             this.employeeLogoutButton.UseVisualStyleBackColor = false;
+            this.employeeLogoutButton.Click += new System.EventHandler(this.employeeLogoutButton_Click);
             // 
             // ManagerSelectMenuForm
             // 
@@ -138,6 +143,7 @@
             this.Controls.Add(this.openMoviesButton);
             this.Controls.Add(this.pictureBoxLogo);
             this.Name = "ManagerSelectMenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerSelectMenuForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
