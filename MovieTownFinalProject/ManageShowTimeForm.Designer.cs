@@ -1,6 +1,6 @@
 ﻿namespace MovieTownFinalProject
 {
-    partial class ShowRoomManagerForm
+    partial class ManageShowTimeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowRoomManagerForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageShowTimeForm));
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.backButton = new System.Windows.Forms.Button();
             this.showRoomLabel = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(501, 236);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 3;
+            this.pictureBoxLogo.TabIndex = 4;
             this.pictureBoxLogo.TabStop = false;
             // 
             // backButton
@@ -55,7 +55,7 @@
             this.backButton.Location = new System.Drawing.Point(32, 28);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(74, 50);
-            this.backButton.TabIndex = 5;
+            this.backButton.TabIndex = 6;
             this.backButton.UseVisualStyleBackColor = false;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
@@ -66,11 +66,11 @@
             this.showRoomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
             this.showRoomLabel.Location = new System.Drawing.Point(235, 351);
             this.showRoomLabel.Name = "showRoomLabel";
-            this.showRoomLabel.Size = new System.Drawing.Size(266, 25);
-            this.showRoomLabel.TabIndex = 6;
-            this.showRoomLabel.Text = "Select Show Room Details";
+            this.showRoomLabel.Size = new System.Drawing.Size(259, 25);
+            this.showRoomLabel.TabIndex = 7;
+            this.showRoomLabel.Text = "Select Show Time Details";
             // 
-            // ShowRoomManagerForm
+            // ManageShowTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,10 +79,10 @@
             this.Controls.Add(this.showRoomLabel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Name = "ShowRoomManagerForm";
+            this.Name = "ManageShowTimeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShowRoom";
-            this.Load += new System.EventHandler(this.ShowRoomManagerForm_Load);
+            this.Text = "ManageShowTime";
+            this.Load += new System.EventHandler(this.ManageShowTimeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

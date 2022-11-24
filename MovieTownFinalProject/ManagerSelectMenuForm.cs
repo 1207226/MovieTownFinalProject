@@ -50,7 +50,10 @@ namespace MovieTownFinalProject
         /// <param name="e"></param>
         private void openShowTimeButton_Click(object sender, EventArgs e)
         {
-
+            ManageShowTimeForm manageShowTimeForm = new ManageShowTimeForm();
+            this.Hide();
+            manageShowTimeForm.ShowDialog();
+            this.Close();
         }
 
         /// <summary>
