@@ -35,6 +35,8 @@
             this.employeeLoginButton = new System.Windows.Forms.Button();
             this.clientLoginButton = new System.Windows.Forms.Button();
             this.EmployeeLogInLabel = new System.Windows.Forms.Label();
+            this.invalidInputLable1 = new System.Windows.Forms.Label();
+            this.invalidInputLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,9 +119,33 @@
             this.EmployeeLogInLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
             this.EmployeeLogInLabel.Location = new System.Drawing.Point(251, 325);
             this.EmployeeLogInLabel.Name = "EmployeeLogInLabel";
-            this.EmployeeLogInLabel.Size = new System.Drawing.Size(230, 25);
+            this.EmployeeLogInLabel.Size = new System.Drawing.Size(179, 25);
             this.EmployeeLogInLabel.TabIndex = 9;
-            this.EmployeeLogInLabel.Text = "Enter Your Credentials";
+            this.EmployeeLogInLabel.Text = "Enter Credentials";
+            // 
+            // invalidInputLable1
+            // 
+            this.invalidInputLable1.AutoSize = true;
+            this.invalidInputLable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidInputLable1.ForeColor = System.Drawing.Color.Red;
+            this.invalidInputLable1.Location = new System.Drawing.Point(187, 415);
+            this.invalidInputLable1.Name = "invalidInputLable1";
+            this.invalidInputLable1.Size = new System.Drawing.Size(28, 36);
+            this.invalidInputLable1.TabIndex = 10;
+            this.invalidInputLable1.Text = "*";
+            this.invalidInputLable1.Visible = false;
+            // 
+            // invalidInputLabel2
+            // 
+            this.invalidInputLabel2.AutoSize = true;
+            this.invalidInputLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidInputLabel2.ForeColor = System.Drawing.Color.Red;
+            this.invalidInputLabel2.Location = new System.Drawing.Point(187, 478);
+            this.invalidInputLabel2.Name = "invalidInputLabel2";
+            this.invalidInputLabel2.Size = new System.Drawing.Size(28, 36);
+            this.invalidInputLabel2.TabIndex = 11;
+            this.invalidInputLabel2.Text = "*";
+            this.invalidInputLabel2.Visible = false;
             // 
             // ManagerLogInForm
             // 
@@ -127,6 +153,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.invalidInputLabel2);
+            this.Controls.Add(this.invalidInputLable1);
             this.Controls.Add(this.EmployeeLogInLabel);
             this.Controls.Add(this.employeeNumberInput);
             this.Controls.Add(this.clientLoginButton);
@@ -151,5 +179,7 @@
         private System.Windows.Forms.Button employeeLoginButton;
         private System.Windows.Forms.Button clientLoginButton;
         private System.Windows.Forms.Label EmployeeLogInLabel;
+        private System.Windows.Forms.Label invalidInputLable1;
+        private System.Windows.Forms.Label invalidInputLabel2;
     }
 }

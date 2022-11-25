@@ -63,6 +63,8 @@ namespace MovieTownFinalProject
             else if (employeeNumber != testEmpNumber || password != testPassword)
             {
                 ScreenShake(this);
+                invalidInputLable1.Visible = true;
+                invalidInputLabel2.Visible = true;
                 employeeNumberInput.ForeColor = Color.Red;
                 employeeNumberInput.Text = "Re-Enter Employee Number";
                 employeePasswordInput.PasswordChar = '\0';
