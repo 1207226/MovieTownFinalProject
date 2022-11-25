@@ -35,6 +35,7 @@
             this.signupButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
             this.employeeButton = new System.Windows.Forms.Button();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.InitialImage")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(121, 63);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(116, 63);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(501, 236);
@@ -55,7 +56,7 @@
             this.homePageUserNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.homePageUserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePageUserNameInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.homePageUserNameInput.Location = new System.Drawing.Point(228, 394);
+            this.homePageUserNameInput.Location = new System.Drawing.Point(219, 415);
             this.homePageUserNameInput.Margin = new System.Windows.Forms.Padding(4);
             this.homePageUserNameInput.Name = "homePageUserNameInput";
             this.homePageUserNameInput.Size = new System.Drawing.Size(295, 23);
@@ -67,7 +68,7 @@
             this.homePagePasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.homePagePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePagePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.homePagePasswordInput.Location = new System.Drawing.Point(228, 457);
+            this.homePagePasswordInput.Location = new System.Drawing.Point(219, 478);
             this.homePagePasswordInput.Margin = new System.Windows.Forms.Padding(4);
             this.homePagePasswordInput.Name = "homePagePasswordInput";
             this.homePagePasswordInput.Size = new System.Drawing.Size(295, 23);
@@ -82,7 +83,7 @@
             this.signupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.signupButton.Location = new System.Drawing.Point(453, 558);
+            this.signupButton.Location = new System.Drawing.Point(444, 592);
             this.signupButton.Margin = new System.Windows.Forms.Padding(4);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(129, 38);
@@ -98,7 +99,7 @@
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.loginButton.Location = new System.Drawing.Point(169, 558);
+            this.loginButton.Location = new System.Drawing.Point(160, 592);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(127, 38);
@@ -114,7 +115,7 @@
             this.employeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.employeeButton.Location = new System.Drawing.Point(304, 734);
+            this.employeeButton.Location = new System.Drawing.Point(303, 734);
             this.employeeButton.Margin = new System.Windows.Forms.Padding(4);
             this.employeeButton.Name = "employeeButton";
             this.employeeButton.Size = new System.Drawing.Size(127, 38);
@@ -123,12 +124,24 @@
             this.employeeButton.UseVisualStyleBackColor = false;
             this.employeeButton.Click += new System.EventHandler(this.employeeButton_Click);
             // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
+            this.welcomeLabel.Location = new System.Drawing.Point(312, 325);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(109, 25);
+            this.welcomeLabel.TabIndex = 9;
+            this.welcomeLabel.Text = "Welcome!";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.employeeButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.signupButton);
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button signupButton;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button employeeButton;
+        private System.Windows.Forms.Label welcomeLabel;
     }
 }
 
