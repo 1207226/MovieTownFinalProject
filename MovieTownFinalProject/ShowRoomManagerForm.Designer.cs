@@ -45,7 +45,7 @@
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.InitialImage")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(121, 63);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(116, 63);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(501, 236);
@@ -71,7 +71,7 @@
             this.showRoomLabel.AutoSize = true;
             this.showRoomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showRoomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
-            this.showRoomLabel.Location = new System.Drawing.Point(235, 351);
+            this.showRoomLabel.Location = new System.Drawing.Point(233, 351);
             this.showRoomLabel.Name = "showRoomLabel";
             this.showRoomLabel.Size = new System.Drawing.Size(266, 25);
             this.showRoomLabel.TabIndex = 6;

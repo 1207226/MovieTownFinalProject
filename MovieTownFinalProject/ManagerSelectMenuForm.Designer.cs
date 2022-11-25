@@ -42,7 +42,7 @@
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.InitialImage")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(121, 63);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(116, 63);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(501, 236);
@@ -58,7 +58,7 @@
             this.openMoviesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openMoviesButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openMoviesButton.Location = new System.Drawing.Point(307, 370);
+            this.openMoviesButton.Location = new System.Drawing.Point(303, 382);
             this.openMoviesButton.Margin = new System.Windows.Forms.Padding(4);
             this.openMoviesButton.Name = "openMoviesButton";
             this.openMoviesButton.Size = new System.Drawing.Size(127, 38);
@@ -75,7 +75,7 @@
             this.openShowRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openShowRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openShowRoom.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openShowRoom.Location = new System.Drawing.Point(307, 458);
+            this.openShowRoom.Location = new System.Drawing.Point(303, 470);
             this.openShowRoom.Margin = new System.Windows.Forms.Padding(4);
             this.openShowRoom.Name = "openShowRoom";
             this.openShowRoom.Size = new System.Drawing.Size(127, 38);
@@ -92,7 +92,7 @@
             this.openShowTimeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openShowTimeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openShowTimeButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openShowTimeButton.Location = new System.Drawing.Point(307, 546);
+            this.openShowTimeButton.Location = new System.Drawing.Point(303, 558);
             this.openShowTimeButton.Margin = new System.Windows.Forms.Padding(4);
             this.openShowTimeButton.Name = "openShowTimeButton";
             this.openShowTimeButton.Size = new System.Drawing.Size(127, 38);
@@ -109,7 +109,7 @@
             this.openClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openClientButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.openClientButton.Location = new System.Drawing.Point(307, 634);
+            this.openClientButton.Location = new System.Drawing.Point(303, 646);
             this.openClientButton.Margin = new System.Windows.Forms.Padding(4);
             this.openClientButton.Name = "openClientButton";
             this.openClientButton.Size = new System.Drawing.Size(127, 38);
@@ -126,7 +126,7 @@
             this.employeeLogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeeLogoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeLogoutButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.employeeLogoutButton.Location = new System.Drawing.Point(307, 722);
+            this.employeeLogoutButton.Location = new System.Drawing.Point(303, 734);
             this.employeeLogoutButton.Margin = new System.Windows.Forms.Padding(4);
             this.employeeLogoutButton.Name = "employeeLogoutButton";
             this.employeeLogoutButton.Size = new System.Drawing.Size(127, 38);
