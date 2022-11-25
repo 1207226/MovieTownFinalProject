@@ -77,6 +77,7 @@
             // signupButton
             // 
             this.signupButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.signupButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signupButton.FlatAppearance.BorderSize = 0;
             this.signupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +93,7 @@
             // loginButton
             // 
             this.loginButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,6 +109,7 @@
             // employeeButton
             // 
             this.employeeButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.employeeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.employeeButton.FlatAppearance.BorderSize = 0;
             this.employeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,7 +135,7 @@
             this.Controls.Add(this.homePagePasswordInput);
             this.Controls.Add(this.homePageUserNameInput);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

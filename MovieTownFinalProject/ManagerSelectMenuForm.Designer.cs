@@ -53,6 +53,7 @@
             // openMoviesButton
             // 
             this.openMoviesButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.openMoviesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openMoviesButton.FlatAppearance.BorderSize = 0;
             this.openMoviesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openMoviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -69,6 +70,7 @@
             // openShowRoom
             // 
             this.openShowRoom.BackColor = System.Drawing.Color.MidnightBlue;
+            this.openShowRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openShowRoom.FlatAppearance.BorderSize = 0;
             this.openShowRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openShowRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,6 +87,7 @@
             // openShowTimeButton
             // 
             this.openShowTimeButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.openShowTimeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openShowTimeButton.FlatAppearance.BorderSize = 0;
             this.openShowTimeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openShowTimeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,6 +104,7 @@
             // openClientButton
             // 
             this.openClientButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.openClientButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.openClientButton.FlatAppearance.BorderSize = 0;
             this.openClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,6 +121,7 @@
             // employeeLogoutButton
             // 
             this.employeeLogoutButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.employeeLogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.employeeLogoutButton.FlatAppearance.BorderSize = 0;
             this.employeeLogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeeLogoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
