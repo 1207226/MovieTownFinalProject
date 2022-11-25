@@ -28,5 +28,14 @@ namespace MovieTownFinalProject
             mLForm.ShowDialog();
             this.Close();
         }
+        /// <summary>
+        /// Sets the Page Focus on the Login Button on Load.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            loginButton.TabIndex = 0;
+        }
     }
 }
