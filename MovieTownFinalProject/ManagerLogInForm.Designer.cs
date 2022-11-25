@@ -64,6 +64,7 @@
             this.employeePasswordInput.TabIndex = 4;
             this.employeePasswordInput.Text = "Enter Password";
             this.employeePasswordInput.Click += new System.EventHandler(this.employeePasswordInput_Click);
+            this.employeePasswordInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.employeePasswordInput_KeyPress);
             // 
             // employeeNumberInput
             // 

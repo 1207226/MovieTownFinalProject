@@ -128,5 +128,15 @@ namespace MovieTownFinalProject
             }
             form.Location = original;
         }
+
+        private void employeePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (employeePasswordInput.Text == "Enter Password" || employeePasswordInput.Text == "Re-Enter Password")
+            {
+                employeePasswordInput.Clear();
+                employeePasswordInput.ForeColor = Color.Black;
+                employeePasswordInput.PasswordChar = '*';
+            }
+        }
     }
 }
