@@ -56,11 +56,13 @@ namespace MovieTownFinalProject
                 SelectMenu.ShowDialog();
                 this.Close();
             }
-            if ((employeeNumber == "Enter Employee Number" && password == "Enter Password") || (employeeNumber == "Re-Enter Employee Number" && password == "Re-Enter Password")){ 
-                //screen shake function?
+            if ((employeeNumber == "Enter Employee Number" && password == "Enter Password") || (employeeNumber == "Re-Enter Employee Number" && password == "Re-Enter Password"))
+            {
+                ScreenShake(this);
             } 
             else if (employeeNumber != testEmpNumber || password != testPassword)
             {
+                ScreenShake(this);
                 employeeNumberInput.ForeColor = Color.Red;
                 employeeNumberInput.Text = "Re-Enter Employee Number";
                 employeePasswordInput.PasswordChar = '\0';
@@ -106,6 +108,23 @@ namespace MovieTownFinalProject
                 employeePasswordInput.ForeColor = Color.Black;
                 employeePasswordInput.PasswordChar = '*';
             }
+        }
+        /// <summary>
+        /// Methode to Shake the Application, to be used incasae of wrong input.
+        /// </summary>
+        /// <param name="form">Gets the "this" parameter to use its location.</param>
+        /// <remarks>Because i could, and it's kind of fun.</remarks>
+        private static void ScreenShake(Form form)
+        {
+            var original = form.Location;
+            var rnd = new Random(1337);
+            const int shake = 5;
+            for (int i = 0; i < 10; i++)
+            {
+                form.Location = new Point(original.X + rnd.Next(-shake, shake), original.Y + rnd.Next(-shake, shake));
+                System.Threading.Thread.Sleep(20);
+            }
+            form.Location = original;
         }
     }
 }
