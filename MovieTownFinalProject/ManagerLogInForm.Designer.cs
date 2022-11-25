@@ -76,6 +76,7 @@
             // employeeLoginButton
             // 
             this.employeeLoginButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.employeeLoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.employeeLoginButton.FlatAppearance.BorderSize = 0;
             this.employeeLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.employeeLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +93,7 @@
             // clientLoginButton
             // 
             this.clientLoginButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.clientLoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clientLoginButton.FlatAppearance.BorderSize = 0;
             this.clientLoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clientLoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
