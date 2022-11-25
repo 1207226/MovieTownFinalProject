@@ -44,5 +44,14 @@ namespace MovieTownFinalProject
             SelectMenu.ShowDialog();
             this.Close();
         }
+        /// <summary>
+        /// Sets the Page Focus on the Employee Login Button on Load.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ManagerLogInForm_Load(object sender, EventArgs e)
+        {
+            employeeLoginButton.TabIndex = 0;
+        }
     }
 }

@@ -121,6 +121,7 @@
             this.Name = "ManagerLogInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerLogInForm";
+            this.Load += new System.EventHandler(this.ManagerLogInForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -63,7 +63,7 @@
             this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backButton.FlatAppearance.BorderSize = 0;
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton.Location = new System.Drawing.Point(32, 28);
+            this.backButton.Location = new System.Drawing.Point(35, 28);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(74, 50);
             this.backButton.TabIndex = 6;
