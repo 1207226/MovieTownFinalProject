@@ -61,12 +61,15 @@ namespace MovieTownFinalProject
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// <remarks>Broken at the momment. p(T_T')</remarks>
         private void openClientButton_Click(object sender, EventArgs e)
         {
-            ManageClientForm manageClientForm = new ManageClientForm();
-            this.Hide();
-            manageClientForm.ShowDialog();
-            this.Close();
+            // Quick fix.
+            MessageBox.Show("Sorry, form unavailible at the moment");
+            //ManageClientForm manageClientForm = new ManageClientForm();
+            //this.Hide();
+            //manageClientForm.ShowDialog();
+            //this.Close();
         }
         /// <summary>
         /// Opens the Client Log-In Form and Closes the Selection Menu Form.

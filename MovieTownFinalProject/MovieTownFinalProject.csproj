@@ -102,6 +102,12 @@
     <EmbeddedResource Include="ManagerSelectMenuForm.resx">
       <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageShowTimeForm.resx">
+      <DependentUpon>ManageShowTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieManagerForm.resx">
+      <DependentUpon>MovieManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,7 +117,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-   <EmbeddedResource Include="ShowRoomManagerForm.resx">
+    <EmbeddedResource Include="ShowRoomManagerForm.resx">
       <DependentUpon>ShowRoomManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MovieTownDbDataSet.xsc">

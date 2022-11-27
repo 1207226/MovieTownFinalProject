@@ -51,7 +51,7 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.InitialImage")));
+            this.pictureBoxLogo.InitialImage = null;
             this.pictureBoxLogo.Location = new System.Drawing.Point(116, 63);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
