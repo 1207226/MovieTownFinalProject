@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageClientForm.Designer.cs">
+      <DependentUpon>ManageClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerLogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,32 +73,54 @@
       <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+    <Compile Include="ManageShowTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageShowTimeForm.Designer.cs">
+      <DependentUpon>ManageShowTimeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MovieManagerForm.Designer.cs">
       <DependentUpon>MovieManagerForm.cs</DependentUpon>
+    </Compile>
 =======
+>>>>>>> fc5862d9308d987fad65dd233d28efda245c7a97
     <Compile Include="Movie.cs" />
     <Compile Include="MovieTheatre.cs" />
     <Compile Include="MovieTownDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieTownDbDataSet.xsd</DependentUpon>
->>>>>>> fc5862d9308d987fad65dd233d28efda245c7a97
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
+<<<<<<< HEAD
+    <Compile Include="ShowRoomManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRoomManagerForm.Designer.cs">
+      <DependentUpon>ShowRoomManagerForm.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> fc5862d9308d987fad65dd233d28efda245c7a97
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageClientForm.resx">
+      <DependentUpon>ManageClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogInForm.resx">
       <DependentUpon>ManagerLogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerSelectMenuForm.resx">
       <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageShowTimeForm.resx">
+      <DependentUpon>ManageShowTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovieManagerForm.resx">
       <DependentUpon>MovieManagerForm.cs</DependentUpon>
@@ -106,6 +134,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <EmbeddedResource Include="ShowRoomManagerForm.resx">
+      <DependentUpon>ShowRoomManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> fc5862d9308d987fad65dd233d28efda245c7a97
     <None Include="MovieTownDbDataSet.xsc">
       <DependentUpon>MovieTownDbDataSet.xsd</DependentUpon>
     </None>
