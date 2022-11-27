@@ -37,6 +37,7 @@
             this.EmployeeLogInLabel = new System.Windows.Forms.Label();
             this.invalidInputLable1 = new System.Windows.Forms.Label();
             this.invalidInputLabel2 = new System.Windows.Forms.Label();
+            this.postNoteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,12 +149,24 @@
             this.invalidInputLabel2.Text = "*";
             this.invalidInputLabel2.Visible = false;
             // 
+            // postNoteLabel
+            // 
+            this.postNoteLabel.BackColor = System.Drawing.Color.Gold;
+            this.postNoteLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.postNoteLabel.Location = new System.Drawing.Point(596, 332);
+            this.postNoteLabel.Name = "postNoteLabel";
+            this.postNoteLabel.Size = new System.Drawing.Size(115, 154);
+            this.postNoteLabel.TabIndex = 12;
+            this.postNoteLabel.Text = "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n\r\n";
+            this.postNoteLabel.Click += new System.EventHandler(this.postNoteLabel_Click);
+            // 
             // ManagerLogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.postNoteLabel);
             this.Controls.Add(this.invalidInputLabel2);
             this.Controls.Add(this.invalidInputLable1);
             this.Controls.Add(this.EmployeeLogInLabel);
@@ -182,5 +195,6 @@
         private System.Windows.Forms.Label EmployeeLogInLabel;
         private System.Windows.Forms.Label invalidInputLable1;
         private System.Windows.Forms.Label invalidInputLabel2;
+        private System.Windows.Forms.Label postNoteLabel;
     }
 }

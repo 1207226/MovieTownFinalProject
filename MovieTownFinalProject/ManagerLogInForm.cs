@@ -138,5 +138,17 @@ namespace MovieTownFinalProject
                 employeePasswordInput.PasswordChar = '*';
             }
         }
+
+        private void postNoteLabel_Click(object sender, EventArgs e)
+        {
+            if(postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n") 
+            { 
+                postNoteLabel.Text = "PS: Please do not leave sensitive information publicly accesseble.";
+            }
+            else
+            {
+                postNoteLabel.Text = "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n";
+            }
+        }
     }
 }
