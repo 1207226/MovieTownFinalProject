@@ -128,7 +128,12 @@ namespace MovieTownFinalProject
             }
             form.Location = original;
         }
-
+        /// <summary>
+        /// Ereases the Text from employeePassowrdInput TextBox when Clicked if Text has Default Value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>Also Changes the Text Color & Sets PasswordChar.</remarks>
         private void employeePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (employeePasswordInput.Text == "Enter Password" || employeePasswordInput.Text == "Re-Enter Password")
@@ -138,7 +143,11 @@ namespace MovieTownFinalProject
                 employeePasswordInput.PasswordChar = '*';
             }
         }
-
+        /// <summary>
+        /// Post note memo interactive text on click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void postNoteLabel_Click(object sender, EventArgs e)
         {
             if(postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n") 
