@@ -37,5 +37,20 @@ namespace MovieTownFinalProject
         {
             loginButton.TabIndex = 0;
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            messageBox();
+        }
+
+        private void signupButton_Click(object sender, EventArgs e)
+        {
+            messageBox();
+        }
+
+        public void messageBox()
+        {
+            MessageBox.Show("Feature not yet availble. Please Login as an Employee.");
+        }
     }
 }
