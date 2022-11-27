@@ -54,6 +54,7 @@
             // homePageUserNameInput
             // 
             this.homePageUserNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.homePageUserNameInput.Enabled = false;
             this.homePageUserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePageUserNameInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePageUserNameInput.Location = new System.Drawing.Point(219, 415);
@@ -66,6 +67,7 @@
             // homePagePasswordInput
             // 
             this.homePagePasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.homePagePasswordInput.Enabled = false;
             this.homePagePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePagePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePagePasswordInput.Location = new System.Drawing.Point(219, 478);
@@ -90,6 +92,7 @@
             this.signupButton.TabIndex = 3;
             this.signupButton.Text = "Sign-Up";
             this.signupButton.UseVisualStyleBackColor = false;
+            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
             // loginButton
             // 
@@ -106,6 +109,7 @@
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Log-In";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // employeeButton
             // 

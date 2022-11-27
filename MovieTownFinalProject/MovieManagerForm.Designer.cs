@@ -44,6 +44,7 @@
             this.movieDateTextBox = new System.Windows.Forms.TextBox();
             this.movieRoomTextBox = new System.Windows.Forms.TextBox();
             this.movieGenreTextBox = new System.Windows.Forms.TextBox();
+            this.instructionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -222,12 +223,24 @@
             this.movieGenreTextBox.TabIndex = 17;
             this.movieGenreTextBox.Text = "Enter Movie Genre";
             // 
+            // instructionLabel
+            // 
+            this.instructionLabel.AutoSize = true;
+            this.instructionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instructionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.instructionLabel.Location = new System.Drawing.Point(181, 412);
+            this.instructionLabel.Name = "instructionLabel";
+            this.instructionLabel.Size = new System.Drawing.Size(370, 22);
+            this.instructionLabel.TabIndex = 41;
+            this.instructionLabel.Text = "Section to be implemented as of tutorial 12-3.";
+            // 
             // MovieManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.instructionLabel);
             this.Controls.Add(this.movieGenreTextBox);
             this.Controls.Add(this.movieRoomTextBox);
             this.Controls.Add(this.movieDateTextBox);
@@ -270,5 +283,6 @@
         private System.Windows.Forms.TextBox movieDateTextBox;
         private System.Windows.Forms.TextBox movieRoomTextBox;
         private System.Windows.Forms.TextBox movieGenreTextBox;
+        private System.Windows.Forms.Label instructionLabel;
     }
 }
