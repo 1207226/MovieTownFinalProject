@@ -42,6 +42,7 @@
             this.roomLabel = new System.Windows.Forms.Label();
             this.movieLabel = new System.Windows.Forms.Label();
             this.showtimeLabel = new System.Windows.Forms.Label();
+            this.instructionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,12 +198,24 @@
             this.showtimeLabel.TabIndex = 18;
             this.showtimeLabel.Text = "Show Time:";
             // 
+            // instructionLabel
+            // 
+            this.instructionLabel.AutoSize = true;
+            this.instructionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instructionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.instructionLabel.Location = new System.Drawing.Point(181, 412);
+            this.instructionLabel.Name = "instructionLabel";
+            this.instructionLabel.Size = new System.Drawing.Size(370, 22);
+            this.instructionLabel.TabIndex = 41;
+            this.instructionLabel.Text = "Section to be implemented as of tutorial 12-3.";
+            // 
             // ManageShowTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.instructionLabel);
             this.Controls.Add(this.showTimeMovieTextBox);
             this.Controls.Add(this.showTimeRoomTextBox);
             this.Controls.Add(this.movieDateTextBox);
@@ -241,5 +254,6 @@
         private System.Windows.Forms.Label roomLabel;
         private System.Windows.Forms.Label movieLabel;
         private System.Windows.Forms.Label showtimeLabel;
+        private System.Windows.Forms.Label instructionLabel;
     }
 }
