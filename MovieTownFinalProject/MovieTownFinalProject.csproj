@@ -46,19 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="Employee.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageClientForm.Designer.cs">
-      <DependentUpon>ManageClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerLogInForm.cs">
       <SubType>Form</SubType>
@@ -104,20 +96,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageClientForm.resx">
-      <DependentUpon>ManageClientForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogInForm.resx">
       <DependentUpon>ManagerLogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerSelectMenuForm.resx">
       <DependentUpon>ManagerSelectMenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageShowTimeForm.resx">
-      <DependentUpon>ManageShowTimeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MovieManagerForm.resx">
-      <DependentUpon>MovieManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,7 +111,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ShowRoomManagerForm.resx">
+   <EmbeddedResource Include="ShowRoomManagerForm.resx">
       <DependentUpon>ShowRoomManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MovieTownDbDataSet.xsc">
