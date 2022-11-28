@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageClientForm.Designer.cs">
+      <DependentUpon>ManageClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerLogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageClientForm.resx">
+      <DependentUpon>ManageClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogInForm.resx">
       <DependentUpon>ManagerLogInForm.cs</DependentUpon>

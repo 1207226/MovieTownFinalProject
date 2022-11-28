@@ -231,7 +231,6 @@
             this.Controls.Add(this.pictureBoxLogo);
             this.Name = "ManageShowTimeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ManageShowTime";
             this.Load += new System.EventHandler(this.ManageShowTimeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);

@@ -65,11 +65,11 @@ namespace MovieTownFinalProject
         private void openClientButton_Click(object sender, EventArgs e)
         {
             // Quick fix.
-            MessageBox.Show("Sorry, form unavailible at the moment");
-            //ManageClientForm manageClientForm = new ManageClientForm();
-            //this.Hide();
-            //manageClientForm.ShowDialog();
-            //this.Close();
+            //MessageBox.Show("Sorry, form unavailible at the moment");
+            ManageClientForm manageClientForm = new ManageClientForm();
+            this.Hide();
+            manageClientForm.ShowDialog();
+            this.Close();
         }
         /// <summary>
         /// Opens the Client Log-In Form and Closes the Selection Menu Form.
