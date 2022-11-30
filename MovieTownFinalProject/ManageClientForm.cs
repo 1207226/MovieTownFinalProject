@@ -49,7 +49,5 @@ namespace MovieTownFinalProject
             frm.ShowDialog();
             this.Close();
         }
-
- 
     }
 }

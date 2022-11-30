@@ -85,7 +85,6 @@ namespace MovieTownFinalProject
             this.Hide();
             homepage.ShowDialog();
             this.Close();
-
         }
     }
 }

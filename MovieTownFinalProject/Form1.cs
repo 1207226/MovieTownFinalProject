@@ -50,6 +50,12 @@ namespace MovieTownFinalProject
             this.loginButton.TabIndex = 0;
         }
 
+        /// <summary>
+        /// Check the login credential of the client. If valid open the movie selection form.
+        /// </summary>
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Execption.</param>
+        /// <remarks>At the moment only shows a message box. To change when movie selection form is made.</remarks>
         private void LoginButton_Click(object sender, EventArgs e)
         {
             this.FeatureMissing();

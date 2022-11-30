@@ -57,7 +57,7 @@ namespace MovieTownFinalProject
             string password1 = this.signUpPasswordTextBox1.Text;
             string password2 = this.signUpPasswordTextBox2.Text;
 
-            string[] invalidChar = {" ", "!", "*", "@", "#","#", "=", "+", "-"};
+            string[] invalidChar = { " ", "!", "*", "@", "#", "#", "=", "+", "-" };
             string[] emailRequirement = { ".com", ".ca", ".net" };
 
             if (userName != "User Name" && invalidChar.Any(userName.Contains))
@@ -105,7 +105,7 @@ namespace MovieTownFinalProject
                 validField++;
             }
 
-            if ( validField != 5)
+            if (validField != 5)
             {
                 ManagerLogInForm.ScreenShake(this);
             }
@@ -224,6 +224,11 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Set the focus on the SignUp button when the from is being loaded.
+        /// </summary>
+        /// <param name="sender">Form being loaded.</param>
+        /// <param name="e">Exception.</param>
         private void ClientSignUpForm_Load(object sender, EventArgs e)
         {
             this.signupButton.TabIndex = 0;
