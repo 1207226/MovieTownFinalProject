@@ -91,7 +91,7 @@
             this.signupButton.TabIndex = 3;
             this.signupButton.Text = "Sign-Up";
             this.signupButton.UseVisualStyleBackColor = false;
-            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
+            this.signupButton.Click += new System.EventHandler(this.SignupButton_Click);
             // 
             // loginButton
             // 
@@ -108,7 +108,7 @@
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Log-In";
             this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // employeeButton
             // 
@@ -125,7 +125,7 @@
             this.employeeButton.TabIndex = 5;
             this.employeeButton.Text = "Employee";
             this.employeeButton.UseVisualStyleBackColor = false;
-            this.employeeButton.Click += new System.EventHandler(this.employeeButton_Click);
+            this.employeeButton.Click += new System.EventHandler(this.EmployeeButton_Click);
             // 
             // welcomeLabel
             // 

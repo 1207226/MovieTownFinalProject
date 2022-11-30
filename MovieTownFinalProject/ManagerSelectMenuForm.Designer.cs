@@ -65,7 +65,7 @@
             this.openMoviesButton.TabIndex = 6;
             this.openMoviesButton.Text = "Movies";
             this.openMoviesButton.UseVisualStyleBackColor = false;
-            this.openMoviesButton.Click += new System.EventHandler(this.openMoviesButton_Click);
+            this.openMoviesButton.Click += new System.EventHandler(this.OpenMoviesButton_Click);
             // 
             // openShowRoom
             // 
@@ -82,7 +82,7 @@
             this.openShowRoom.TabIndex = 7;
             this.openShowRoom.Text = "Show Rooms";
             this.openShowRoom.UseVisualStyleBackColor = false;
-            this.openShowRoom.Click += new System.EventHandler(this.openShowRoom_Click);
+            this.openShowRoom.Click += new System.EventHandler(this.OpenShowRoom_Click);
             // 
             // openShowTimeButton
             // 
@@ -99,7 +99,7 @@
             this.openShowTimeButton.TabIndex = 8;
             this.openShowTimeButton.Text = "Show Times";
             this.openShowTimeButton.UseVisualStyleBackColor = false;
-            this.openShowTimeButton.Click += new System.EventHandler(this.openShowTimeButton_Click);
+            this.openShowTimeButton.Click += new System.EventHandler(this.OpenShowTimeButton_Click);
             // 
             // openClientButton
             // 
@@ -116,7 +116,7 @@
             this.openClientButton.TabIndex = 9;
             this.openClientButton.Text = "Clients";
             this.openClientButton.UseVisualStyleBackColor = false;
-            this.openClientButton.Click += new System.EventHandler(this.openClientButton_Click);
+            this.openClientButton.Click += new System.EventHandler(this.OpenClientButton_Click);
             // 
             // employeeLogoutButton
             // 
@@ -133,7 +133,7 @@
             this.employeeLogoutButton.TabIndex = 10;
             this.employeeLogoutButton.Text = "Log-Out";
             this.employeeLogoutButton.UseVisualStyleBackColor = false;
-            this.employeeLogoutButton.Click += new System.EventHandler(this.employeeLogoutButton_Click);
+            this.employeeLogoutButton.Click += new System.EventHandler(this.EmployeeLogoutButton_Click);
             // 
             // ManagerSelectMenuForm
             // 

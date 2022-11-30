@@ -1,44 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿// <copyright file="ShowRoomManagerForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MovieTownFinalProject
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Manage Show Room Form.
+    /// </summary>
     public partial class ShowRoomManagerForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShowRoomManagerForm"/> class.
+        /// </summary>
         public ShowRoomManagerForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
+
         /// <summary>
         /// Set the Size of the Back Arrow to the Size of the Button.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Form loading.</param>
+        /// <param name="e">Execption.</param>
         private void ShowRoomManagerForm_Load(object sender, EventArgs e)
         {
-            backButton.BackgroundImageLayout = ImageLayout.Stretch;
+            this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         /// <summary>
         /// Opens Selection Menu Form Form and Closes the Show Room Manager Form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backButton_Click(object sender, EventArgs e)
+        /// <param name="sender">Button Clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void BackButton_Click(object sender, EventArgs e)
         {
-            ManagerSelectMenuForm SelectMenu = new ManagerSelectMenuForm();
+            ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
             this.Hide();
-            SelectMenu.ShowDialog();
+            selectMenu.ShowDialog();
             this.Close();
         }
-
-
     }
 }

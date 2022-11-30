@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿// <copyright file="ClientSignUpForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MovieTownFinalProject
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+
     /// <summary>
-    ///
+    /// Client SignUp Form.
     /// </summary>
     public partial class ClientSignUpForm : Form
     {
@@ -53,7 +57,7 @@ namespace MovieTownFinalProject
             string password1 = this.signUpPasswordTextBox1.Text;
             string password2 = this.signUpPasswordTextBox2.Text;
 
-            string[] invalidChar = {" ", "!", "*", "@", "#","#", "=", "+", "-"};
+            string[] invalidChar = { " ", "!", "*", "@", "#", "#", "=", "+", "-" };
             string[] emailRequirement = { ".com", ".ca", ".net" };
 
             if (userName != "User Name" && invalidChar.Any(userName.Contains))
@@ -101,7 +105,7 @@ namespace MovieTownFinalProject
                 validField++;
             }
 
-            if ( validField != 5)
+            if (validField != 5)
             {
                 ManagerLogInForm.ScreenShake(this);
             }
@@ -220,9 +224,14 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Set the focus on the SignUp button when the from is being loaded.
+        /// </summary>
+        /// <param name="sender">Form being loaded.</param>
+        /// <param name="e">Exception.</param>
         private void ClientSignUpForm_Load(object sender, EventArgs e)
         {
-            signupButton.TabIndex = 0;
+            this.signupButton.TabIndex = 0;
         }
     }
 }

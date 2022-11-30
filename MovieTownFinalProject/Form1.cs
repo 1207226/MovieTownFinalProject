@@ -1,53 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿// <copyright file="Form1.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MovieTownFinalProject
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Home Page Form.
+    /// </summary>
     public partial class HomePage : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HomePage"/> class.
+        /// </summary>
         public HomePage()
         {
             this.InitializeComponent();
         }
+
         /// <summary>
         /// Opens the Empoloyee Log-In Form and Closes the Client Log-In Form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void employeeButton_Click(object sender, EventArgs e)
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void EmployeeButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             ManagerLogInForm mLForm = new ManagerLogInForm();
             mLForm.ShowDialog();
             this.Close();
         }
+
         /// <summary>
         /// Sets the Page Focus on the Login Button on Load.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Button Clicked.</param>
+        /// <param name="e">Execption.</param>
         private void HomePage_Load(object sender, EventArgs e)
         {
-            loginButton.TabIndex = 0;
+            this.loginButton.TabIndex = 0;
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Check the login credential of the client. If valid open the movie selection form.
+        /// </summary>
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Execption.</param>
+        /// <remarks>At the moment only shows a message box. To change when movie selection form is made.</remarks>
+        private void LoginButton_Click(object sender, EventArgs e)
         {
-            messageBox();
+            this.FeatureMissing();
         }
+
         /// <summary>
         ///  Opens the Client Sign-Up Form and Closes the Client Log-In Form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void signupButton_Click(object sender, EventArgs e)
+        /// <param name="sender">Button Clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void SignupButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             ClientSignUpForm clientSignUpForm = new ClientSignUpForm();
@@ -55,7 +74,10 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
-        public void messageBox()
+        /// <summary>
+        /// Opens a message box warning the user.
+        /// </summary>
+        private void FeatureMissing()
         {
             MessageBox.Show("Feature not yet availble. Please Login as an Employee.");
         }
