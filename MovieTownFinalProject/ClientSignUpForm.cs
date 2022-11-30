@@ -222,7 +222,7 @@ namespace MovieTownFinalProject
 
         private void ClientSignUpForm_Load(object sender, EventArgs e)
         {
-            signupButton.TabIndex = 0;
+            this.signupButton.TabIndex = 0;
         }
     }
 }
