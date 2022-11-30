@@ -13,21 +13,24 @@ namespace MovieTownFinalProject
 {
     public partial class ManagerLogInForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManagerLogInForm"/> class.
+        /// </summary>
         public ManagerLogInForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
-        //Temporary Employee Number & Password for Testing.
-        const string testEmpNumber = "123456";
-        const string testPassword = "qwerty1";
+        // Temporary Employee Number & Password for Testing.
+        private const string TestEmpNumber = "123456";
+        private const string TestPassword = "qwerty1";
 
         /// <summary>
         ///  Opens the Client Log-In Form and Closes the Empoloyee Log-In Form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void clientLoginButton_Click(object sender, EventArgs e)
+        /// <param name="sender">Button Clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void ClientLoginButton_Click(object sender, EventArgs e)
         {
             HomePage homepage = new HomePage();
             this.Hide();
@@ -38,22 +41,21 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Opens the Manager Selection Menu Form and Closes the Empoloyee Log-In Form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Button Clicked.</param>
+        /// <param name="e">Execption.</param>
         /// <remarks>Check if the Empolyee Number & Password are valid and correspond to each others.</remarks>
         /// <remarks>Responds to Invalid Input by Reseting TextBox Text with New Message & Style.</remarks>
-        private void employeeLoginButton_Click(object sender, EventArgs e)
+        private void EmployeeLoginButton_Click(object sender, EventArgs e)
         {
-            //TODO : Add a conditional statement to to check credentials, if valid do below.
+            // TODO : Add a conditional statement to to check credentials, if valid do below.
+            string employeeNumber = this.employeeNumberInput.Text;
+            string password = this.employeePasswordInput.Text;
 
-            string employeeNumber = employeeNumberInput.Text;
-            string password = employeePasswordInput.Text;
-
-            if (employeeNumber == testEmpNumber && password == testPassword)
+            if (employeeNumber == TestEmpNumber && password == TestPassword)
             {
-                ManagerSelectMenuForm SelectMenu = new ManagerSelectMenuForm();
+                ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
                 this.Hide();
-                SelectMenu.ShowDialog();
+                selectMenu.ShowDialog();
                 this.Close();
             }
 
@@ -61,57 +63,57 @@ namespace MovieTownFinalProject
             {
                 ScreenShake(this);
             }
-            else if (employeeNumber != testEmpNumber || password != testPassword)
+            else if (employeeNumber != TestEmpNumber || password != TestPassword)
             {
                 ScreenShake(this);
-                invalidInputLable1.Visible = true;
-                invalidInputLabel2.Visible = true;
-                employeeNumberInput.ForeColor = Color.Red;
-                employeeNumberInput.Text = "Re-Enter Employee Number";
-                employeePasswordInput.PasswordChar = '\0';
-                employeePasswordInput.ForeColor = Color.Red;
-                employeePasswordInput.Text = "Re-Enter Password";
+                this.invalidInputLable1.Visible = true;
+                this.invalidInputLabel2.Visible = true;
+                this.employeeNumberInput.ForeColor = Color.Red;
+                this.employeeNumberInput.Text = "Re-Enter Employee Number";
+                this.employeePasswordInput.PasswordChar = '\0';
+                this.employeePasswordInput.ForeColor = Color.Red;
+                this.employeePasswordInput.Text = "Re-Enter Password";
             }
         }
+
         /// <summary>
         /// Sets the Page Focus on the Employee Login Button on Load.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Exeption.</param>
         private void ManagerLogInForm_Load(object sender, EventArgs e)
         {
-            employeeLoginButton.TabIndex = 0;
-
+            this.employeeLoginButton.TabIndex = 0;
         }
 
         /// <summary>
         /// Ereases the Text from employeeNumberInput TextBox when Clicked if Text has Default Value. 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Execption.</param>
         /// <remarks>Also Changes the Text Color.</remarks>
-        private void employeeNumberInput_Click(object sender, EventArgs e)
+        private void EmployeeNumberInput_Click(object sender, EventArgs e)
         {
-            if (employeeNumberInput.Text == "Enter Employee Number" || employeeNumberInput.Text == "Re-Enter Employee Number")
+            if (this.employeeNumberInput.Text == "Enter Employee Number" || this.employeeNumberInput.Text == "Re-Enter Employee Number")
             {
-                employeeNumberInput.Clear();
-                employeeNumberInput.ForeColor = Color.Black;
+                this.employeeNumberInput.Clear();
+                this.employeeNumberInput.ForeColor = Color.Black;
             }
         }
 
         /// <summary>
         /// Ereases the Text from employeePasswordInput TextBox when Clicked if Text has Default Value.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Button Clicked</param>
+        /// <param name="e">Execption.</param>
         /// <remarks>Also Changes the Text Color & Sets PasswordChar.</remarks>
-        private void employeePasswordInput_Click(object sender, EventArgs e)
+        private void EmployeePasswordInput_Click(object sender, EventArgs e)
         {
-            if (employeePasswordInput.Text == "Enter Password" || employeePasswordInput.Text == "Re-Enter Password")
+            if (this.employeePasswordInput.Text == "Enter Password" || this.employeePasswordInput.Text == "Re-Enter Password")
             {
-                employeePasswordInput.Clear();
-                employeePasswordInput.ForeColor = Color.Black;
-                employeePasswordInput.PasswordChar = '*';
+                this.employeePasswordInput.Clear();
+                this.employeePasswordInput.ForeColor = Color.Black;
+                this.employeePasswordInput.PasswordChar = '*';
             }
         }
 
@@ -137,33 +139,33 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Ereases the Text from employeePassowrdInput TextBox when Clicked if Text has Default Value.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Key press from keyboard.</param>
+        /// <param name="e">Execption.</param>
         /// <remarks>Also Changes the Text Color & Sets PasswordChar.</remarks>
-        private void employeePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
+        private void EmployeePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (employeePasswordInput.Text == "Enter Password" || employeePasswordInput.Text == "Re-Enter Password")
+            if (this.employeePasswordInput.Text == "Enter Password" || this.employeePasswordInput.Text == "Re-Enter Password")
             {
-                employeePasswordInput.Clear();
-                employeePasswordInput.ForeColor = Color.Black;
-                employeePasswordInput.PasswordChar = '*';
+                this.employeePasswordInput.Clear();
+                this.employeePasswordInput.ForeColor = Color.Black;
+                this.employeePasswordInput.PasswordChar = '*';
             }
         }
 
         /// <summary>
         /// Post note memo interactive text on click.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void postNoteLabel_Click(object sender, EventArgs e)
+        /// <param name="sender">Label is Cliked</param>
+        /// <param name="e">Execption.</param>
+        private void PostNoteLabel_Click(object sender, EventArgs e)
         {
-            if(postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n") 
+            if (this.postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n") 
             {
-                postNoteLabel.Text = "PS: Please do not leave sensitive information publicly accesseble.";
+                this.postNoteLabel.Text = "PS: Please do not leave sensitive information publicly accesseble.";
             }
             else
             {
-                postNoteLabel.Text = "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n";
+                this.postNoteLabel.Text = "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n";
             }
         }
     }

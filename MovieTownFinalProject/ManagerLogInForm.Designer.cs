@@ -64,8 +64,8 @@
             this.employeePasswordInput.Size = new System.Drawing.Size(295, 23);
             this.employeePasswordInput.TabIndex = 4;
             this.employeePasswordInput.Text = "Enter Password";
-            this.employeePasswordInput.Click += new System.EventHandler(this.employeePasswordInput_Click);
-            this.employeePasswordInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.employeePasswordInput_KeyPress);
+            this.employeePasswordInput.Click += new System.EventHandler(this.EmployeePasswordInput_Click);
+            this.employeePasswordInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmployeePasswordInput_KeyPress);
             // 
             // employeeNumberInput
             // 
@@ -78,7 +78,7 @@
             this.employeeNumberInput.Size = new System.Drawing.Size(295, 23);
             this.employeeNumberInput.TabIndex = 3;
             this.employeeNumberInput.Text = "Enter Employee Number";
-            this.employeeNumberInput.Click += new System.EventHandler(this.employeeNumberInput_Click);
+            this.employeeNumberInput.Click += new System.EventHandler(this.EmployeeNumberInput_Click);
             // 
             // employeeLoginButton
             // 
@@ -95,7 +95,7 @@
             this.employeeLoginButton.TabIndex = 5;
             this.employeeLoginButton.Text = "Log-In";
             this.employeeLoginButton.UseVisualStyleBackColor = false;
-            this.employeeLoginButton.Click += new System.EventHandler(this.employeeLoginButton_Click);
+            this.employeeLoginButton.Click += new System.EventHandler(this.EmployeeLoginButton_Click);
             // 
             // clientLoginButton
             // 
@@ -112,7 +112,7 @@
             this.clientLoginButton.TabIndex = 6;
             this.clientLoginButton.Text = "Client Log-In";
             this.clientLoginButton.UseVisualStyleBackColor = false;
-            this.clientLoginButton.Click += new System.EventHandler(this.clientLoginButton_Click);
+            this.clientLoginButton.Click += new System.EventHandler(this.ClientLoginButton_Click);
             // 
             // EmployeeLogInLabel
             // 
@@ -158,7 +158,7 @@
             this.postNoteLabel.Size = new System.Drawing.Size(115, 154);
             this.postNoteLabel.TabIndex = 12;
             this.postNoteLabel.Text = "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n\r\n";
-            this.postNoteLabel.Click += new System.EventHandler(this.postNoteLabel_Click);
+            this.postNoteLabel.Click += new System.EventHandler(this.PostNoteLabel_Click);
             // 
             // ManagerLogInForm
             // 
