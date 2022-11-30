@@ -54,7 +54,6 @@
             // homePageUserNameInput
             // 
             this.homePageUserNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.homePageUserNameInput.Enabled = false;
             this.homePageUserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePageUserNameInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePageUserNameInput.Location = new System.Drawing.Point(219, 415);
