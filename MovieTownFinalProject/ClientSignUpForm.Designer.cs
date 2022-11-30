@@ -30,15 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientSignUpForm));
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.homePageUserNameInput = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.employeeButton = new System.Windows.Forms.Button();
+            this.signUpUserNameTextBox = new System.Windows.Forms.TextBox();
+            this.signUpFirstNameTextBox = new System.Windows.Forms.TextBox();
+            this.signUpEmailTextBox = new System.Windows.Forms.TextBox();
+            this.signUpLastNameTextBox = new System.Windows.Forms.TextBox();
+            this.signUpPasswordTextBox1 = new System.Windows.Forms.TextBox();
             this.signupButton = new System.Windows.Forms.Button();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.signUpPasswordTextBox2 = new System.Windows.Forms.TextBox();
+            this.backButton = new System.Windows.Forms.Button();
+            this.invalidInputLable1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,81 +60,65 @@
             this.pictureBoxLogo.TabIndex = 1;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // homePageUserNameInput
+            // signUpUserNameTextBox
             // 
-            this.homePageUserNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.homePageUserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homePageUserNameInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.homePageUserNameInput.Location = new System.Drawing.Point(219, 398);
-            this.homePageUserNameInput.Margin = new System.Windows.Forms.Padding(4);
-            this.homePageUserNameInput.Name = "homePageUserNameInput";
-            this.homePageUserNameInput.Size = new System.Drawing.Size(295, 23);
-            this.homePageUserNameInput.TabIndex = 2;
-            this.homePageUserNameInput.Text = "User Name";
+            this.signUpUserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signUpUserNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpUserNameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpUserNameTextBox.Location = new System.Drawing.Point(219, 398);
+            this.signUpUserNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.signUpUserNameTextBox.Name = "signUpUserNameTextBox";
+            this.signUpUserNameTextBox.Size = new System.Drawing.Size(295, 23);
+            this.signUpUserNameTextBox.TabIndex = 2;
+            this.signUpUserNameTextBox.Text = "User Name";
             // 
-            // textBox1
+            // signUpFirstNameTextBox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Location = new System.Drawing.Point(219, 450);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 23);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "First Name";
+            this.signUpFirstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signUpFirstNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpFirstNameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpFirstNameTextBox.Location = new System.Drawing.Point(219, 450);
+            this.signUpFirstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.signUpFirstNameTextBox.Name = "signUpFirstNameTextBox";
+            this.signUpFirstNameTextBox.Size = new System.Drawing.Size(295, 23);
+            this.signUpFirstNameTextBox.TabIndex = 3;
+            this.signUpFirstNameTextBox.Text = "First Name";
             // 
-            // textBox2
+            // signUpEmailTextBox
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(219, 554);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(295, 23);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "E-mail";
+            this.signUpEmailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signUpEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpEmailTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpEmailTextBox.Location = new System.Drawing.Point(219, 554);
+            this.signUpEmailTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.signUpEmailTextBox.Name = "signUpEmailTextBox";
+            this.signUpEmailTextBox.Size = new System.Drawing.Size(295, 23);
+            this.signUpEmailTextBox.TabIndex = 5;
+            this.signUpEmailTextBox.Text = "E-mail";
             // 
-            // textBox3
+            // signUpLastNameTextBox
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox3.Location = new System.Drawing.Point(219, 502);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(295, 23);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Last Name";
+            this.signUpLastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signUpLastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpLastNameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpLastNameTextBox.Location = new System.Drawing.Point(219, 502);
+            this.signUpLastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.signUpLastNameTextBox.Name = "signUpLastNameTextBox";
+            this.signUpLastNameTextBox.Size = new System.Drawing.Size(295, 23);
+            this.signUpLastNameTextBox.TabIndex = 4;
+            this.signUpLastNameTextBox.Text = "Last Name";
             // 
-            // textBox4
+            // signUpPasswordTextBox1
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox4.Location = new System.Drawing.Point(219, 606);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(295, 23);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.Text = "Password";
-            // 
-            // employeeButton
-            // 
-            this.employeeButton.BackColor = System.Drawing.Color.RoyalBlue;
-            this.employeeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.employeeButton.FlatAppearance.BorderSize = 0;
-            this.employeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.employeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.employeeButton.Location = new System.Drawing.Point(159, 725);
-            this.employeeButton.Margin = new System.Windows.Forms.Padding(4);
-            this.employeeButton.Name = "employeeButton";
-            this.employeeButton.Size = new System.Drawing.Size(127, 38);
-            this.employeeButton.TabIndex = 7;
-            this.employeeButton.Text = "Back";
-            this.employeeButton.UseVisualStyleBackColor = false;
+            this.signUpPasswordTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signUpPasswordTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpPasswordTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpPasswordTextBox1.Location = new System.Drawing.Point(219, 606);
+            this.signUpPasswordTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.signUpPasswordTextBox1.Name = "signUpPasswordTextBox1";
+            this.signUpPasswordTextBox1.Size = new System.Drawing.Size(295, 23);
+            this.signUpPasswordTextBox1.TabIndex = 6;
+            this.signUpPasswordTextBox1.Text = "Password";
             // 
             // signupButton
             // 
@@ -138,13 +128,14 @@
             this.signupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.signupButton.Location = new System.Drawing.Point(443, 725);
+            this.signupButton.Location = new System.Drawing.Point(302, 727);
             this.signupButton.Margin = new System.Windows.Forms.Padding(4);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(129, 38);
             this.signupButton.TabIndex = 8;
             this.signupButton.Text = "Create Account";
             this.signupButton.UseVisualStyleBackColor = false;
+            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
             // 
             // welcomeLabel
             // 
@@ -157,17 +148,103 @@
             this.welcomeLabel.TabIndex = 10;
             this.welcomeLabel.Text = "Enter your Information";
             // 
-            // textBox5
+            // signUpPasswordTextBox2
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox5.Location = new System.Drawing.Point(219, 658);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(295, 23);
-            this.textBox5.TabIndex = 11;
-            this.textBox5.Text = "Re-Enter Password";
+            this.signUpPasswordTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.signUpPasswordTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpPasswordTextBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpPasswordTextBox2.Location = new System.Drawing.Point(219, 658);
+            this.signUpPasswordTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.signUpPasswordTextBox2.Name = "signUpPasswordTextBox2";
+            this.signUpPasswordTextBox2.Size = new System.Drawing.Size(295, 23);
+            this.signUpPasswordTextBox2.TabIndex = 11;
+            this.signUpPasswordTextBox2.Text = "Re-Enter Password";
+            // 
+            // backButton
+            // 
+            this.backButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton.BackgroundImage")));
+            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Location = new System.Drawing.Point(35, 28);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(74, 50);
+            this.backButton.TabIndex = 12;
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // invalidInputLable1
+            // 
+            this.invalidInputLable1.AutoSize = true;
+            this.invalidInputLable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidInputLable1.ForeColor = System.Drawing.Color.Red;
+            this.invalidInputLable1.Location = new System.Drawing.Point(184, 398);
+            this.invalidInputLable1.Name = "invalidInputLable1";
+            this.invalidInputLable1.Size = new System.Drawing.Size(28, 36);
+            this.invalidInputLable1.TabIndex = 13;
+            this.invalidInputLable1.Text = "*";
+            this.invalidInputLable1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(184, 450);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 36);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "*";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(184, 554);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 36);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "*";
+            this.label2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(184, 502);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 36);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "*";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(184, 658);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 36);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "*";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(184, 606);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 36);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "*";
+            this.label5.Visible = false;
             // 
             // ClientSignUpForm
             // 
@@ -175,15 +252,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.invalidInputLable1);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.signUpPasswordTextBox2);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.signupButton);
-            this.Controls.Add(this.employeeButton);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.homePageUserNameInput);
+            this.Controls.Add(this.signUpPasswordTextBox1);
+            this.Controls.Add(this.signUpEmailTextBox);
+            this.Controls.Add(this.signUpLastNameTextBox);
+            this.Controls.Add(this.signUpFirstNameTextBox);
+            this.Controls.Add(this.signUpUserNameTextBox);
             this.Controls.Add(this.pictureBoxLogo);
             this.Name = "ClientSignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -197,14 +280,20 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.TextBox homePageUserNameInput;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button employeeButton;
+        private System.Windows.Forms.TextBox signUpUserNameTextBox;
+        private System.Windows.Forms.TextBox signUpFirstNameTextBox;
+        private System.Windows.Forms.TextBox signUpEmailTextBox;
+        private System.Windows.Forms.TextBox signUpLastNameTextBox;
+        private System.Windows.Forms.TextBox signUpPasswordTextBox1;
         private System.Windows.Forms.Button signupButton;
         private System.Windows.Forms.Label welcomeLabel;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox signUpPasswordTextBox2;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label invalidInputLable1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
