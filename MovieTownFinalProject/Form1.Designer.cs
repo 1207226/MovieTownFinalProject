@@ -62,11 +62,11 @@
             this.homePageUserNameInput.Size = new System.Drawing.Size(295, 23);
             this.homePageUserNameInput.TabIndex = 1;
             this.homePageUserNameInput.Text = "Enter User Name";
+            this.homePageUserNameInput.Click += new System.EventHandler(this.HomePageUserNameInput_Click);
             // 
             // homePagePasswordInput
             // 
             this.homePagePasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.homePagePasswordInput.Enabled = false;
             this.homePagePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePagePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePagePasswordInput.Location = new System.Drawing.Point(219, 478);
@@ -75,6 +75,7 @@
             this.homePagePasswordInput.Size = new System.Drawing.Size(295, 23);
             this.homePagePasswordInput.TabIndex = 2;
             this.homePagePasswordInput.Text = "Enter Password";
+            this.homePagePasswordInput.Click += new System.EventHandler(this.HomePagePasswordInput_Click);
             // 
             // signupButton
             // 

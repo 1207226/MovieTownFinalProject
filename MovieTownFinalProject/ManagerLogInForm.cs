@@ -94,7 +94,7 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Ereases the Text from employeeNumberInput TextBox when Clicked if Text has Default Value. 
+        /// Ereases the Text from employeeNumberInput TextBox when Clicked if Text has Default Value.
         /// </summary>
         /// <param name="sender">Button clicked.</param>
         /// <param name="e">Execption.</param>

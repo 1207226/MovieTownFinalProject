@@ -81,5 +81,46 @@ namespace MovieTownFinalProject
         {
             MessageBox.Show("Feature not yet availble. Please Login as an Employee.");
         }
+
+        /// <summary>
+        /// Calls a methode to clean the text if it holds a default value.
+        /// </summary>
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Exception.</param>
+        private void HomePageUserNameInput_Click(object sender, EventArgs e)
+        {
+            if (this.homePageUserNameInput.Text == "Enter User Name" || this.homePageUserNameInput.Text == "Re-Enter User Name")
+            {
+                this.ClearTextBox(this.homePageUserNameInput);
+            }
+        }
+
+        /// <summary>
+        /// Calls a methode to clean the text if it holds a default value.
+        /// </summary>
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void HomePagePasswordInput_Click(object sender, EventArgs e)
+        {
+            if (this.homePagePasswordInput.Text == "Enter Password" || this.homePagePasswordInput.Text == "Re-Enter Password")
+            {
+                this.ClearTextBox(this.homePagePasswordInput);
+            }
+        }
+
+        /// <summary>
+        /// Checks the value being hold in a textBox and erases it depending of its value.
+        /// </summary>
+        /// <param name="textBox">Name of the textBox to be Cleared.</param>
+        private void ClearTextBox(TextBox textBox)
+        {
+            textBox.Clear();
+            textBox.ForeColor = Color.Black;
+
+            if (textBox.Name == "homePagePasswordInput")
+            {
+                textBox.PasswordChar = '*';
+            }
+        }
     }
 }
