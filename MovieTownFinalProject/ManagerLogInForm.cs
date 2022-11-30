@@ -17,11 +17,11 @@ namespace MovieTownFinalProject
         {
             InitializeComponent();
         }
+
         //Temporary Employee Number & Password for Testing.
         const string testEmpNumber = "123456";
         const string testPassword = "qwerty1";
 
-        
         /// <summary>
         ///  Opens the Client Log-In Form and Closes the Empoloyee Log-In Form.
         /// </summary>
@@ -33,8 +33,8 @@ namespace MovieTownFinalProject
             this.Hide();
             homepage.ShowDialog();
             this.Close();
-
         }
+
         /// <summary>
         /// Opens the Manager Selection Menu Form and Closes the Empoloyee Log-In Form.
         /// </summary>
@@ -56,10 +56,11 @@ namespace MovieTownFinalProject
                 SelectMenu.ShowDialog();
                 this.Close();
             }
+
             if ((employeeNumber == "Enter Employee Number" && password == "Enter Password") || (employeeNumber == "Re-Enter Employee Number" && password == "Re-Enter Password"))
             {
                 ScreenShake(this);
-            } 
+            }
             else if (employeeNumber != testEmpNumber || password != testPassword)
             {
                 ScreenShake(this);
@@ -70,7 +71,7 @@ namespace MovieTownFinalProject
                 employeePasswordInput.PasswordChar = '\0';
                 employeePasswordInput.ForeColor = Color.Red;
                 employeePasswordInput.Text = "Re-Enter Password";
-            }   
+            }
         }
         /// <summary>
         /// Sets the Page Focus on the Employee Login Button on Load.
@@ -82,6 +83,7 @@ namespace MovieTownFinalProject
             employeeLoginButton.TabIndex = 0;
 
         }
+
         /// <summary>
         /// Ereases the Text from employeeNumberInput TextBox when Clicked if Text has Default Value. 
         /// </summary>
@@ -96,6 +98,7 @@ namespace MovieTownFinalProject
                 employeeNumberInput.ForeColor = Color.Black;
             }
         }
+
         /// <summary>
         /// Ereases the Text from employeePasswordInput TextBox when Clicked if Text has Default Value.
         /// </summary>
@@ -111,12 +114,13 @@ namespace MovieTownFinalProject
                 employeePasswordInput.PasswordChar = '*';
             }
         }
+
         /// <summary>
         /// Methode to Shake the Application, to be used incasae of wrong input.
         /// </summary>
         /// <param name="form">Gets the "this" parameter to use its location.</param>
         /// <remarks>Because i could, and it's kind of fun.</remarks>
-        private static void ScreenShake(Form form)
+        public static void ScreenShake(Form form)
         {
             var original = form.Location;
             var rnd = new Random(1337);
@@ -126,8 +130,10 @@ namespace MovieTownFinalProject
                 form.Location = new Point(original.X + rnd.Next(-shake, shake), original.Y + rnd.Next(-shake, shake));
                 System.Threading.Thread.Sleep(20);
             }
+
             form.Location = original;
         }
+
         /// <summary>
         /// Ereases the Text from employeePassowrdInput TextBox when Clicked if Text has Default Value.
         /// </summary>
@@ -143,6 +149,7 @@ namespace MovieTownFinalProject
                 employeePasswordInput.PasswordChar = '*';
             }
         }
+
         /// <summary>
         /// Post note memo interactive text on click.
         /// </summary>
@@ -151,7 +158,7 @@ namespace MovieTownFinalProject
         private void postNoteLabel_Click(object sender, EventArgs e)
         {
             if(postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n") 
-            { 
+            {
                 postNoteLabel.Text = "PS: Please do not leave sensitive information publicly accesseble.";
             }
             else

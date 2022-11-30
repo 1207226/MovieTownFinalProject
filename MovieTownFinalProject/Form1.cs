@@ -42,10 +42,17 @@ namespace MovieTownFinalProject
         {
             messageBox();
         }
-
+        /// <summary>
+        ///  Opens the Client Sign-Up Form and Closes the Client Log-In Form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void signupButton_Click(object sender, EventArgs e)
         {
-            messageBox();
+            this.Hide();
+            ClientSignUpForm clientSignUpForm = new ClientSignUpForm();
+            clientSignUpForm.ShowDialog();
+            this.Close();
         }
 
         public void messageBox()
