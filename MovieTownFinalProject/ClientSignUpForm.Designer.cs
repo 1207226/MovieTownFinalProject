@@ -71,6 +71,7 @@
             this.signUpUserNameTextBox.Size = new System.Drawing.Size(295, 23);
             this.signUpUserNameTextBox.TabIndex = 2;
             this.signUpUserNameTextBox.Text = "User Name";
+            this.signUpUserNameTextBox.Click += new System.EventHandler(this.SignUpUserNameTextBox_Click);
             // 
             // signUpFirstNameTextBox
             // 
@@ -83,6 +84,7 @@
             this.signUpFirstNameTextBox.Size = new System.Drawing.Size(295, 23);
             this.signUpFirstNameTextBox.TabIndex = 3;
             this.signUpFirstNameTextBox.Text = "First Name";
+            this.signUpFirstNameTextBox.Click += new System.EventHandler(this.SignUpFirstNameTextBox_Click);
             // 
             // signUpEmailTextBox
             // 
@@ -95,6 +97,7 @@
             this.signUpEmailTextBox.Size = new System.Drawing.Size(295, 23);
             this.signUpEmailTextBox.TabIndex = 5;
             this.signUpEmailTextBox.Text = "E-mail";
+            this.signUpEmailTextBox.Click += new System.EventHandler(this.SignUpEmailTextBox_Click);
             // 
             // signUpLastNameTextBox
             // 
@@ -107,6 +110,7 @@
             this.signUpLastNameTextBox.Size = new System.Drawing.Size(295, 23);
             this.signUpLastNameTextBox.TabIndex = 4;
             this.signUpLastNameTextBox.Text = "Last Name";
+            this.signUpLastNameTextBox.Click += new System.EventHandler(this.SignUpLastNameTextBox_Click);
             // 
             // signUpPasswordTextBox1
             // 
@@ -119,6 +123,7 @@
             this.signUpPasswordTextBox1.Size = new System.Drawing.Size(295, 23);
             this.signUpPasswordTextBox1.TabIndex = 6;
             this.signUpPasswordTextBox1.Text = "Password";
+            this.signUpPasswordTextBox1.Click += new System.EventHandler(this.SignUpPasswordTextBox1_Click);
             // 
             // signupButton
             // 
@@ -135,7 +140,7 @@
             this.signupButton.TabIndex = 8;
             this.signupButton.Text = "Create Account";
             this.signupButton.UseVisualStyleBackColor = false;
-            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
+            this.signupButton.Click += new System.EventHandler(this.SignupButton_Click);
             // 
             // welcomeLabel
             // 
@@ -159,6 +164,7 @@
             this.signUpPasswordTextBox2.Size = new System.Drawing.Size(295, 23);
             this.signUpPasswordTextBox2.TabIndex = 11;
             this.signUpPasswordTextBox2.Text = "Re-Enter Password";
+            this.signUpPasswordTextBox2.Click += new System.EventHandler(this.SignUpPasswordTextBox2_Click);
             // 
             // backButton
             // 
