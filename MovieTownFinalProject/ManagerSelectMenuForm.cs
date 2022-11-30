@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿// <copyright file="ManagerSelectMenuForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace MovieTownFinalProject
 {
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Selection menu form.
+    /// </summary>
     public partial class ManagerSelectMenuForm : Form
     {
         /// <summary>
@@ -73,6 +73,7 @@ namespace MovieTownFinalProject
             manageClientForm.ShowDialog();
             this.Close();
         }
+
         /// <summary>
         /// Opens the Client Log-In Form and Closes the Selection Menu Form.
         /// </summary>
