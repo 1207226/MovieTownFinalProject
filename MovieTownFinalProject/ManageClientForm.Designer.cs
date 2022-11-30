@@ -69,7 +69,7 @@
             this.backButton.Size = new System.Drawing.Size(74, 50);
             this.backButton.TabIndex = 7;
             this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // showRoomLabel
             // 
