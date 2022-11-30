@@ -36,11 +36,11 @@ namespace MovieTownFinalProject {
         
         private ShowtimeDataTable tableShowtime;
         
-        private global::System.Data.DataRelation relationFK__Movie__MovieGenr__49C3F6B7;
+        private global::System.Data.DataRelation relationFK__Movie__MovieGenr__3E52440B;
         
-        private global::System.Data.DataRelation relationFK__Showtime__MovieI__5070F446;
+        private global::System.Data.DataRelation relationFK__Showtime__MovieI__412EB0B6;
         
-        private global::System.Data.DataRelation relationFK__Showtime__RoomId__5165187F;
+        private global::System.Data.DataRelation relationFK__Showtime__RoomId__4222D4EF;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -320,9 +320,9 @@ namespace MovieTownFinalProject {
                     this.tableShowtime.InitVars();
                 }
             }
-            this.relationFK__Movie__MovieGenr__49C3F6B7 = this.Relations["FK__Movie__MovieGenr__49C3F6B7"];
-            this.relationFK__Showtime__MovieI__5070F446 = this.Relations["FK__Showtime__MovieI__5070F446"];
-            this.relationFK__Showtime__RoomId__5165187F = this.Relations["FK__Showtime__RoomId__5165187F"];
+            this.relationFK__Movie__MovieGenr__3E52440B = this.Relations["FK__Movie__MovieGenr__3E52440B"];
+            this.relationFK__Showtime__MovieI__412EB0B6 = this.Relations["FK__Showtime__MovieI__412EB0B6"];
+            this.relationFK__Showtime__RoomId__4222D4EF = this.Relations["FK__Showtime__RoomId__4222D4EF"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -345,18 +345,18 @@ namespace MovieTownFinalProject {
             base.Tables.Add(this.tableRoom);
             this.tableShowtime = new ShowtimeDataTable();
             base.Tables.Add(this.tableShowtime);
-            this.relationFK__Movie__MovieGenr__49C3F6B7 = new global::System.Data.DataRelation("FK__Movie__MovieGenr__49C3F6B7", new global::System.Data.DataColumn[] {
+            this.relationFK__Movie__MovieGenr__3E52440B = new global::System.Data.DataRelation("FK__Movie__MovieGenr__3E52440B", new global::System.Data.DataColumn[] {
                         this.tableGenre.GenreIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMovie.MovieGenreColumn}, false);
-            this.Relations.Add(this.relationFK__Movie__MovieGenr__49C3F6B7);
-            this.relationFK__Showtime__MovieI__5070F446 = new global::System.Data.DataRelation("FK__Showtime__MovieI__5070F446", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Movie__MovieGenr__3E52440B);
+            this.relationFK__Showtime__MovieI__412EB0B6 = new global::System.Data.DataRelation("FK__Showtime__MovieI__412EB0B6", new global::System.Data.DataColumn[] {
                         this.tableMovie.MovieIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableShowtime.MovieIdColumn}, false);
-            this.Relations.Add(this.relationFK__Showtime__MovieI__5070F446);
-            this.relationFK__Showtime__RoomId__5165187F = new global::System.Data.DataRelation("FK__Showtime__RoomId__5165187F", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Showtime__MovieI__412EB0B6);
+            this.relationFK__Showtime__RoomId__4222D4EF = new global::System.Data.DataRelation("FK__Showtime__RoomId__4222D4EF", new global::System.Data.DataColumn[] {
                         this.tableRoom.RoomIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableShowtime.RoomIdColumn}, false);
-            this.Relations.Add(this.relationFK__Showtime__RoomId__5165187F);
+            this.Relations.Add(this.relationFK__Showtime__RoomId__4222D4EF);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,7 +819,7 @@ namespace MovieTownFinalProject {
             
             private global::System.Data.DataColumn columnEmployeeId;
             
-            private global::System.Data.DataColumn columnEmployeeNumber;
+            private global::System.Data.DataColumn columnUsername;
             
             private global::System.Data.DataColumn columnFirstName;
             
@@ -872,9 +872,9 @@ namespace MovieTownFinalProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EmployeeNumberColumn {
+            public global::System.Data.DataColumn UsernameColumn {
                 get {
-                    return this.columnEmployeeNumber;
+                    return this.columnUsername;
                 }
             }
             
@@ -947,11 +947,11 @@ namespace MovieTownFinalProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EmployeeRow AddEmployeeRow(int EmployeeNumber, string FirstName, string LastName, string Email, string Password) {
+            public EmployeeRow AddEmployeeRow(string Username, string FirstName, string LastName, string Email, string Password) {
                 EmployeeRow rowEmployeeRow = ((EmployeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        EmployeeNumber,
+                        Username,
                         FirstName,
                         LastName,
                         Email,
@@ -986,7 +986,7 @@ namespace MovieTownFinalProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnEmployeeId = base.Columns["EmployeeId"];
-                this.columnEmployeeNumber = base.Columns["EmployeeNumber"];
+                this.columnUsername = base.Columns["Username"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
                 this.columnEmail = base.Columns["Email"];
@@ -998,8 +998,8 @@ namespace MovieTownFinalProject {
             private void InitClass() {
                 this.columnEmployeeId = new global::System.Data.DataColumn("EmployeeId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployeeId);
-                this.columnEmployeeNumber = new global::System.Data.DataColumn("EmployeeNumber", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmployeeNumber);
+                this.columnUsername = new global::System.Data.DataColumn("Username", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsername);
                 this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFirstName);
                 this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1016,7 +1016,8 @@ namespace MovieTownFinalProject {
                 this.columnEmployeeId.AllowDBNull = false;
                 this.columnEmployeeId.ReadOnly = true;
                 this.columnEmployeeId.Unique = true;
-                this.columnEmployeeNumber.AllowDBNull = false;
+                this.columnUsername.AllowDBNull = false;
+                this.columnUsername.MaxLength = 50;
                 this.columnFirstName.AllowDBNull = false;
                 this.columnFirstName.MaxLength = 50;
                 this.columnLastName.AllowDBNull = false;
@@ -1536,14 +1537,14 @@ namespace MovieTownFinalProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MovieRow AddMovieRow(string MovieName, GenreRow parentGenreRowByFK__Movie__MovieGenr__49C3F6B7) {
+            public MovieRow AddMovieRow(string MovieName, GenreRow parentGenreRowByFK__Movie__MovieGenr__3E52440B) {
                 MovieRow rowMovieRow = ((MovieRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         MovieName,
                         null};
-                if ((parentGenreRowByFK__Movie__MovieGenr__49C3F6B7 != null)) {
-                    columnValuesArray[2] = parentGenreRowByFK__Movie__MovieGenr__49C3F6B7[0];
+                if ((parentGenreRowByFK__Movie__MovieGenr__3E52440B != null)) {
+                    columnValuesArray[2] = parentGenreRowByFK__Movie__MovieGenr__3E52440B[0];
                 }
                 rowMovieRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMovieRow);
@@ -2135,18 +2136,18 @@ namespace MovieTownFinalProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ShowtimeRow AddShowtimeRow(MovieRow parentMovieRowByFK__Showtime__MovieI__5070F446, RoomRow parentRoomRowByFK__Showtime__RoomId__5165187F, System.DateTime Showtime) {
+            public ShowtimeRow AddShowtimeRow(MovieRow parentMovieRowByFK__Showtime__MovieI__412EB0B6, RoomRow parentRoomRowByFK__Showtime__RoomId__4222D4EF, System.DateTime Showtime) {
                 ShowtimeRow rowShowtimeRow = ((ShowtimeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
                         Showtime};
-                if ((parentMovieRowByFK__Showtime__MovieI__5070F446 != null)) {
-                    columnValuesArray[1] = parentMovieRowByFK__Showtime__MovieI__5070F446[0];
+                if ((parentMovieRowByFK__Showtime__MovieI__412EB0B6 != null)) {
+                    columnValuesArray[1] = parentMovieRowByFK__Showtime__MovieI__412EB0B6[0];
                 }
-                if ((parentRoomRowByFK__Showtime__RoomId__5165187F != null)) {
-                    columnValuesArray[2] = parentRoomRowByFK__Showtime__RoomId__5165187F[0];
+                if ((parentRoomRowByFK__Showtime__RoomId__4222D4EF != null)) {
+                    columnValuesArray[2] = parentRoomRowByFK__Showtime__RoomId__4222D4EF[0];
                 }
                 rowShowtimeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowShowtimeRow);
@@ -2439,12 +2440,12 @@ namespace MovieTownFinalProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int EmployeeNumber {
+            public string Username {
                 get {
-                    return ((int)(this[this.tableEmployee.EmployeeNumberColumn]));
+                    return ((string)(this[this.tableEmployee.UsernameColumn]));
                 }
                 set {
-                    this[this.tableEmployee.EmployeeNumberColumn] = value;
+                    this[this.tableEmployee.UsernameColumn] = value;
                 }
             }
             
@@ -2532,11 +2533,11 @@ namespace MovieTownFinalProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MovieRow[] GetMovieRows() {
-                if ((this.Table.ChildRelations["FK__Movie__MovieGenr__49C3F6B7"] == null)) {
+                if ((this.Table.ChildRelations["FK__Movie__MovieGenr__3E52440B"] == null)) {
                     return new MovieRow[0];
                 }
                 else {
-                    return ((MovieRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Movie__MovieGenr__49C3F6B7"])));
+                    return ((MovieRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Movie__MovieGenr__3E52440B"])));
                 }
             }
         }
@@ -2592,21 +2593,21 @@ namespace MovieTownFinalProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GenreRow GenreRow {
                 get {
-                    return ((GenreRow)(this.GetParentRow(this.Table.ParentRelations["FK__Movie__MovieGenr__49C3F6B7"])));
+                    return ((GenreRow)(this.GetParentRow(this.Table.ParentRelations["FK__Movie__MovieGenr__3E52440B"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Movie__MovieGenr__49C3F6B7"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Movie__MovieGenr__3E52440B"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ShowtimeRow[] GetShowtimeRows() {
-                if ((this.Table.ChildRelations["FK__Showtime__MovieI__5070F446"] == null)) {
+                if ((this.Table.ChildRelations["FK__Showtime__MovieI__412EB0B6"] == null)) {
                     return new ShowtimeRow[0];
                 }
                 else {
-                    return ((ShowtimeRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Showtime__MovieI__5070F446"])));
+                    return ((ShowtimeRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Showtime__MovieI__412EB0B6"])));
                 }
             }
         }
@@ -2661,11 +2662,11 @@ namespace MovieTownFinalProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ShowtimeRow[] GetShowtimeRows() {
-                if ((this.Table.ChildRelations["FK__Showtime__RoomId__5165187F"] == null)) {
+                if ((this.Table.ChildRelations["FK__Showtime__RoomId__4222D4EF"] == null)) {
                     return new ShowtimeRow[0];
                 }
                 else {
-                    return ((ShowtimeRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Showtime__RoomId__5165187F"])));
+                    return ((ShowtimeRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Showtime__RoomId__4222D4EF"])));
                 }
             }
         }
@@ -2732,10 +2733,10 @@ namespace MovieTownFinalProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MovieRow MovieRow {
                 get {
-                    return ((MovieRow)(this.GetParentRow(this.Table.ParentRelations["FK__Showtime__MovieI__5070F446"])));
+                    return ((MovieRow)(this.GetParentRow(this.Table.ParentRelations["FK__Showtime__MovieI__412EB0B6"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Showtime__MovieI__5070F446"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Showtime__MovieI__412EB0B6"]);
                 }
             }
             
@@ -2743,10 +2744,10 @@ namespace MovieTownFinalProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RoomRow RoomRow {
                 get {
-                    return ((RoomRow)(this.GetParentRow(this.Table.ParentRelations["FK__Showtime__RoomId__5165187F"])));
+                    return ((RoomRow)(this.GetParentRow(this.Table.ParentRelations["FK__Showtime__RoomId__4222D4EF"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Showtime__RoomId__5165187F"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Showtime__RoomId__4222D4EF"]);
                 }
             }
         }
@@ -3516,7 +3517,7 @@ SELECT ClientId, Username, FirstName, LastName, Email, Password FROM Client WHER
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Employee";
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
-            tableMapping.ColumnMappings.Add("EmployeeNumber", "EmployeeNumber");
+            tableMapping.ColumnMappings.Add("Username", "Username");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
             tableMapping.ColumnMappings.Add("Email", "Email");
@@ -3524,36 +3525,36 @@ SELECT ClientId, Username, FirstName, LastName, Email, Password FROM Client WHER
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([EmployeeId] = @Original_EmployeeId) AND ([EmployeeNumber] = @Original_EmployeeNumber) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Email] = @Original_Email) AND ([Password] = @Original_Password))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([EmployeeId] = @Original_EmployeeId) AND ([Username] = @Original_Username) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Email] = @Original_Email) AND ([Password] = @Original_Password))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([EmployeeNumber], [FirstName], [LastName], [Email], [Password]) VALUES (@EmployeeNumber, @FirstName, @LastName, @Email, @Password);
-SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Employee WHERE (EmployeeId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([Username], [FirstName], [LastName], [Email], [Password]) VALUES (@Username, @FirstName, @LastName, @Email, @Password);
+SELECT EmployeeId, Username, FirstName, LastName, Email, Password FROM Employee WHERE (EmployeeId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [EmployeeNumber] = @EmployeeNumber, [FirstName] = @FirstName, [LastName] = @LastName, [Email] = @Email, [Password] = @Password WHERE (([EmployeeId] = @Original_EmployeeId) AND ([EmployeeNumber] = @Original_EmployeeNumber) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Email] = @Original_Email) AND ([Password] = @Original_Password));
-SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Employee WHERE (EmployeeId = @EmployeeId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [Username] = @Username, [FirstName] = @FirstName, [LastName] = @LastName, [Email] = @Email, [Password] = @Password WHERE (([EmployeeId] = @Original_EmployeeId) AND ([Username] = @Original_Username) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Email] = @Original_Email) AND ([Password] = @Original_Password));
+SELECT EmployeeId, Username, FirstName, LastName, Email, Password FROM Employee WHERE (EmployeeId = @EmployeeId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3574,8 +3575,8 @@ SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Emp
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM dbo." +
-                "Employee";
+            this._commandCollection[0].CommandText = "SELECT EmployeeId, Username, FirstName, LastName, Email, Password FROM dbo.Employ" +
+                "ee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3636,9 +3637,14 @@ SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Emp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_EmployeeId, int Original_EmployeeNumber, string Original_FirstName, string Original_LastName, string Original_Email, string Original_Password) {
+        public virtual int Delete(int Original_EmployeeId, string Original_Username, string Original_FirstName, string Original_LastName, string Original_Email, string Original_Password) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_EmployeeId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_EmployeeNumber));
+            if ((Original_Username == null)) {
+                throw new global::System.ArgumentNullException("Original_Username");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Username));
+            }
             if ((Original_FirstName == null)) {
                 throw new global::System.ArgumentNullException("Original_FirstName");
             }
@@ -3683,8 +3689,13 @@ SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Emp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int EmployeeNumber, string FirstName, string LastName, string Email, string Password) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EmployeeNumber));
+        public virtual int Insert(string Username, string FirstName, string LastName, string Email, string Password) {
+            if ((Username == null)) {
+                throw new global::System.ArgumentNullException("Username");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Username));
+            }
             if ((FirstName == null)) {
                 throw new global::System.ArgumentNullException("FirstName");
             }
@@ -3729,8 +3740,13 @@ SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Emp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int EmployeeNumber, string FirstName, string LastName, string Email, string Password, int Original_EmployeeId, int Original_EmployeeNumber, string Original_FirstName, string Original_LastName, string Original_Email, string Original_Password, int EmployeeId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EmployeeNumber));
+        public virtual int Update(string Username, string FirstName, string LastName, string Email, string Password, int Original_EmployeeId, string Original_Username, string Original_FirstName, string Original_LastName, string Original_Email, string Original_Password, int EmployeeId) {
+            if ((Username == null)) {
+                throw new global::System.ArgumentNullException("Username");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Username));
+            }
             if ((FirstName == null)) {
                 throw new global::System.ArgumentNullException("FirstName");
             }
@@ -3756,7 +3772,12 @@ SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Emp
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Password));
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_EmployeeId));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_EmployeeNumber));
+            if ((Original_Username == null)) {
+                throw new global::System.ArgumentNullException("Original_Username");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Username));
+            }
             if ((Original_FirstName == null)) {
                 throw new global::System.ArgumentNullException("Original_FirstName");
             }
@@ -3802,8 +3823,8 @@ SELECT EmployeeId, EmployeeNumber, FirstName, LastName, Email, Password FROM Emp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int EmployeeNumber, string FirstName, string LastName, string Email, string Password, int Original_EmployeeId, int Original_EmployeeNumber, string Original_FirstName, string Original_LastName, string Original_Email, string Original_Password) {
-            return this.Update(EmployeeNumber, FirstName, LastName, Email, Password, Original_EmployeeId, Original_EmployeeNumber, Original_FirstName, Original_LastName, Original_Email, Original_Password, Original_EmployeeId);
+        public virtual int Update(string Username, string FirstName, string LastName, string Email, string Password, int Original_EmployeeId, string Original_Username, string Original_FirstName, string Original_LastName, string Original_Email, string Original_Password) {
+            return this.Update(Username, FirstName, LastName, Email, Password, Original_EmployeeId, Original_Username, Original_FirstName, Original_LastName, Original_Email, Original_Password, Original_EmployeeId);
         }
     }
     
@@ -4914,7 +4935,7 @@ SELECT RoomId, RoomName, NumberOfSeats FROM Room WHERE (RoomId = @RoomId)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShowtimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShowtimeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Showtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Showtime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Showtime] ([MovieId], [RoomId], [Showtime]) VALUES (@MovieId, " +
@@ -4923,7 +4944,7 @@ SELECT RoomId, RoomName, NumberOfSeats FROM Room WHERE (RoomId = @RoomId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Showtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Showtime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Showtime] SET [MovieId] = @MovieId, [RoomId] = @RoomId, [Showtime] = @Showtime WHERE (([ShowtimeId] = @Original_ShowtimeId) AND ([MovieId] = @Original_MovieId) AND ([RoomId] = @Original_RoomId) AND ([Showtime] = @Original_Showtime));
@@ -4931,11 +4952,11 @@ SELECT ShowtimeId, MovieId, RoomId, Showtime FROM Showtime WHERE (ShowtimeId = @
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Showtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Showtime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShowtimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShowtimeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Showtime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Showtime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Showtime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShowtimeId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ShowtimeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         

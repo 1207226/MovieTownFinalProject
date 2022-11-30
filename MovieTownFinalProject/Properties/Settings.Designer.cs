@@ -26,7 +26,8 @@ namespace MovieTownFinalProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CRCL-CST-020;Initial Catalog=MovieTownDb;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\MovieTownDb\\MovieTownDb.md" +
+            "f;Integrated Security=True;Connect Timeout=30")]
         public string MovieTownDbConnectionString {
             get {
                 return ((string)(this["MovieTownDbConnectionString"]));
