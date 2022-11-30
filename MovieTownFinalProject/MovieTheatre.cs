@@ -5,6 +5,8 @@
 namespace MovieTownFinalProject
 {
     using System.Collections.Generic;
+    using System.Data.SqlClient;
+    using System.Data;
 
     /// <summary>
     /// A movie theatre.
@@ -21,7 +23,35 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Gets or sets list of rooms.
         /// </summary>
-        public List<Room> Rooms { get; set; }
+        public List<Room> Rooms
+        {
+            get
+            {
+                SqlConnection conn = new SqlConnection
+                {
+                    ConnectionString =
+                  "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                  "Initial Catalog=MovieTownDb;",
+                };
+                SqlCommand command = new SqlCommand("SELECT * FROM Room", conn);
+
+                conn.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int roomId = int.Parse(reader["RoomId"].ToString());
+
+                    string roomName = reader["RoomName"].ToString();
+
+                    int numberOfSeats = int.Parse(reader["NumberOfSeats"].ToString());
+
+                    Room newRoom = new Room(roomId, roomName, numberOfSeats)
+                }
+            }
+            set;
+        }
 
         /// <summary>
         /// Gets or sets list of users.
