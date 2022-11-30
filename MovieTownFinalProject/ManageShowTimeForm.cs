@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="ManageShowTimeForm.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,31 +14,39 @@ using System.Windows.Forms;
 
 namespace MovieTownFinalProject
 {
+    /// <summary>
+    /// Manage Show times form.
+    /// </summary>
     public partial class ManageShowTimeForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageShowTimeForm"/> class.
+        /// </summary>
         public ManageShowTimeForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
+
         /// <summary>
         /// Set the Size of the Back Arrow to the Size of the Button.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">Form is loading.</param>
+        /// <param name="e">Execption.</param>
         private void ManageShowTimeForm_Load(object sender, EventArgs e)
         {
-            backButton.BackgroundImageLayout = ImageLayout.Stretch;
+            this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
+
         /// <summary>
         /// Opens Selection Menu Form Form and Closes the Show Time Manager Form.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backButton_Click(object sender, EventArgs e)
+        /// <param name="sender">Button clicked.</param>
+        /// <param name="e">Exception.</param>
+        private void BackButton_Click(object sender, EventArgs e)
         {
-            ManagerSelectMenuForm SelectMenu = new ManagerSelectMenuForm();
+            ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
             this.Hide();
-            SelectMenu.ShowDialog();
+            selectMenu.ShowDialog();
             this.Close();
         }
     }
