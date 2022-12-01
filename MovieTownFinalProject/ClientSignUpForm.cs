@@ -112,6 +112,10 @@ namespace MovieTownFinalProject
             else
             {
                 MessageBox.Show("Account Created!");
+                this.Hide();
+                ClientMovieSelectionForm clientMovieSelectionForm = new ClientMovieSelectionForm();
+                clientMovieSelectionForm.ShowDialog();
+                this.Close();
             }
         }
 
