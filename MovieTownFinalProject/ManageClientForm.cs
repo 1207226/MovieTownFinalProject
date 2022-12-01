@@ -34,6 +34,10 @@ namespace MovieTownFinalProject
         /// <param name="e">Exception.</param>
         private void ManageClientForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'movieTownDbDataSet.Client' table. You can move, or remove it, as needed.
+            this.clientTableAdapter.Fill(this.movieTownDbDataSet.Client);
+            // TODO: This line of code loads data into the 'movieTownDbDataSet.Client' table. You can move, or remove it, as needed.
+            this.clientTableAdapter.Fill(this.movieTownDbDataSet.Client);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -48,6 +52,22 @@ namespace MovieTownFinalProject
             this.Hide();
             frm.ShowDialog();
             this.Close();
+        }
+
+        private void clientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clientBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
+
+        }
+
+        private void clientBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clientBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
+
         }
     }
 }

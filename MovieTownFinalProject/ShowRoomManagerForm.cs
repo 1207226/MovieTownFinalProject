@@ -34,6 +34,8 @@ namespace MovieTownFinalProject
         /// <param name="e">Execption.</param>
         private void ShowRoomManagerForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'movieTownDbDataSet.Room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.movieTownDbDataSet.Room);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -48,6 +50,14 @@ namespace MovieTownFinalProject
             this.Hide();
             selectMenu.ShowDialog();
             this.Close();
+        }
+
+        private void roomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.roomBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
+
         }
     }
 }

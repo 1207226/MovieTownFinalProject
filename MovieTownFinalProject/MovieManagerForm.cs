@@ -52,12 +52,11 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
-        private void movieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void MovieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.movieBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
-
         }
     }
 }

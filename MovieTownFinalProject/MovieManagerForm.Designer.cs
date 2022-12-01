@@ -70,7 +70,7 @@
             // 
             movieIdLabel.AutoSize = true;
             movieIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            movieIdLabel.Location = new System.Drawing.Point(115, 399);
+            movieIdLabel.Location = new System.Drawing.Point(82, 399);
             movieIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             movieIdLabel.Name = "movieIdLabel";
             movieIdLabel.Size = new System.Drawing.Size(81, 20);
@@ -81,7 +81,7 @@
             // 
             movieNameLabel1.AutoSize = true;
             movieNameLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            movieNameLabel1.Location = new System.Drawing.Point(115, 463);
+            movieNameLabel1.Location = new System.Drawing.Point(82, 463);
             movieNameLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             movieNameLabel1.Name = "movieNameLabel1";
             movieNameLabel1.Size = new System.Drawing.Size(111, 20);
@@ -92,7 +92,7 @@
             // 
             movieGenreLabel1.AutoSize = true;
             movieGenreLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            movieGenreLabel1.Location = new System.Drawing.Point(115, 527);
+            movieGenreLabel1.Location = new System.Drawing.Point(82, 527);
             movieGenreLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             movieGenreLabel1.Name = "movieGenreLabel1";
             movieGenreLabel1.Size = new System.Drawing.Size(115, 20);
@@ -103,7 +103,7 @@
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.InitialImage = null;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(119, 51);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(86, 51);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(376, 192);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@
             this.backButton.FlatAppearance.BorderSize = 0;
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.Location = new System.Drawing.Point(26, 23);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(56, 41);
             this.backButton.TabIndex = 4;
@@ -129,7 +129,7 @@
             this.movieLabel.AutoSize = true;
             this.movieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movieLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
-            this.movieLabel.Location = new System.Drawing.Point(221, 282);
+            this.movieLabel.Location = new System.Drawing.Point(188, 282);
             this.movieLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.movieLabel.Name = "movieLabel";
             this.movieLabel.Size = new System.Drawing.Size(172, 20);
@@ -183,7 +183,7 @@
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorSeparator2,
             this.movieBindingNavigatorSaveItem});
-            this.movieBindingNavigator.Location = new System.Drawing.Point(119, 327);
+            this.movieBindingNavigator.Location = new System.Drawing.Point(86, 327);
             this.movieBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.movieBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.movieBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -287,14 +287,14 @@
             this.movieBindingNavigatorSaveItem.Name = "movieBindingNavigatorSaveItem";
             this.movieBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.movieBindingNavigatorSaveItem.Text = "Save Data";
-            this.movieBindingNavigatorSaveItem.Click += new System.EventHandler(this.movieBindingNavigatorSaveItem_Click);
+            this.movieBindingNavigatorSaveItem.Click += new System.EventHandler(this.MovieBindingNavigatorSaveItem_Click);
             // 
             // movieIdTextBox
             // 
             this.movieIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movieBindingSource, "MovieId", true));
             this.movieIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieIdTextBox.Location = new System.Drawing.Point(257, 396);
-            this.movieIdTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movieIdTextBox.Location = new System.Drawing.Point(224, 396);
+            this.movieIdTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.movieIdTextBox.Name = "movieIdTextBox";
             this.movieIdTextBox.Size = new System.Drawing.Size(238, 26);
             this.movieIdTextBox.TabIndex = 43;
@@ -303,8 +303,8 @@
             // 
             this.movieNameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movieBindingSource, "MovieName", true));
             this.movieNameTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieNameTextBox1.Location = new System.Drawing.Point(257, 460);
-            this.movieNameTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movieNameTextBox1.Location = new System.Drawing.Point(224, 460);
+            this.movieNameTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.movieNameTextBox1.Name = "movieNameTextBox1";
             this.movieNameTextBox1.Size = new System.Drawing.Size(238, 26);
             this.movieNameTextBox1.TabIndex = 45;
@@ -313,8 +313,8 @@
             // 
             this.movieGenreTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movieBindingSource, "MovieGenre", true));
             this.movieGenreTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieGenreTextBox1.Location = new System.Drawing.Point(257, 524);
-            this.movieGenreTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movieGenreTextBox1.Location = new System.Drawing.Point(224, 524);
+            this.movieGenreTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.movieGenreTextBox1.Name = "movieGenreTextBox1";
             this.movieGenreTextBox1.Size = new System.Drawing.Size(238, 26);
             this.movieGenreTextBox1.TabIndex = 47;
@@ -324,7 +324,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(614, 687);
+            this.ClientSize = new System.Drawing.Size(549, 687);
             this.Controls.Add(movieIdLabel);
             this.Controls.Add(this.movieIdTextBox);
             this.Controls.Add(movieNameLabel1);
@@ -335,7 +335,7 @@
             this.Controls.Add(this.movieLabel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MovieManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieManager";
