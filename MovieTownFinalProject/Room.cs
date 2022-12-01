@@ -15,8 +15,9 @@ namespace MovieTownFinalProject
         /// </summary>
         /// <param name="roomName">Visible name for the room.</param>
         /// <param name="numberOfSeats">Number of seats in the room.</param>
-        public Room(string roomName, int numberOfSeats)
+        public Room(int roomId, string roomName, int numberOfSeats)
         {
+            this.RoomId = roomId;
             this.RoomName = roomName;
             this.NumberOfSeats = numberOfSeats;
         }

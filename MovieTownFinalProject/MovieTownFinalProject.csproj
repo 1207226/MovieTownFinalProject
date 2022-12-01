@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+<PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+ <Compile Include="Client.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="ClientMovieSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +113,9 @@
     </Compile>
     <Compile Include="Movie.cs" />
     <Compile Include="MovieTheatre.cs" />
+    <Compile Include="MovieTownDbDataSet.cs">
+      <DependentUpon>MovieTownDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MovieTownDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,7 +196,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
-  </ItemGroup>
+</ItemGroup>
   <ItemGroup>
     <Content Include="MovieTownDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
