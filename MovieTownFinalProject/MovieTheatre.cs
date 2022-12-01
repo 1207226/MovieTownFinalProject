@@ -4,7 +4,6 @@
 
 namespace MovieTownFinalProject
 {
-    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data.SqlClient;
 
@@ -17,7 +16,7 @@ namespace MovieTownFinalProject
         {
             ConnectionString =
                   "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                  "Initial Catalog=MovieTownDb;",
+                  "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
         };
 
         /// <summary>
@@ -68,7 +67,7 @@ namespace MovieTownFinalProject
             {
                 BindingList<User> tempList = new BindingList<User>();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM Client", conn);
+                SqlCommand command = new SqlCommand("SELECT * FROM Client", this.conn);
 
                 conn.Open();
 
