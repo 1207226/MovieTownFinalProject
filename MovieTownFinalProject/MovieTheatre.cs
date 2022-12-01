@@ -69,7 +69,7 @@ namespace MovieTownFinalProject
 
                 SqlCommand command = new SqlCommand("SELECT * FROM Client", this.conn);
 
-                conn.Open();
+                this.conn.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -85,7 +85,7 @@ namespace MovieTownFinalProject
 
                     string email = reader["Email"].ToString();
 
-                    string password = reader["FirstName"].ToString();
+                    string password = reader["Password"].ToString();
 
                     Client newClient = new Client(clientId, username, firstName, lastName, email, password);
 

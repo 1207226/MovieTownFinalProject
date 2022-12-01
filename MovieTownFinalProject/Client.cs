@@ -1,4 +1,7 @@
-﻿
+﻿// <copyright file="Client.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace MovieTownFinalProject
 {
     /// <summary>
@@ -9,6 +12,12 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
+        /// <param name="clientId">System's name for the client.</param>
+        /// <param name="username">Clien't username.</param>
+        /// <param name="firstName">Client's first name.</param>
+        /// <param name="lastName">Client's last name.</param>
+        /// <param name="email">Client's email.</param>
+        /// <param name="password">Client's password.</param>
         public Client(int clientId, string username, string firstName, string lastName, string email, string password)
         {
             this.ClientId = clientId;
@@ -17,7 +26,6 @@ namespace MovieTownFinalProject
             this.LastName = lastName;
             this.Email = email;
             this.Password = password;
-
         }
 
         /// <summary>
