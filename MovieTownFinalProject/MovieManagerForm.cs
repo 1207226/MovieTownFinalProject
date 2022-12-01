@@ -52,6 +52,11 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
+        /// <summary>
+        /// Saves the changes made to the Movie Data.
+        /// </summary>
+        /// <param name="sender">Save Button Clicked.</param>
+        /// <param name="e">Execption.</param>
         private void MovieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();

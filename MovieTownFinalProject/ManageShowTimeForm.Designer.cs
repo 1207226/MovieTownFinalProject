@@ -255,7 +255,7 @@
             this.showtimeBindingNavigatorSaveItem.Name = "showtimeBindingNavigatorSaveItem";
             this.showtimeBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.showtimeBindingNavigatorSaveItem.Text = "Save Data";
-            this.showtimeBindingNavigatorSaveItem.Click += new System.EventHandler(this.showtimeBindingNavigatorSaveItem_Click);
+            this.showtimeBindingNavigatorSaveItem.Click += new System.EventHandler(this.ShowtimeBindingNavigatorSaveItem_Click);
             // 
             // showtimeIdLabel
             // 

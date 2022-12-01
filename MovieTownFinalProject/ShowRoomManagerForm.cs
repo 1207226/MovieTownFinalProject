@@ -52,12 +52,16 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
-        private void roomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Saves the change made to the Room data.
+        /// </summary>
+        /// <param name="sender">Save Button Clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void RoomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.roomBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
-
         }
     }
 }

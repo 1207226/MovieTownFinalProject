@@ -52,12 +52,16 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
-        private void showtimeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Saves the changes to the Show time Data.
+        /// </summary>
+        /// <param name="sender">Save Button Cliecked.</param>
+        /// <param name="e">Execption.</param>
+        private void ShowtimeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.showtimeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
-
         }
     }
 }
