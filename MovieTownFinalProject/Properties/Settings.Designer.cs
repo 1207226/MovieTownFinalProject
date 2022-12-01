@@ -33,5 +33,16 @@ namespace MovieTownFinalProject.Properties {
                 return ((string)(this["MovieTownDbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MovieTownDb.m" +
+            "df;Integrated Security=True;Connect Timeout=30")]
+        public string MovieTownDbConnectionString1 {
+            get {
+                return ((string)(this["MovieTownDbConnectionString1"]));
+            }
+        }
     }
 }

@@ -34,6 +34,8 @@ namespace MovieTownFinalProject
         /// <param name="e">Execption.</param>
         private void MovieManagerForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'movieTownDbDataSet.Movie' table. You can move, or remove it, as needed.
+            this.movieTableAdapter.Fill(this.movieTownDbDataSet.Movie);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -48,6 +50,14 @@ namespace MovieTownFinalProject
             this.Hide();
             selectMenu.ShowDialog();
             this.Close();
+        }
+
+        private void movieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.movieBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
+
         }
     }
 }
