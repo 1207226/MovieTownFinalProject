@@ -258,7 +258,7 @@
             this.clientBindingNavigatorSaveItem.Name = "clientBindingNavigatorSaveItem";
             this.clientBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.clientBindingNavigatorSaveItem.Text = "Save Data";
-            this.clientBindingNavigatorSaveItem.Click += new System.EventHandler(this.clientBindingNavigatorSaveItem_Click_1);
+            this.clientBindingNavigatorSaveItem.Click += new System.EventHandler(this.ClientBindingNavigatorSaveItem_Click);
             // 
             // clientIdLabel
             // 

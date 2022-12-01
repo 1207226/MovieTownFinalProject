@@ -252,7 +252,7 @@
             this.roomBindingNavigatorSaveItem.Name = "roomBindingNavigatorSaveItem";
             this.roomBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.roomBindingNavigatorSaveItem.Text = "Save Data";
-            this.roomBindingNavigatorSaveItem.Click += new System.EventHandler(this.roomBindingNavigatorSaveItem_Click);
+            this.roomBindingNavigatorSaveItem.Click += new System.EventHandler(this.RoomBindingNavigatorSaveItem_Click);
             // 
             // roomIdLabel
             // 

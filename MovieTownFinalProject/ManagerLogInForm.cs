@@ -29,6 +29,25 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
+        /// Methode to Shake the Application, to be used incasae of wrong input.
+        /// </summary>
+        /// <param name="form">Gets the "this" parameter to use its location.</param>
+        /// <remarks>Because i could, and it's kind of fun.</remarks>
+        public static void ScreenShake(Form form)
+        {
+            var original = form.Location;
+            var rnd = new Random(1337);
+            const int shake = 5;
+            for (int i = 0; i < 10; i++)
+            {
+                form.Location = new Point(original.X + rnd.Next(-shake, shake), original.Y + rnd.Next(-shake, shake));
+                System.Threading.Thread.Sleep(20);
+            }
+
+            form.Location = original;
+        }
+
+        /// <summary>
         ///  Opens the Client Log-In Form and Closes the Empoloyee Log-In Form.
         /// </summary>
         /// <param name="sender">Button Clicked.</param>
@@ -122,25 +141,6 @@ namespace MovieTownFinalProject
                 this.employeePasswordInput.ForeColor = Color.Black;
                 this.employeePasswordInput.PasswordChar = '*';
             }
-        }
-
-        /// <summary>
-        /// Methode to Shake the Application, to be used incasae of wrong input.
-        /// </summary>
-        /// <param name="form">Gets the "this" parameter to use its location.</param>
-        /// <remarks>Because i could, and it's kind of fun.</remarks>
-        public static void ScreenShake(Form form)
-        {
-            var original = form.Location;
-            var rnd = new Random(1337);
-            const int shake = 5;
-            for (int i = 0; i < 10; i++)
-            {
-                form.Location = new Point(original.X + rnd.Next(-shake, shake), original.Y + rnd.Next(-shake, shake));
-                System.Threading.Thread.Sleep(20);
-            }
-
-            form.Location = original;
         }
 
         /// <summary>

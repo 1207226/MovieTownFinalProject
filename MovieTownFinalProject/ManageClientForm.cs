@@ -36,6 +36,7 @@ namespace MovieTownFinalProject
         {
             // TODO: This line of code loads data into the 'movieTownDbDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.movieTownDbDataSet.Client);
+
             // TODO: This line of code loads data into the 'movieTownDbDataSet.Client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.movieTownDbDataSet.Client);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
@@ -54,20 +55,16 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
-        private void clientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Saves the change to the Client Data.
+        /// </summary>
+        /// <param name="sender">Save Button Clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void ClientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.clientBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
-
-        }
-
-        private void clientBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clientBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
-
         }
     }
 }
