@@ -68,7 +68,10 @@ namespace MovieTownFinalProject
 
             if (userName == tempClientUserName && userPassword == tempClientPassword)
             {
-                this.FeatureMissing();
+                this.Hide();
+                ClientMovieSelectionForm movieSelectionForm = new ClientMovieSelectionForm();
+                movieSelectionForm.ShowDialog();
+                this.Close();
             }
 
             if ((userName == "Enter User Name" || userName == "Re-Enter User Name") && (userPassword == "Enter Password" || userPassword == "Re-Enter Password"))
