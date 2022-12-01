@@ -28,10 +28,6 @@ namespace MovieTownFinalProject
             this.InitializeComponent();
         }
 
-        // Temporary Employee Number & Password for Testing.
-        private const string TestEmpNumber = "123456";
-        private const string TestPassword = "qwerty1";
-
         /// <summary>
         ///  Opens the Client Log-In Form and Closes the Empoloyee Log-In Form.
         /// </summary>
@@ -54,11 +50,15 @@ namespace MovieTownFinalProject
         /// <remarks>Responds to Invalid Input by Reseting TextBox Text with New Message & Style.</remarks>
         private void EmployeeLoginButton_Click(object sender, EventArgs e)
         {
+            // Temporary Employee Number & Password for Testing.
+            string testEmpNumber = "123456";
+            string testPassword = "qwerty1";
+
             // TODO : Add a conditional statement to to check credentials, if valid do below.
             string employeeNumber = this.employeeNumberInput.Text;
             string password = this.employeePasswordInput.Text;
 
-            if (employeeNumber == TestEmpNumber && password == TestPassword)
+            if (employeeNumber == testEmpNumber && password == testPassword)
             {
                 ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
                 this.Hide();
@@ -70,7 +70,7 @@ namespace MovieTownFinalProject
             {
                 ScreenShake(this);
             }
-            else if (employeeNumber != TestEmpNumber || password != TestPassword)
+            else if (employeeNumber != testEmpNumber || password != testPassword)
             {
                 ScreenShake(this);
                 this.invalidInputLable1.Visible = true;
@@ -94,7 +94,7 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Ereases the Text from employeeNumberInput TextBox when Clicked if Text has Default Value. 
+        /// Ereases the Text from employeeNumberInput TextBox when Clicked if Text has Default Value.
         /// </summary>
         /// <param name="sender">Button clicked.</param>
         /// <param name="e">Execption.</param>
@@ -111,7 +111,7 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Ereases the Text from employeePasswordInput TextBox when Clicked if Text has Default Value.
         /// </summary>
-        /// <param name="sender">Button Clicked</param>
+        /// <param name="sender">Button Clicked.</param>
         /// <param name="e">Execption.</param>
         /// <remarks>Also Changes the Text Color & Sets PasswordChar.</remarks>
         private void EmployeePasswordInput_Click(object sender, EventArgs e)
@@ -162,11 +162,11 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Post note memo interactive text on click.
         /// </summary>
-        /// <param name="sender">Label is Cliked</param>
+        /// <param name="sender">Label is Cliked.</param>
         /// <param name="e">Execption.</param>
         private void PostNoteLabel_Click(object sender, EventArgs e)
         {
-            if (this.postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n") 
+            if (this.postNoteLabel.Text == "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n")
             {
                 this.postNoteLabel.Text = "PS: Please do not leave sensitive information publicly accesseble.";
             }

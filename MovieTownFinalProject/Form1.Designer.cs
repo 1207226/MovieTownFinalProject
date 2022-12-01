@@ -36,6 +36,8 @@
             this.loginButton = new System.Windows.Forms.Button();
             this.employeeButton = new System.Windows.Forms.Button();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.invalidInputLable1 = new System.Windows.Forms.Label();
+            this.invalidInputLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +64,11 @@
             this.homePageUserNameInput.Size = new System.Drawing.Size(295, 23);
             this.homePageUserNameInput.TabIndex = 1;
             this.homePageUserNameInput.Text = "Enter User Name";
+            this.homePageUserNameInput.Click += new System.EventHandler(this.HomePageUserNameInput_Click);
             // 
             // homePagePasswordInput
             // 
             this.homePagePasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.homePagePasswordInput.Enabled = false;
             this.homePagePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homePagePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.homePagePasswordInput.Location = new System.Drawing.Point(219, 478);
@@ -75,6 +77,8 @@
             this.homePagePasswordInput.Size = new System.Drawing.Size(295, 23);
             this.homePagePasswordInput.TabIndex = 2;
             this.homePagePasswordInput.Text = "Enter Password";
+            this.homePagePasswordInput.Click += new System.EventHandler(this.HomePagePasswordInput_Click);
+            this.homePagePasswordInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HomePagePasswordInput_KeyPress);
             // 
             // signupButton
             // 
@@ -138,12 +142,38 @@
             this.welcomeLabel.TabIndex = 9;
             this.welcomeLabel.Text = "Welcome!";
             // 
+            // invalidInputLable1
+            // 
+            this.invalidInputLable1.AutoSize = true;
+            this.invalidInputLable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidInputLable1.ForeColor = System.Drawing.Color.Red;
+            this.invalidInputLable1.Location = new System.Drawing.Point(184, 415);
+            this.invalidInputLable1.Name = "invalidInputLable1";
+            this.invalidInputLable1.Size = new System.Drawing.Size(28, 36);
+            this.invalidInputLable1.TabIndex = 11;
+            this.invalidInputLable1.Text = "*";
+            this.invalidInputLable1.Visible = false;
+            // 
+            // invalidInputLabel2
+            // 
+            this.invalidInputLabel2.AutoSize = true;
+            this.invalidInputLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invalidInputLabel2.ForeColor = System.Drawing.Color.Red;
+            this.invalidInputLabel2.Location = new System.Drawing.Point(184, 478);
+            this.invalidInputLabel2.Name = "invalidInputLabel2";
+            this.invalidInputLabel2.Size = new System.Drawing.Size(28, 36);
+            this.invalidInputLabel2.TabIndex = 12;
+            this.invalidInputLabel2.Text = "*";
+            this.invalidInputLabel2.Visible = false;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.invalidInputLabel2);
+            this.Controls.Add(this.invalidInputLable1);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.employeeButton);
             this.Controls.Add(this.loginButton);
@@ -172,6 +202,8 @@
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button employeeButton;
         private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Label invalidInputLable1;
+        private System.Windows.Forms.Label invalidInputLabel2;
     }
 }
 

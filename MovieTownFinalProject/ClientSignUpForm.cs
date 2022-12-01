@@ -42,10 +42,10 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Checks if entered values are valid, if not calls methods to highligh mistakes. If all valid add a new client to db. 
+        /// Checks if entered values are valid, if not calls methods to highligh mistakes. If all valid add a new client to db.
         /// </summary>
         /// <param name="sender">Button Clicked.</param>
-        /// <param name="e">Exeptions</param>
+        /// <param name="e">Exeptions.</param>
         /// <remarks>After adding a new client closes this form, and opens the movie select form.</remarks>
         private void SignupButton_Click(object sender, EventArgs e)
         {
