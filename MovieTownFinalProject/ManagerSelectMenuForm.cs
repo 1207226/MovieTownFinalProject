@@ -62,7 +62,7 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Opens the Client Log-In Form and Closes the Selection Menu Form.
         /// </summary>
-        /// <param name="sender">Button Clicked</param>
+        /// <param name="sender">Button Clicked.</param>
         /// <param name="e">Execption.</param>
         private void OpenClientButton_Click(object sender, EventArgs e)
         {
@@ -77,7 +77,7 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Opens the Client Log-In Form and Closes the Selection Menu Form.
         /// </summary>
-        /// <param name="sender">Button clicked,</param>
+        /// <param name="sender">Button clicked.</param>
         /// <param name="e">Execption.</param>
         private void EmployeeLogoutButton_Click(object sender, EventArgs e)
         {
