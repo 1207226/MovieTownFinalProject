@@ -34,6 +34,8 @@ namespace MovieTownFinalProject
         /// <param name="e">Execption.</param>
         private void ManageShowTimeForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'movieTownDbDataSet.Showtime' table. You can move, or remove it, as needed.
+            this.showtimeTableAdapter.Fill(this.movieTownDbDataSet.Showtime);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -48,6 +50,14 @@ namespace MovieTownFinalProject
             this.Hide();
             selectMenu.ShowDialog();
             this.Close();
+        }
+
+        private void showtimeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.showtimeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
+
         }
     }
 }
