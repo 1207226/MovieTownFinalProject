@@ -12,8 +12,21 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Employee"/> class.
         /// </summary>
-        public Employee()
+        /// <param name="employeeId">System's name for the employee.</param>
+        /// <param name="employeeNumber">Employee's number.</param>
+        /// <param name="firstName">Employee's first name.</param>
+        /// <param name="lastName">Employee's last name.</param>
+        /// <param name="email">Employee's email.</param>
+        /// <param name="password">Employee's password.</param>
+        public Employee(int employeeId, int employeeNumber, string firstName, string lastName, string email, string password)
         {
+            this.EmployeeId = employeeId;
+            this.EmployeeNumber = employeeNumber;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.Password = password;
+
         }
 
         /// <summary>

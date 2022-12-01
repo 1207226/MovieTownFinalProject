@@ -5,14 +5,21 @@
 namespace MovieTownFinalProject
 {
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Data.SqlClient;
-    using System.Data;
 
     /// <summary>
     /// A movie theatre.
     /// </summary>
     internal class MovieTheatre
     {
+        private readonly SqlConnection conn = new SqlConnection
+        {
+            ConnectionString =
+                  "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                  "Initial Catalog=MovieTownDb;",
+        };
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MovieTheatre"/> class.
         /// </summary>
@@ -21,21 +28,17 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Gets or sets list of rooms.
+        /// Gets list of rooms.
         /// </summary>
-        public List<Room> Rooms
+        public BindingList<Room> Rooms
         {
             get
             {
-                SqlConnection conn = new SqlConnection
-                {
-                    ConnectionString =
-                  "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                  "Initial Catalog=MovieTownDb;",
-                };
-                SqlCommand command = new SqlCommand("SELECT * FROM Room", conn);
+                BindingList<Room> tempList = new BindingList<Room>();
 
-                conn.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM Room", this.conn);
+
+                this.conn.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -47,20 +50,108 @@ namespace MovieTownFinalProject
 
                     int numberOfSeats = int.Parse(reader["NumberOfSeats"].ToString());
 
-                    Room newRoom = new Room(roomId, roomName, numberOfSeats)
+                    Room newRoom = new Room(roomId, roomName, numberOfSeats);
+
+                    tempList.Add(newRoom);
                 }
+
+                return tempList;
             }
-            set;
         }
 
         /// <summary>
-        /// Gets or sets list of users.
+        /// Gets list of users.
         /// </summary>
-        public List<User> Users { get; set; }
+        public BindingList<User> Users
+        {
+            get
+            {
+                BindingList<User> tempList = new BindingList<User>();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM Client", conn);
+
+                conn.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int clientId = int.Parse(reader["ClientId"].ToString());
+
+                    string username = reader["Username"].ToString();
+
+                    string firstName = reader["FirstName"].ToString();
+
+                    string lastName = reader["LastName"].ToString();
+
+                    string email = reader["Email"].ToString();
+
+                    string password = reader["FirstName"].ToString();
+
+                    Client newClient = new Client(clientId, username, firstName, lastName, email, password);
+
+                    tempList.Add(newClient);
+                }
+
+                reader.Close();
+
+                command = new SqlCommand("SELECT * FROM Employee", this.conn);
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int employeeId = int.Parse(reader["EmployeeId"].ToString());
+
+                    int employeeNumber = int.Parse(reader["EmployeeNumber"].ToString());
+
+                    string firstName = reader["FirstName"].ToString();
+
+                    string lastName = reader["LastName"].ToString();
+
+                    string email = reader["Email"].ToString();
+
+                    string password = reader["FirstName"].ToString();
+
+                    Employee newClient = new Employee(employeeId, employeeNumber, firstName, lastName, email, password);
+
+                    tempList.Add(newClient);
+                }
+
+                return tempList;
+            }
+        }
 
         /// <summary>
-        /// Gets or sets list of movies.
+        /// Gets list of movies.
         /// </summary>
-        public List<Movie> Movies { get; set; }
+        public BindingList<Movie> Movies
+        {
+            get
+            {
+                BindingList<Movie> tempList = new BindingList<Movie>();
+
+                SqlCommand command = new SqlCommand("SELECT * FROM Movie", this.conn);
+
+                this.conn.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int movieId = int.Parse(reader["MovieId"].ToString());
+
+                    string movieName = reader["MovieName"].ToString();
+
+                    string movieGenre = reader["movieGenre"].ToString();
+
+                    Movie newMovie = new Movie(movieId, movieName, movieGenre);
+
+                    tempList.Add(newMovie);
+                }
+
+                return tempList;
+            }
+        }
     }
 }

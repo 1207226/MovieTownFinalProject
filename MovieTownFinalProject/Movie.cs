@@ -12,8 +12,14 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Movie"/> class.
         /// </summary>
-        public Movie()
+        /// <param name="movieId">System's name for the movie.</param>
+        /// <param name="movieName">Visible name for the movie.</param>
+        /// <param name="movieGenre">Movie's genre.</param>
+        public Movie(int movieId, string movieName, string movieGenre)
         {
+            this.MovieId = movieId;
+            this.MovieName = movieName;
+            this.MovieGenre = movieGenre;
         }
 
         /// <summary>

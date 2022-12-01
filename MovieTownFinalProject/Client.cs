@@ -1,7 +1,4 @@
-﻿// <copyright file="Client.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
+﻿
 namespace MovieTownFinalProject
 {
     /// <summary>
@@ -12,8 +9,15 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Initializes a new instance of the <see cref="Client"/> class.
         /// </summary>
-        public Client()
+        public Client(int clientId, string username, string firstName, string lastName, string email, string password)
         {
+            this.ClientId = clientId;
+            this.Username = username;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.Password = password;
+
         }
 
         /// <summary>
