@@ -26,7 +26,6 @@ namespace MovieTownFinalProject
             this.LastName = lastName;
             this.Email = email;
             this.Password = password;
-
         }
 
         /// <summary>
