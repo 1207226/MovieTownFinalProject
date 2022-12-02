@@ -84,6 +84,13 @@ namespace MovieTownFinalProject
             {
                 this.ClearTextBox(this.homePageUserNameInput);
             }
+
+            if (this.homePagePasswordInput.Text == string.Empty)
+            {
+                this.homePagePasswordInput.PasswordChar = '\0';
+                this.homePagePasswordInput.Text = "Enter Password";
+                this.homePagePasswordInput.ForeColor = Color.Gray;
+            }
         }
 
         /// <summary>
@@ -96,6 +103,12 @@ namespace MovieTownFinalProject
             if (this.homePagePasswordInput.Text == "Enter Password" || this.homePagePasswordInput.Text == "Re-Enter Password")
             {
                 this.ClearTextBox(this.homePagePasswordInput);
+            }
+
+            if (this.homePageUserNameInput.Text == string.Empty)
+            {
+                this.homePageUserNameInput.Text = "Enter User Name";
+                this.homePageUserNameInput.ForeColor = Color.Gray;
             }
         }
 

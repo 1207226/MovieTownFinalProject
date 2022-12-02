@@ -64,7 +64,7 @@
             // 
             this.signUpUserNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signUpUserNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpUserNameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpUserNameTextBox.ForeColor = System.Drawing.Color.Gray;
             this.signUpUserNameTextBox.Location = new System.Drawing.Point(219, 398);
             this.signUpUserNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.signUpUserNameTextBox.Name = "signUpUserNameTextBox";
@@ -77,7 +77,7 @@
             // 
             this.signUpFirstNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signUpFirstNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpFirstNameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpFirstNameTextBox.ForeColor = System.Drawing.Color.Gray;
             this.signUpFirstNameTextBox.Location = new System.Drawing.Point(219, 450);
             this.signUpFirstNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.signUpFirstNameTextBox.Name = "signUpFirstNameTextBox";
@@ -90,7 +90,7 @@
             // 
             this.signUpEmailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signUpEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpEmailTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpEmailTextBox.ForeColor = System.Drawing.Color.Gray;
             this.signUpEmailTextBox.Location = new System.Drawing.Point(219, 554);
             this.signUpEmailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.signUpEmailTextBox.Name = "signUpEmailTextBox";
@@ -103,7 +103,7 @@
             // 
             this.signUpLastNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signUpLastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpLastNameTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpLastNameTextBox.ForeColor = System.Drawing.Color.Gray;
             this.signUpLastNameTextBox.Location = new System.Drawing.Point(219, 502);
             this.signUpLastNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.signUpLastNameTextBox.Name = "signUpLastNameTextBox";
@@ -116,7 +116,7 @@
             // 
             this.signUpPasswordTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signUpPasswordTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpPasswordTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpPasswordTextBox1.ForeColor = System.Drawing.Color.Gray;
             this.signUpPasswordTextBox1.Location = new System.Drawing.Point(219, 606);
             this.signUpPasswordTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.signUpPasswordTextBox1.Name = "signUpPasswordTextBox1";
@@ -124,6 +124,7 @@
             this.signUpPasswordTextBox1.TabIndex = 6;
             this.signUpPasswordTextBox1.Text = "Password";
             this.signUpPasswordTextBox1.Click += new System.EventHandler(this.SignUpPasswordTextBox1_Click);
+            this.signUpPasswordTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SignUpPasswordTextBox1_KeyPress);
             // 
             // signupButton
             // 
@@ -157,7 +158,7 @@
             // 
             this.signUpPasswordTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.signUpPasswordTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpPasswordTextBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.signUpPasswordTextBox2.ForeColor = System.Drawing.Color.Gray;
             this.signUpPasswordTextBox2.Location = new System.Drawing.Point(219, 658);
             this.signUpPasswordTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.signUpPasswordTextBox2.Name = "signUpPasswordTextBox2";
@@ -165,6 +166,7 @@
             this.signUpPasswordTextBox2.TabIndex = 11;
             this.signUpPasswordTextBox2.Text = "Re-Enter Password";
             this.signUpPasswordTextBox2.Click += new System.EventHandler(this.SignUpPasswordTextBox2_Click);
+            this.signUpPasswordTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SignUpPasswordTextBox2_KeyPress);
             // 
             // backButton
             // 

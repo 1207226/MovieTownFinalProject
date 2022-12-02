@@ -93,6 +93,13 @@ namespace MovieTownFinalProject
                 this.employeeNumberInput.Clear();
                 this.employeeNumberInput.ForeColor = Color.Black;
             }
+
+            if (this.employeePasswordInput.Text == string.Empty)
+            {
+                this.employeePasswordInput.PasswordChar = '\0';
+                this.employeePasswordInput.Text = "Enter Password";
+                this.employeePasswordInput.ForeColor = Color.Gray;
+            }
         }
 
         /// <summary>
@@ -108,6 +115,12 @@ namespace MovieTownFinalProject
                 this.employeePasswordInput.Clear();
                 this.employeePasswordInput.ForeColor = Color.Black;
                 this.employeePasswordInput.PasswordChar = '*';
+            }
+
+            if (this.employeeNumberInput.Text == string.Empty)
+            {
+                this.employeeNumberInput.Text = "Enter Employee Number";
+                this.employeeNumberInput.ForeColor = Color.Gray;
             }
         }
 
