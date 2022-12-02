@@ -51,45 +51,13 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Check the login credential of the client. If valid open the movie selection form.
+        /// Lunch the CheckLogin Methode to verify users credential for validation.
         /// </summary>
         /// <param name="sender">Button clicked.</param>
         /// <param name="e">Execption.</param>
-        /// <remarks>At the moment only shows a message box. To change when movie selection form is made.</remarks>
-        /// <remarks>Also only checks the input to some variables, integration with the database is not complete.</remarks>
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            // Temporary testing values for user credential.
-            string tempClientUserName = "user";
-            string tempClientPassword = "password";
-
-            string userName = this.homePageUserNameInput.Text;
-            string userPassword = this.homePagePasswordInput.Text;
-
-            if (userName == tempClientUserName && userPassword == tempClientPassword)
-            {
-                this.Hide();
-                ClientMovieSelectionForm movieSelectionForm = new ClientMovieSelectionForm();
-                movieSelectionForm.ShowDialog();
-                this.Close();
-            }
-
-            if ((userName == "Enter User Name" || userName == "Re-Enter User Name") && (userPassword == "Enter Password" || userPassword == "Re-Enter Password"))
-            {
-                ManagerLogInForm.ScreenShake(this);
-            }
-            else if (userName != tempClientUserName || userPassword != tempClientPassword)
-            {
-                this.invalidInputLable1.Visible = true;
-                this.invalidInputLabel2.Visible = true;
-                this.homePageUserNameInput.ForeColor = Color.Red;
-                this.homePageUserNameInput.Text = "Re-Enter User Name";
-                this.homePagePasswordInput.PasswordChar = '\0';
-                this.homePagePasswordInput.ForeColor = Color.Red;
-                this.homePagePasswordInput.Text = "Re-Enter Password";
-
-                ManagerLogInForm.ScreenShake(this);
-            }
+            this.CheckLogIn();
         }
 
         /// <summary>
@@ -103,14 +71,6 @@ namespace MovieTownFinalProject
             ClientSignUpForm clientSignUpForm = new ClientSignUpForm();
             clientSignUpForm.ShowDialog();
             this.Close();
-        }
-
-        /// <summary>
-        /// Opens a message box warning the user.
-        /// </summary>
-        private void FeatureMissing()
-        {
-            MessageBox.Show("Feature not yet availble. Please Login as an Employee.");
         }
 
         /// <summary>
@@ -159,6 +119,7 @@ namespace MovieTownFinalProject
         /// </summary>
         /// <param name="sender">A key is press while on the homePagePasswordInput textBox.</param>
         /// <param name="e">Exception.</param>
+        /// <remarks> Also checks if the enter key is press, if so lunch the CheckLogin methode.</remarks>
         private void HomePagePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (this.homePagePasswordInput.Text == "Enter Password" || this.homePagePasswordInput.Text == "Re-Enter Password")
@@ -166,6 +127,50 @@ namespace MovieTownFinalProject
                 this.homePagePasswordInput.Clear();
                 this.homePagePasswordInput.ForeColor = Color.Black;
                 this.homePagePasswordInput.PasswordChar = '*';
+            }
+
+            if (e.KeyChar == (char)13)
+            {
+                this.CheckLogIn();
+            }
+        }
+
+        /// <summary>
+        /// Check the login credential of the client. If valid open the movie selection form.
+        /// </summary>
+        /// <remarks>Also only checks the input to some variables, integration with the database is not complete.</remarks>
+        private void CheckLogIn()
+        {
+            // Temporary testing values for user credential.
+            string tempClientUserName = "user";
+            string tempClientPassword = "password";
+
+            string userName = this.homePageUserNameInput.Text;
+            string userPassword = this.homePagePasswordInput.Text;
+
+            if (userName == tempClientUserName && userPassword == tempClientPassword)
+            {
+                this.Hide();
+                ClientMovieSelectionForm movieSelectionForm = new ClientMovieSelectionForm();
+                movieSelectionForm.ShowDialog();
+                this.Close();
+            }
+
+            if ((userName == "Enter User Name" || userName == "Re-Enter User Name") && (userPassword == "Enter Password" || userPassword == "Re-Enter Password"))
+            {
+                ManagerLogInForm.ScreenShake(this);
+            }
+            else if (userName != tempClientUserName || userPassword != tempClientPassword)
+            {
+                this.invalidInputLable1.Visible = true;
+                this.invalidInputLabel2.Visible = true;
+                this.homePageUserNameInput.ForeColor = Color.Red;
+                this.homePageUserNameInput.Text = "Re-Enter User Name";
+                this.homePagePasswordInput.PasswordChar = '\0';
+                this.homePagePasswordInput.ForeColor = Color.Red;
+                this.homePagePasswordInput.Text = "Re-Enter Password";
+
+                ManagerLogInForm.ScreenShake(this);
             }
         }
     }
