@@ -61,45 +61,13 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Opens the Manager Selection Menu Form and Closes the Empoloyee Log-In Form.
+        /// Lunch the CheckLogin Methode to verify user's credential.
         /// </summary>
         /// <param name="sender">Button Clicked.</param>
         /// <param name="e">Execption.</param>
-        /// <remarks>Check if the Empolyee Number & Password are valid and correspond to each others.</remarks>
-        /// <remarks>Responds to Invalid Input by Reseting TextBox Text with New Message & Style.</remarks>
         private void EmployeeLoginButton_Click(object sender, EventArgs e)
         {
-            // Temporary Employee Number & Password for Testing.
-            string testEmpNumber = "123456";
-            string testPassword = "qwerty1";
-
-            // TODO : Add a conditional statement to to check credentials, if valid do below.
-            string employeeNumber = this.employeeNumberInput.Text;
-            string password = this.employeePasswordInput.Text;
-
-            if (employeeNumber == testEmpNumber && password == testPassword)
-            {
-                ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
-                this.Hide();
-                selectMenu.ShowDialog();
-                this.Close();
-            }
-
-            if ((employeeNumber == "Enter Employee Number" && password == "Enter Password") || (employeeNumber == "Re-Enter Employee Number" && password == "Re-Enter Password"))
-            {
-                ScreenShake(this);
-            }
-            else if (employeeNumber != testEmpNumber || password != testPassword)
-            {
-                ScreenShake(this);
-                this.invalidInputLable1.Visible = true;
-                this.invalidInputLabel2.Visible = true;
-                this.employeeNumberInput.ForeColor = Color.Red;
-                this.employeeNumberInput.Text = "Re-Enter Employee Number";
-                this.employeePasswordInput.PasswordChar = '\0';
-                this.employeePasswordInput.ForeColor = Color.Red;
-                this.employeePasswordInput.Text = "Re-Enter Password";
-            }
+            this.CheckLogin();
         }
 
         /// <summary>
@@ -149,6 +117,7 @@ namespace MovieTownFinalProject
         /// <param name="sender">Key press from keyboard.</param>
         /// <param name="e">Execption.</param>
         /// <remarks>Also Changes the Text Color & Sets PasswordChar.</remarks>
+        /// <remarks>Checks if the enter key is press, if so lunches the CheckLogin methode.</remarks>
         private void EmployeePasswordInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (this.employeePasswordInput.Text == "Enter Password" || this.employeePasswordInput.Text == "Re-Enter Password")
@@ -156,6 +125,11 @@ namespace MovieTownFinalProject
                 this.employeePasswordInput.Clear();
                 this.employeePasswordInput.ForeColor = Color.Black;
                 this.employeePasswordInput.PasswordChar = '*';
+            }
+
+            if (e.KeyChar == (char)13)
+            {
+                this.CheckLogin();
             }
         }
 
@@ -173,6 +147,46 @@ namespace MovieTownFinalProject
             else
             {
                 this.postNoteLabel.Text = "\r\nLogin Information:\r\n\r\nEmployee # : 123456\r\n\r\nPassword  : qwerty1\r\n";
+            }
+        }
+
+        /// <summary>
+        /// Opens the Manager Selection Menu Form and Closes the Empoloyee Log-In Form.
+        /// </summary>
+        /// <remarks>Check if the Empolyee Number & Password are valid and correspond to each others.</remarks>
+        /// <remarks>Responds to Invalid Input by Reseting TextBox Text with New Message & Style.</remarks>
+        private void CheckLogin()
+        {
+            // Temporary Employee Number & Password for Testing.
+            string testEmpNumber = "123456";
+            string testPassword = "qwerty1";
+
+            // TODO : Add a conditional statement to to check credentials, if valid do below.
+            string employeeNumber = this.employeeNumberInput.Text;
+            string password = this.employeePasswordInput.Text;
+
+            if (employeeNumber == testEmpNumber && password == testPassword)
+            {
+                ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
+                this.Hide();
+                selectMenu.ShowDialog();
+                this.Close();
+            }
+
+            if ((employeeNumber == "Enter Employee Number" && password == "Enter Password") || (employeeNumber == "Re-Enter Employee Number" && password == "Re-Enter Password"))
+            {
+                ScreenShake(this);
+            }
+            else if (employeeNumber != testEmpNumber || password != testPassword)
+            {
+                ScreenShake(this);
+                this.invalidInputLable1.Visible = true;
+                this.invalidInputLabel2.Visible = true;
+                this.employeeNumberInput.ForeColor = Color.Red;
+                this.employeeNumberInput.Text = "Re-Enter Employee Number";
+                this.employeePasswordInput.PasswordChar = '\0';
+                this.employeePasswordInput.ForeColor = Color.Red;
+                this.employeePasswordInput.Text = "Re-Enter Password";
             }
         }
     }
