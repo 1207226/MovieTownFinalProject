@@ -110,7 +110,7 @@ namespace MovieTownFinalProject
 
                     string email = reader["Email"].ToString();
 
-                    string password = reader["FirstName"].ToString();
+                    string password = reader["Password"].ToString();
 
                     Employee newClient = new Employee(employeeId, employeeNumber, firstName, lastName, email, password);
 

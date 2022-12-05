@@ -158,10 +158,11 @@ namespace MovieTownFinalProject
             string tempClientUserName = "user";
             string tempClientPassword = "password";
 
+
             string userName = this.homePageUserNameInput.Text;
             string userPassword = this.homePagePasswordInput.Text;
 
-            if (userName == tempClientUserName && userPassword == tempClientPassword)
+            if (CheckUsername(userName, userPassword))
             {
                 this.Hide();
                 ClientMovieSelectionForm movieSelectionForm = new ClientMovieSelectionForm();
@@ -173,7 +174,7 @@ namespace MovieTownFinalProject
             {
                 ManagerLogInForm.ScreenShake(this);
             }
-            else if (userName != tempClientUserName || userPassword != tempClientPassword)
+            else
             {
                 this.invalidInputLable1.Visible = true;
                 this.invalidInputLabel2.Visible = true;
@@ -185,6 +186,26 @@ namespace MovieTownFinalProject
 
                 ManagerLogInForm.ScreenShake(this);
             }
+        }
+
+        private bool CheckUsername(string username, string password)
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            foreach (User user in theatre.Users)
+            {
+                if (user is Client)
+                {
+                    Client client = (Client)user;
+
+                    if (client.Username == username && client.Password == password)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

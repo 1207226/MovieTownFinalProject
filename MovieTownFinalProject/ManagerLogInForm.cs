@@ -14,6 +14,7 @@ namespace MovieTownFinalProject
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
     /// <summary>
     /// Manager logIn form.
@@ -175,23 +176,39 @@ namespace MovieTownFinalProject
             string testPassword = "qwerty1";
 
             // TODO : Add a conditional statement to to check credentials, if valid do below.
-            string employeeNumber = this.employeeNumberInput.Text;
-            string password = this.employeePasswordInput.Text;
+            if (int.TryParse(this.employeeNumberInput.Text, out int employeeNumber))
+            {
+                string password = this.employeePasswordInput.Text;
 
-            if (employeeNumber == testEmpNumber && password == testPassword)
-            {
-                ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
-                this.Hide();
-                selectMenu.ShowDialog();
-                this.Close();
-            }
+                if (this.CheckEmployeeNumber(employeeNumber, password))
+                {
+                    ManagerSelectMenuForm selectMenu = new ManagerSelectMenuForm();
+                    this.Hide();
+                    selectMenu.ShowDialog();
+                    this.Close();
+                }
 
-            if ((employeeNumber == "Enter Employee Number" && password == "Enter Password") || (employeeNumber == "Re-Enter Employee Number" && password == "Re-Enter Password"))
-            {
-                ScreenShake(this);
+                if ((this.employeeNumberInput.Text == "Enter Employee Number" && password == "Enter Password") || (this.employeeNumberInput.Text == "Re-Enter Employee Number" && password == "Re-Enter Password"))
+                {
+                    ScreenShake(this);
+                }
+                else
+                {
+                    MessageBox.Show("doesn't exist");
+
+                    ScreenShake(this);
+                    this.invalidInputLable1.Visible = true;
+                    this.invalidInputLabel2.Visible = true;
+                    this.employeeNumberInput.ForeColor = Color.Red;
+                    this.employeeNumberInput.Text = "Re-Enter Employee Number";
+                    this.employeePasswordInput.PasswordChar = '\0';
+                    this.employeePasswordInput.ForeColor = Color.Red;
+                    this.employeePasswordInput.Text = "Re-Enter Password";
+                }
             }
-            else if (employeeNumber != testEmpNumber || password != testPassword)
+            else
             {
+                MessageBox.Show("username not int");
                 ScreenShake(this);
                 this.invalidInputLable1.Visible = true;
                 this.invalidInputLabel2.Visible = true;
@@ -201,6 +218,26 @@ namespace MovieTownFinalProject
                 this.employeePasswordInput.ForeColor = Color.Red;
                 this.employeePasswordInput.Text = "Re-Enter Password";
             }
+        }
+
+        private bool CheckEmployeeNumber(int employeeNumber, string password)
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            foreach (User user in theatre.Users)
+            {
+                if (user is Employee)
+                {
+                    Employee employee = (Employee)user;
+
+                    if (employee.EmployeeNumber == employeeNumber && employee.Password == password)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }
