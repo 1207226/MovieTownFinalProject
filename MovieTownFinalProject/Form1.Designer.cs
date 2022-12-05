@@ -57,7 +57,7 @@
             // 
             this.homePageUserNameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.homePageUserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homePageUserNameInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.homePageUserNameInput.ForeColor = System.Drawing.Color.Gray;
             this.homePageUserNameInput.Location = new System.Drawing.Point(219, 415);
             this.homePageUserNameInput.Margin = new System.Windows.Forms.Padding(4);
             this.homePageUserNameInput.Name = "homePageUserNameInput";
@@ -70,7 +70,7 @@
             // 
             this.homePagePasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.homePagePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homePagePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.homePagePasswordInput.ForeColor = System.Drawing.Color.Gray;
             this.homePagePasswordInput.Location = new System.Drawing.Point(219, 478);
             this.homePagePasswordInput.Margin = new System.Windows.Forms.Padding(4);
             this.homePagePasswordInput.Name = "homePagePasswordInput";

@@ -57,7 +57,7 @@
             // 
             this.employeePasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.employeePasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeePasswordInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.employeePasswordInput.ForeColor = System.Drawing.Color.Gray;
             this.employeePasswordInput.Location = new System.Drawing.Point(219, 478);
             this.employeePasswordInput.Margin = new System.Windows.Forms.Padding(4);
             this.employeePasswordInput.Name = "employeePasswordInput";
@@ -71,7 +71,7 @@
             // 
             this.employeeNumberInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.employeeNumberInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeNumberInput.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.employeeNumberInput.ForeColor = System.Drawing.Color.Gray;
             this.employeeNumberInput.Location = new System.Drawing.Point(219, 415);
             this.employeeNumberInput.Margin = new System.Windows.Forms.Padding(4);
             this.employeeNumberInput.Name = "employeeNumberInput";
