@@ -171,10 +171,6 @@ namespace MovieTownFinalProject
         /// <remarks>Responds to Invalid Input by Reseting TextBox Text with New Message & Style.</remarks>
         private void CheckLogin()
         {
-            // Temporary Employee Number & Password for Testing.
-            string testEmpNumber = "123456";
-            string testPassword = "qwerty1";
-
             // TODO : Add a conditional statement to to check credentials, if valid do below.
             if (int.TryParse(this.employeeNumberInput.Text, out int employeeNumber))
             {
@@ -194,8 +190,6 @@ namespace MovieTownFinalProject
                 }
                 else
                 {
-                    MessageBox.Show("doesn't exist");
-
                     ScreenShake(this);
                     this.invalidInputLable1.Visible = true;
                     this.invalidInputLabel2.Visible = true;
@@ -208,7 +202,6 @@ namespace MovieTownFinalProject
             }
             else
             {
-                MessageBox.Show("username not int");
                 ScreenShake(this);
                 this.invalidInputLable1.Visible = true;
                 this.invalidInputLabel2.Visible = true;

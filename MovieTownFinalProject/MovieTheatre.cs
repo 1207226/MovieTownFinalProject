@@ -4,6 +4,8 @@
 
 namespace MovieTownFinalProject
 {
+    using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data.SqlClient;
 
@@ -19,11 +21,19 @@ namespace MovieTownFinalProject
                   "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
         };
 
+        private BindingList<Movie> _movies = new BindingList<Movie>();
+        private BindingList<Room> _rooms = new BindingList<Room>();
+        private BindingList<User> _users = new BindingList<User>();
+        private BindingList<Showtime> _showtimes = new BindingList<Showtime>();
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MovieTheatre"/> class.
         /// </summary>
         public MovieTheatre()
         {
+            this._rooms = this.Rooms;
+            this._users = this.Users;
+            this._movies = this.Movies;
         }
 
         /// <summary>
@@ -33,28 +43,36 @@ namespace MovieTownFinalProject
         {
             get
             {
-                BindingList<Room> tempList = new BindingList<Room>();
-
-                SqlCommand command = new SqlCommand("SELECT * FROM Room", this.conn);
-
-                this.conn.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                if (this._rooms.Count == 0)
                 {
-                    int roomId = int.Parse(reader["RoomId"].ToString());
+                    SqlCommand command = new SqlCommand("SELECT * FROM Room", this.conn);
 
-                    string roomName = reader["RoomName"].ToString();
+                    this.conn.Close();
+                    this.conn.Open();
 
-                    int numberOfSeats = int.Parse(reader["NumberOfSeats"].ToString());
+                    SqlDataReader reader = command.ExecuteReader();
 
-                    Room newRoom = new Room(roomId, roomName, numberOfSeats);
+                    while (reader.Read())
+                    {
+                        int roomId = int.Parse(reader["RoomId"].ToString());
 
-                    tempList.Add(newRoom);
+                        string roomName = reader["RoomName"].ToString();
+
+                        int numberOfSeats = int.Parse(reader["NumberOfSeats"].ToString());
+
+                        Room newRoom = new Room(roomId, roomName, numberOfSeats);
+
+                        this._rooms.Add(newRoom);
+                    }
+
+                    reader.Close();
+
+                    return this._rooms;
                 }
-
-                return tempList;
+                else
+                {
+                    return this._rooms;
+                }
             }
         }
 
@@ -65,59 +83,68 @@ namespace MovieTownFinalProject
         {
             get
             {
-                BindingList<User> tempList = new BindingList<User>();
-
-                SqlCommand command = new SqlCommand("SELECT * FROM Client", this.conn);
-
-                this.conn.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                if (this._users.Count == 0)
                 {
-                    int clientId = int.Parse(reader["ClientId"].ToString());
+                    SqlCommand command = new SqlCommand("SELECT * FROM Client", this.conn);
 
-                    string username = reader["Username"].ToString();
+                    this.conn.Close();
+                    this.conn.Open();
 
-                    string firstName = reader["FirstName"].ToString();
+                    SqlDataReader reader = command.ExecuteReader();
 
-                    string lastName = reader["LastName"].ToString();
+                    while (reader.Read())
+                    {
+                        int clientId = int.Parse(reader["ClientId"].ToString());
 
-                    string email = reader["Email"].ToString();
+                        string username = reader["Username"].ToString();
 
-                    string password = reader["Password"].ToString();
+                        string firstName = reader["FirstName"].ToString();
 
-                    Client newClient = new Client(clientId, username, firstName, lastName, email, password);
+                        string lastName = reader["LastName"].ToString();
 
-                    tempList.Add(newClient);
+                        string email = reader["Email"].ToString();
+
+                        string password = reader["Password"].ToString();
+
+                        Client newClient = new Client(clientId, username, firstName, lastName, email, password);
+
+                        this._users.Add(newClient);
+                    }
+
+                    reader.Close();
+
+                    command = new SqlCommand("SELECT * FROM Employee", this.conn);
+
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int employeeId = int.Parse(reader["EmployeeId"].ToString());
+
+                        int employeeNumber = int.Parse(reader["EmployeeNumber"].ToString());
+
+                        string firstName = reader["FirstName"].ToString();
+
+                        string lastName = reader["LastName"].ToString();
+
+                        string email = reader["Email"].ToString();
+
+                        string password = reader["Password"].ToString();
+
+                        Employee newClient = new Employee(employeeId, employeeNumber, firstName, lastName, email, password);
+
+                        this._users.Add(newClient);
+                    }
+
+                    reader.Close();
+
+                    this.conn.Close();
+                    return this._users;
                 }
-
-                reader.Close();
-
-                command = new SqlCommand("SELECT * FROM Employee", this.conn);
-
-                reader = command.ExecuteReader();
-
-                while (reader.Read())
+                else
                 {
-                    int employeeId = int.Parse(reader["EmployeeId"].ToString());
-
-                    int employeeNumber = int.Parse(reader["EmployeeNumber"].ToString());
-
-                    string firstName = reader["FirstName"].ToString();
-
-                    string lastName = reader["LastName"].ToString();
-
-                    string email = reader["Email"].ToString();
-
-                    string password = reader["Password"].ToString();
-
-                    Employee newClient = new Employee(employeeId, employeeNumber, firstName, lastName, email, password);
-
-                    tempList.Add(newClient);
+                    return this._users;
                 }
-
-                return tempList;
             }
         }
 
@@ -128,28 +155,93 @@ namespace MovieTownFinalProject
         {
             get
             {
-                BindingList<Movie> tempList = new BindingList<Movie>();
-
-                SqlCommand command = new SqlCommand("SELECT * FROM Movie", this.conn);
-
-                this.conn.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                if (this._movies.Count == 0)
                 {
-                    int movieId = int.Parse(reader["MovieId"].ToString());
+                    SqlCommand command = new SqlCommand("SELECT * FROM Movie", this.conn);
 
-                    string movieName = reader["MovieName"].ToString();
+                    this.conn.Close();
+                    this.conn.Open();
 
-                    string movieGenre = reader["movieGenre"].ToString();
+                    SqlDataReader reader = command.ExecuteReader();
 
-                    Movie newMovie = new Movie(movieId, movieName, movieGenre);
+                    while (reader.Read())
+                    {
+                        int movieId = int.Parse(reader["MovieId"].ToString());
 
-                    tempList.Add(newMovie);
+                        string movieName = reader["MovieName"].ToString();
+
+                        string movieGenre = reader["movieGenre"].ToString();
+
+                        Movie newMovie = new Movie(movieId, movieName, movieGenre);
+
+                        this._movies.Add(newMovie);
+                    }
+
+                    reader.Close();
+
+                    this.conn.Close();
+
+                    return this._movies;
                 }
+                else
+                {
+                    return this._movies;
+                }
+            }
+        }
 
-                return tempList;
+        /// <summary>
+        /// Gets list of showtimes.
+        /// </summary>
+        public BindingList<Showtime> Showtimes
+        {
+            get
+            {
+                if (this._showtimes.Count == 0)
+                {
+                    SqlCommand command = new SqlCommand("SELECT * FROM Showtime", this.conn);
+
+                    this.conn.Close();
+                    this.conn.Open();
+
+                    SqlDataReader showtimeReader = command.ExecuteReader();
+
+                    while (showtimeReader.Read())
+                    {
+                        int showtimeId = int.Parse(showtimeReader["ShowtimeId"].ToString());
+
+                        int movieId = int.Parse(showtimeReader["MovieId"].ToString());
+
+                        int roomId = int.Parse(showtimeReader["RoomId"].ToString());
+
+                        DateTime showtimeDate = DateTime.Parse(showtimeReader["Showtime"].ToString());
+
+                        foreach (Movie tempMovie in this.Movies)
+                        {
+                            if (tempMovie.MovieId == movieId)
+                            {
+                                Movie movie = tempMovie;
+                                foreach (Room tempRoom in this.Rooms)
+                                {
+                                    if (tempRoom.RoomId == roomId)
+                                    {
+                                        Room room = tempRoom;
+
+                                        Showtime newShowtime = new Showtime(showtimeId, movie, room, showtimeDate);
+
+                                        this._showtimes.Add(newShowtime);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    return this._showtimes;
+                }
+                else
+                {
+                    return this._showtimes;
+                }
             }
         }
     }

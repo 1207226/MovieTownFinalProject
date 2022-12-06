@@ -154,15 +154,10 @@ namespace MovieTownFinalProject
         /// <remarks>Also only checks the input to some variables, integration with the database is not complete.</remarks>
         private void CheckLogIn()
         {
-            // Temporary testing values for user credential.
-            string tempClientUserName = "user";
-            string tempClientPassword = "password";
-
-
             string userName = this.homePageUserNameInput.Text;
             string userPassword = this.homePagePasswordInput.Text;
 
-            if (CheckUsername(userName, userPassword))
+            if (this.CheckUsername(userName, userPassword))
             {
                 this.Hide();
                 ClientMovieSelectionForm movieSelectionForm = new ClientMovieSelectionForm();
