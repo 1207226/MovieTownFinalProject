@@ -8,6 +8,7 @@ namespace MovieTownFinalProject
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
+    using System.Data.SqlClient;
     using System.Drawing;
     using System.Linq;
     using System.Text;
@@ -354,6 +355,24 @@ namespace MovieTownFinalProject
             }
             else
             {
+                SqlConnection conn = new SqlConnection
+                {
+                    ConnectionString =
+                  "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                  "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                };
+
+                SqlCommand command = new SqlCommand($"INSERT INTO Client (Username, FirstName, LastName, Email, Password) VALUES (@username, @firstName, @lastName, @email, @password)", conn);
+                command.Parameters.AddWithValue("@username", userName);
+                command.Parameters.AddWithValue("@firstName", firstName);
+                command.Parameters.AddWithValue("@lastName", lastName);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@password", password1);
+
+                conn.Open();
+
+                command.ExecuteReader();
+
                 MessageBox.Show("Account Created!");
                 this.Hide();
                 ClientMovieSelectionForm clientMovieSelectionForm = new ClientMovieSelectionForm();
