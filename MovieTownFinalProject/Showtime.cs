@@ -4,8 +4,9 @@ namespace MovieTownFinalProject
 {
     internal class Showtime
     {
-        public Showtime(Movie movie, Room room, DateTime dateTime)
+        public Showtime(int showtimeId, Movie movie, Room room, DateTime dateTime)
         {
+            ShowtimeId = showtimeId;
             ShowtimeMovie = movie;
             ShowtimeRoom = room;
             ShowtimeDate = dateTime;
