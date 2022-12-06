@@ -130,6 +130,7 @@
     <Compile Include="ShowRoomManagerForm.Designer.cs">
       <DependentUpon>ShowRoomManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Showtime.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="ClientMovieSelectionForm.resx">
       <DependentUpon>ClientMovieSelectionForm.cs</DependentUpon>
