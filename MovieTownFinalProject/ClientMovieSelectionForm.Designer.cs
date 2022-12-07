@@ -91,7 +91,7 @@
             this.ticketPurchaseLable.Name = "ticketPurchaseLable";
             this.ticketPurchaseLable.Size = new System.Drawing.Size(24, 25);
             this.ticketPurchaseLable.TabIndex = 12;
-            this.ticketPurchaseLable.Text = "0";
+            this.ticketPurchaseLable.Text = "1";
             // 
             // availibilityButton
             // 
@@ -114,6 +114,7 @@
             // 
             this.reduceTicketButton.BackColor = System.Drawing.Color.MidnightBlue;
             this.reduceTicketButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reduceTicketButton.Enabled = false;
             this.reduceTicketButton.FlatAppearance.BorderSize = 0;
             this.reduceTicketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reduceTicketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
