@@ -13,6 +13,7 @@ namespace MovieTownFinalProject
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
     /// <summary>
     /// Movie Manager Form.
@@ -36,6 +37,10 @@ namespace MovieTownFinalProject
         {
             // TODO: This line of code loads data into the 'movieTownDbDataSet.Movie' table. You can move, or remove it, as needed.
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
+
+            BindingList<string> allMovies = GetMovies();
+
+            MovieListBox.DataSource = allMovies;
         }
 
         /// <summary>
@@ -49,6 +54,20 @@ namespace MovieTownFinalProject
             this.Hide();
             selectMenu.ShowDialog();
             this.Close();
+        }
+
+        private BindingList<string> GetMovies()
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            BindingList<string> allMovies = new BindingList<string>();
+
+            foreach (Movie movie in theatre.Movies)
+            {
+                allMovies.Add(movie.MovieId.ToString() + " " + movie.MovieName + " " + movie.MovieGenre);
+            }
+
+            return allMovies;
         }
     }
 }
