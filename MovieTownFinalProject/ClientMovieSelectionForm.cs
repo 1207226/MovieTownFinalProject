@@ -25,8 +25,7 @@ namespace MovieTownFinalProject
         public ClientMovieSelectionForm()
         {
             this.InitializeComponent();
-
-            this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
+this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
         }
 
         /// <summary>
@@ -77,6 +76,56 @@ namespace MovieTownFinalProject
                 ManagerLogInForm.ScreenShake(this);
 
                 MessageBox.Show("Please select a movie.");
+            }
+        }
+
+        /// <summary>
+        /// Increment the ticket value by 1.
+        /// </summary>
+        /// <param name="sender">Button is clicked.</param>
+        /// <param name="e">Execption.</param>
+        /// <remarks> A limit of 10 tickets is being implimented.</remarks>
+        private void AddTicketButton_Click(object sender, EventArgs e)
+        {
+            int ticketNumber = int.Parse(this.ticketPurchaseLable.Text);
+
+            if (ticketNumber < 10)
+            {
+                ticketNumber++;
+                this.ticketPurchaseLable.Text = ticketNumber.ToString();
+                this.reduceTicketButton.Enabled = true;
+            }
+
+            if (ticketNumber == 10)
+            {
+                this.addTicketButton.Enabled = false;
+                ManagerLogInForm.ScreenShake(this);
+                MessageBox.Show("Cannot select more then 10 tickets.");
+            }
+        }
+
+        /// <summary>
+        /// Decreases the ticket value by1.
+        /// </summary>
+        /// <param name="sender">Button is clicked.</param>
+        /// <param name="e">Execption.</param>
+        /// <remarks> A mininum of 1 ticket is being held.</remarks>
+        private void ReduceTicketButton_Click(object sender, EventArgs e)
+        {
+            int ticketNumber = int.Parse(this.ticketPurchaseLable.Text);
+
+            if (ticketNumber > 0)
+            {
+                ticketNumber--;
+                this.ticketPurchaseLable.Text = ticketNumber.ToString();
+                this.addTicketButton.Enabled = true;
+            }
+
+            if (ticketNumber == 0)
+            {
+                this.reduceTicketButton.Enabled = false;
+                ManagerLogInForm.ScreenShake(this);
+                MessageBox.Show("Cannot select less then 0 ticket.");
             }
         }
     }
