@@ -36,9 +36,9 @@
             this.availibilityButton = new System.Windows.Forms.Button();
             this.reduceTicketButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.movieDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.addTicketButton = new System.Windows.Forms.Button();
+            this.showtimeListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +108,7 @@
             this.availibilityButton.TabIndex = 13;
             this.availibilityButton.Text = "Check Availibility";
             this.availibilityButton.UseVisualStyleBackColor = false;
+            this.availibilityButton.Click += new System.EventHandler(this.AvailibilityButton_Click);
             // 
             // reduceTicketButton
             // 
@@ -136,19 +137,15 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Select Ticket Number";
             // 
-            // dateTimePicker1
+            // movieDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 372);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 22);
-            this.dateTimePicker1.TabIndex = 17;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(116, 400);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(501, 165);
-            this.panel1.TabIndex = 18;
+            this.movieDateTimePicker.Location = new System.Drawing.Point(116, 372);
+            this.movieDateTimePicker.MinDate = new System.DateTime(2022, 12, 7, 9, 30, 54, 0);
+            this.movieDateTimePicker.Name = "movieDateTimePicker";
+            this.movieDateTimePicker.Size = new System.Drawing.Size(241, 22);
+            this.movieDateTimePicker.TabIndex = 17;
+            this.movieDateTimePicker.Value = new System.DateTime(2022, 12, 7, 9, 30, 54, 0);
+            this.movieDateTimePicker.ValueChanged += new System.EventHandler(this.MovieDateTimePicker_ValueChanged);
             // 
             // addTicketButton
             // 
@@ -167,15 +164,24 @@
             this.addTicketButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addTicketButton.UseVisualStyleBackColor = false;
             // 
+            // showtimeListBox
+            // 
+            this.showtimeListBox.FormattingEnabled = true;
+            this.showtimeListBox.ItemHeight = 16;
+            this.showtimeListBox.Location = new System.Drawing.Point(116, 421);
+            this.showtimeListBox.Name = "showtimeListBox";
+            this.showtimeListBox.Size = new System.Drawing.Size(501, 148);
+            this.showtimeListBox.TabIndex = 20;
+            // 
             // ClientMovieSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.showtimeListBox);
             this.Controls.Add(this.addTicketButton);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.movieDateTimePicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.reduceTicketButton);
             this.Controls.Add(this.availibilityButton);
@@ -201,8 +207,8 @@
         private System.Windows.Forms.Button availibilityButton;
         private System.Windows.Forms.Button reduceTicketButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker movieDateTimePicker;
         private System.Windows.Forms.Button addTicketButton;
+        private System.Windows.Forms.ListBox showtimeListBox;
     }
 }

@@ -25,6 +25,8 @@ namespace MovieTownFinalProject
         public ClientMovieSelectionForm()
         {
             this.InitializeComponent();
+
+            this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
         }
 
         /// <summary>
@@ -38,6 +40,44 @@ namespace MovieTownFinalProject
             HomePage homePage = new HomePage();
             homePage.ShowDialog();
             this.Close();
+        }
+
+        private void MovieDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            BindingList<string> currentMovies = this.GetShowtimes(this.movieDateTimePicker.Value.Date);
+
+            this.showtimeListBox.DataSource = currentMovies;
+        }
+
+        private BindingList<string> GetShowtimes(DateTime selectedDate)
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            BindingList<string> currentMovies = new BindingList<string>();
+
+            foreach (Showtime showtime in theatre.Showtimes)
+            {
+                if (showtime.ShowtimeDate >= selectedDate && showtime.ShowtimeDate.Date == selectedDate.Date)
+                {
+                    currentMovies.Add(showtime.ShowtimeMovie.MovieName + " " + showtime.ShowtimeDate.ToShortTimeString());
+                }
+            }
+
+            return currentMovies;
+        }
+
+        private void AvailibilityButton_Click(object sender, EventArgs e)
+        {
+            if (this.showtimeListBox.SelectedItems.Count == 1)
+            {
+                MessageBox.Show("You purchased " + ticketPurchaseLable.Text + " tickets for " + this.showtimeListBox.SelectedValue.ToString());
+            }
+            else
+            {
+                ManagerLogInForm.ScreenShake(this);
+
+                MessageBox.Show("Please select a movie.");
+            }
         }
     }
 }
