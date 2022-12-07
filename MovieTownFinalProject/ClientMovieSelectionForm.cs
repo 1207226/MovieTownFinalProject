@@ -73,7 +73,21 @@ namespace MovieTownFinalProject
         /// <remarks> A mininum of 1 ticket is being held.</remarks>
         private void ReduceTicketButton_Click(object sender, EventArgs e)
         {
+            int ticketNumber = int.Parse(this.ticketPurchaseLable.Text);
 
+            if (ticketNumber > 0)
+            {
+                ticketNumber--;
+                this.ticketPurchaseLable.Text = ticketNumber.ToString();
+                this.addTicketButton.Enabled = true;
+            }
+
+            if (ticketNumber == 0)
+            {
+                this.reduceTicketButton.Enabled = false;
+                ManagerLogInForm.ScreenShake(this);
+                MessageBox.Show("Cannot select less then 0 ticket.");
+            }
         }
     }
 }
