@@ -45,11 +45,11 @@
             this.movieIdTextBox = new System.Windows.Forms.TextBox();
             this.roomIdTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.showTimeListView = new System.Windows.Forms.ListView();
             this.addShowTimeButton = new System.Windows.Forms.Button();
             this.editShowTimeButton = new System.Windows.Forms.Button();
             this.deleteShowTimeButton = new System.Windows.Forms.Button();
             this.saveShowTimeButton = new System.Windows.Forms.Button();
+            this.ShowTimeListBox = new System.Windows.Forms.ListBox();
             showtimeIdLabel = new System.Windows.Forms.Label();
             movieIdLabel = new System.Windows.Forms.Label();
             roomIdLabel = new System.Windows.Forms.Label();
@@ -205,15 +205,6 @@
             this.textBox1.Size = new System.Drawing.Size(265, 30);
             this.textBox1.TabIndex = 49;
             // 
-            // showTimeListView
-            // 
-            this.showTimeListView.HideSelection = false;
-            this.showTimeListView.Location = new System.Drawing.Point(116, 397);
-            this.showTimeListView.Name = "showTimeListView";
-            this.showTimeListView.Size = new System.Drawing.Size(501, 178);
-            this.showTimeListView.TabIndex = 50;
-            this.showTimeListView.UseCompatibleStateImageBehavior = false;
-            // 
             // addShowTimeButton
             // 
             this.addShowTimeButton.BackColor = System.Drawing.Color.MidnightBlue;
@@ -278,17 +269,26 @@
             this.saveShowTimeButton.Text = "Save";
             this.saveShowTimeButton.UseVisualStyleBackColor = false;
             // 
+            // ShowTimeListBox
+            // 
+            this.ShowTimeListBox.FormattingEnabled = true;
+            this.ShowTimeListBox.ItemHeight = 16;
+            this.ShowTimeListBox.Location = new System.Drawing.Point(116, 400);
+            this.ShowTimeListBox.Name = "ShowTimeListBox";
+            this.ShowTimeListBox.Size = new System.Drawing.Size(501, 180);
+            this.ShowTimeListBox.TabIndex = 60;
+            // 
             // ManageShowTimeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.ShowTimeListBox);
             this.Controls.Add(this.saveShowTimeButton);
             this.Controls.Add(this.deleteShowTimeButton);
             this.Controls.Add(this.editShowTimeButton);
             this.Controls.Add(this.addShowTimeButton);
-            this.Controls.Add(this.showTimeListView);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(showtimeIdLabel);
             this.Controls.Add(this.showtimeIdTextBox);
@@ -325,10 +325,10 @@
         private System.Windows.Forms.TextBox movieIdTextBox;
         private System.Windows.Forms.TextBox roomIdTextBox;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListView showTimeListView;
         private System.Windows.Forms.Button addShowTimeButton;
         private System.Windows.Forms.Button editShowTimeButton;
         private System.Windows.Forms.Button deleteShowTimeButton;
         private System.Windows.Forms.Button saveShowTimeButton;
+        private System.Windows.Forms.ListBox ShowTimeListBox;
     }
 }

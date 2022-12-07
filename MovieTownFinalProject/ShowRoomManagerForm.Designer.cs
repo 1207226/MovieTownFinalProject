@@ -46,8 +46,8 @@
             this.deleteRoomButton = new System.Windows.Forms.Button();
             this.editRoomButton = new System.Windows.Forms.Button();
             this.addRoomButton = new System.Windows.Forms.Button();
-            this.showTimeListView = new System.Windows.Forms.ListView();
             this.saveRoomButton = new System.Windows.Forms.Button();
+            this.RoomListBox = new System.Windows.Forms.ListBox();
             roomIdLabel = new System.Windows.Forms.Label();
             roomNameLabel = new System.Windows.Forms.Label();
             numberOfSeatsLabel = new System.Windows.Forms.Label();
@@ -229,15 +229,6 @@
             this.addRoomButton.Text = "Add";
             this.addRoomButton.UseVisualStyleBackColor = false;
             // 
-            // showTimeListView
-            // 
-            this.showTimeListView.HideSelection = false;
-            this.showTimeListView.Location = new System.Drawing.Point(116, 420);
-            this.showTimeListView.Name = "showTimeListView";
-            this.showTimeListView.Size = new System.Drawing.Size(501, 178);
-            this.showTimeListView.TabIndex = 54;
-            this.showTimeListView.UseCompatibleStateImageBehavior = false;
-            // 
             // saveRoomButton
             // 
             this.saveRoomButton.BackColor = System.Drawing.Color.MidnightBlue;
@@ -254,17 +245,26 @@
             this.saveRoomButton.Text = "Save";
             this.saveRoomButton.UseVisualStyleBackColor = false;
             // 
+            // RoomListBox
+            // 
+            this.RoomListBox.FormattingEnabled = true;
+            this.RoomListBox.ItemHeight = 16;
+            this.RoomListBox.Location = new System.Drawing.Point(116, 426);
+            this.RoomListBox.Name = "RoomListBox";
+            this.RoomListBox.Size = new System.Drawing.Size(501, 180);
+            this.RoomListBox.TabIndex = 59;
+            // 
             // ShowRoomManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.RoomListBox);
             this.Controls.Add(this.saveRoomButton);
             this.Controls.Add(this.deleteRoomButton);
             this.Controls.Add(this.editRoomButton);
             this.Controls.Add(this.addRoomButton);
-            this.Controls.Add(this.showTimeListView);
             this.Controls.Add(roomIdLabel);
             this.Controls.Add(this.roomIdTextBox);
             this.Controls.Add(roomNameLabel);
@@ -302,7 +302,7 @@
         private System.Windows.Forms.Button deleteRoomButton;
         private System.Windows.Forms.Button editRoomButton;
         private System.Windows.Forms.Button addRoomButton;
-        private System.Windows.Forms.ListView showTimeListView;
         private System.Windows.Forms.Button saveRoomButton;
+        private System.Windows.Forms.ListBox RoomListBox;
     }
 }
