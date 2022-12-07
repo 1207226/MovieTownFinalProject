@@ -6,13 +6,16 @@ namespace MovieTownFinalProject
     {
         public Showtime(int showtimeId, Movie movie, Room room, DateTime dateTime)
         {
-            ShowtimeId = showtimeId;
-            ShowtimeMovie = movie;
-            ShowtimeRoom = room;
-            ShowtimeDate = dateTime;
+            this.ShowtimeId = showtimeId;
+            this.ShowtimeMovie = movie;
+            this.ShowtimeRoom = room;
+            this.ShowtimeDate = dateTime;
         }
 
-        public int ShowtimeId { get; set; }
+        /// <summary>
+        /// Gets the system's name for the Showtime.
+        /// </summary>
+        public int ShowtimeId { get; }
 
         public Movie ShowtimeMovie { get; set; }
 
