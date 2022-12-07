@@ -124,6 +124,7 @@
             this.reduceTicketButton.TabIndex = 14;
             this.reduceTicketButton.Text = "-";
             this.reduceTicketButton.UseVisualStyleBackColor = false;
+            this.reduceTicketButton.Click += new System.EventHandler(this.ReduceTicketButton_Click);
             // 
             // label2
             // 
@@ -166,6 +167,7 @@
             this.addTicketButton.Text = "+";
             this.addTicketButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addTicketButton.UseVisualStyleBackColor = false;
+            this.addTicketButton.Click += new System.EventHandler(this.AddTicketButton_Click);
             // 
             // ClientMovieSelectionForm
             // 
