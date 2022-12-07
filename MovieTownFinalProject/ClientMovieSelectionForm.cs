@@ -39,5 +39,15 @@ namespace MovieTownFinalProject
             homePage.ShowDialog();
             this.Close();
         }
+
+        private void AddTicketButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReduceTicketButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
