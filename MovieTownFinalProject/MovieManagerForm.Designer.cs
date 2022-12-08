@@ -85,9 +85,9 @@
             movieGenreLabel.Location = new System.Drawing.Point(112, 740);
             movieGenreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             movieGenreLabel.Name = "movieGenreLabel";
-            movieGenreLabel.Size = new System.Drawing.Size(123, 25);
+            movieGenreLabel.Size = new System.Drawing.Size(142, 25);
             movieGenreLabel.TabIndex = 48;
-            movieGenreLabel.Text = "Add Genre:";
+            movieGenreLabel.Text = "Movie Genre:";
             // 
             // pictureBoxLogo
             // 
@@ -153,6 +153,7 @@
             // 
             // movieIdTextBox
             // 
+            this.movieIdTextBox.Enabled = false;
             this.movieIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movieIdTextBox.Location = new System.Drawing.Point(351, 645);
             this.movieIdTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -162,6 +163,7 @@
             // 
             // movieNameTextBox
             // 
+            this.movieNameTextBox.Enabled = false;
             this.movieNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movieNameTextBox.Location = new System.Drawing.Point(351, 694);
             this.movieNameTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -171,6 +173,7 @@
             // 
             // movieGenreComboBox
             // 
+            this.movieGenreComboBox.Enabled = false;
             this.movieGenreComboBox.FormattingEnabled = true;
             this.movieGenreComboBox.Location = new System.Drawing.Point(351, 744);
             this.movieGenreComboBox.Name = "movieGenreComboBox";
@@ -185,6 +188,7 @@
             this.movieSaveButton.TabIndex = 50;
             this.movieSaveButton.Text = "Save";
             this.movieSaveButton.UseVisualStyleBackColor = true;
+            this.movieSaveButton.Click += new System.EventHandler(this.movieSaveButton_Click);
             // 
             // movieAddButton
             // 
@@ -194,6 +198,7 @@
             this.movieAddButton.TabIndex = 51;
             this.movieAddButton.Text = "Add";
             this.movieAddButton.UseVisualStyleBackColor = true;
+            this.movieAddButton.Click += new System.EventHandler(this.MovieAddButton_Click);
             // 
             // movieDeleteButton
             // 
@@ -221,6 +226,7 @@
             this.MovieListBox.Name = "MovieListBox";
             this.MovieListBox.Size = new System.Drawing.Size(499, 180);
             this.MovieListBox.TabIndex = 54;
+            this.MovieListBox.SelectedIndexChanged += new System.EventHandler(this.MovieListBox_SelectedIndexChanged);
             // 
             // MovieManagerForm
             // 
