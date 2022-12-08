@@ -40,12 +40,19 @@ namespace MovieTownFinalProject
         /// <param name="e">Execption.</param>
         private void MovieManagerForm_Load(object sender, EventArgs e)
         {
+            MovieTheatre theatre = new MovieTheatre();
+
             // TODO: This line of code loads data into the 'movieTownDbDataSet.Movie' table. You can move, or remove it, as needed.
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
 
             BindingList<string> allMovies = this.GetMovies();
 
             this.MovieListBox.DataSource = allMovies;
+
+            foreach (Genre genre in theatre.Genres)
+            {
+                this.movieGenreComboBox.Items.Add(genre.GenreName);
+            }
         }
 
         /// <summary>
@@ -115,11 +122,6 @@ namespace MovieTownFinalProject
             this.movieIdTextBox.Text = string.Empty;
             this.movieNameTextBox.Text = string.Empty;
 
-            foreach (Genre genre in theatre.Genres)
-            {
-                this.movieGenreComboBox.Items.Add(genre.GenreName);
-            }
-
             this.movieNameTextBox.Enabled = true;
             this.movieGenreComboBox.Enabled = true;
             this.movieSaveButton.Enabled = true;
@@ -156,29 +158,36 @@ namespace MovieTownFinalProject
         {
             if (MessageBox.Show("Are you sure you want to delete " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MovieTheatre theatre = new MovieTheatre();
-
-                SqlConnection conn = new SqlConnection
+                try
                 {
-                    ConnectionString =
-                      "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                      "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
-                };
+                    MovieTheatre theatre = new MovieTheatre();
 
-                SqlCommand command = new SqlCommand($"DELETE FROM Movie WHERE MovieId = @movieId", conn);
-                command.Parameters.AddWithValue("@movieId", this.movieIdTextBox.Text);
+                    SqlConnection conn = new SqlConnection
+                    {
+                        ConnectionString =
+                          "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                          "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                    };
 
-                conn.Open();
+                    SqlCommand command = new SqlCommand($"DELETE FROM Movie WHERE MovieId = @movieId", conn);
+                    command.Parameters.AddWithValue("@movieId", this.movieIdTextBox.Text);
 
-                command.ExecuteReader();
+                    conn.Open();
 
-                MessageBox.Show("Movie Deleted!");
+                    command.ExecuteReader();
 
-                BindingList<string> allMovies = this.GetMovies();
+                    MessageBox.Show("Movie Deleted!");
 
-                this.MovieListBox.DataSource = allMovies;
+                    BindingList<string> allMovies = this.GetMovies();
 
-                conn.Close();
+                    this.MovieListBox.DataSource = allMovies;
+
+                    conn.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("There are currently showtimes for this Movie, cannot delete it.");
+                }
             }
         }
 
@@ -231,6 +240,8 @@ namespace MovieTownFinalProject
                         this.MovieListBox.DataSource = allMovies;
 
                         conn.Close();
+
+                        return;
                     }
                 }
             }
@@ -273,6 +284,8 @@ namespace MovieTownFinalProject
                         this.MovieListBox.DataSource = allMovies;
 
                         conn.Close();
+
+                        return;
                     }
                 }
             }

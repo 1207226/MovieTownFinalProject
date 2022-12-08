@@ -37,11 +37,24 @@ namespace MovieTownFinalProject
         /// <param name="e">Execption.</param>
         private void ManageShowTimeForm_Load(object sender, EventArgs e)
         {
+            MovieTheatre theatre = new MovieTheatre();
+
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
 
             BindingList<string> allShowtimes = this.GetShowtimes();
 
             this.ShowTimeListBox.DataSource = allShowtimes;
+
+
+            foreach (Movie movie in theatre.Movies)
+            {
+                this.movieComboBox.Items.Add(movie.MovieName);
+            }
+
+            foreach (Room room in theatre.Rooms)
+            {
+                this.roomComboBox.Items.Add(room.RoomName);
+            }
         }
 
         /// <summary>
@@ -56,7 +69,10 @@ namespace MovieTownFinalProject
 
             foreach (Showtime showtime in theatre.Showtimes)
             {
-                allShowtimes.Add(showtime.ShowtimeId + " Movie: " + showtime.ShowtimeMovie.MovieName + " Room: " + showtime.ShowtimeRoom.RoomName + " Date: " + showtime.ShowtimeDate.ToShortDateString() + " " + showtime.ShowtimeDate.ToShortTimeString());
+                if (showtime.ShowtimeDate > DateTime.Now)
+                {
+                    allShowtimes.Add(showtime.ShowtimeId + " Movie: " + showtime.ShowtimeMovie.MovieName + " Room: " + showtime.ShowtimeRoom.RoomName + " Date: " + showtime.ShowtimeDate.ToShortDateString() + " " + showtime.ShowtimeDate.ToShortTimeString());
+                }
             }
 
             return allShowtimes;
@@ -99,16 +115,6 @@ namespace MovieTownFinalProject
             this.showtimeIdTextBox.Text = string.Empty;
             this.movieComboBox.Text = string.Empty;
             this.roomComboBox.Text = string.Empty;
-
-            foreach (Movie movie in theatre.Movies)
-            {
-                this.movieComboBox.Items.Add(movie.MovieName);
-            }
-
-            foreach (Room room in theatre.Rooms)
-            {
-                this.roomComboBox.Items.Add(room.RoomName);
-            }
 
             this.showtimeDateDateTimePicker.Value = DateTime.Today;
             this.showtimeTimeDateTimePicker.Value = DateTime.Today;
@@ -166,7 +172,7 @@ namespace MovieTownFinalProject
                             SqlCommand command = new SqlCommand($"INSERT INTO Showtime (MovieId, RoomId, Showtime) VALUES (@movieId, @roomId, @showtime)", conn);
                             command.Parameters.AddWithValue("@movieId", movie.MovieId);
                             command.Parameters.AddWithValue("@roomId", room.RoomId);
-                            command.Parameters.AddWithValue("@showtime", this.showtimeDateDateTimePicker.Value.Date + this.showtimeDateDateTimePicker.Value.TimeOfDay);
+                            command.Parameters.AddWithValue("@showtime", this.showtimeDateDateTimePicker.Value.Date + this.showtimeTimeDateTimePicker.Value.TimeOfDay);
 
                             conn.Open();
 
@@ -177,6 +183,8 @@ namespace MovieTownFinalProject
                             this.ShowTimeListBox.DataSource = this.GetShowtimes();
 
                             conn.Close();
+
+                            return;
                         }
                     }
                 }
@@ -233,7 +241,7 @@ namespace MovieTownFinalProject
                                 command.Parameters.AddWithValue("@showtimeId", this.showtimeIdTextBox.Text);
                                 command.Parameters.AddWithValue("@movieId", movieId);
                                 command.Parameters.AddWithValue("@roomId", roomId);
-                                command.Parameters.AddWithValue("@showtime", this.showtimeDateDateTimePicker.Value.Date + this.showtimeDateDateTimePicker.Value.TimeOfDay);
+                                command.Parameters.AddWithValue("@showtime", this.showtimeDateDateTimePicker.Value.Date + this.showtimeTimeDateTimePicker.Value.TimeOfDay);
 
                                 conn.Open();
 
@@ -244,6 +252,8 @@ namespace MovieTownFinalProject
                                 this.ShowTimeListBox.DataSource = this.GetShowtimes();
 
                                 conn.Close();
+
+                                return;
                             }
                         }
                     }
@@ -331,16 +341,6 @@ namespace MovieTownFinalProject
             this.saveShowTimeButton.Enabled = true;
             this.showtimeDateDateTimePicker.Enabled = true;
             this.showtimeTimeDateTimePicker.Enabled = true;
-
-            foreach (Movie movie in theatre.Movies)
-            {
-                this.movieComboBox.Items.Add(movie.MovieName);
-            }
-
-            foreach (Room room in theatre.Rooms)
-            {
-                this.roomComboBox.Items.Add(room.RoomName);
-            }
 
             this.saveEdit = 2;
         }
