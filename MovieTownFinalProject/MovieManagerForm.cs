@@ -109,8 +109,10 @@ namespace MovieTownFinalProject
             this.movieSaveButton.Enabled = true;
         }
 
-        private void movieSaveButton_Click(object sender, EventArgs e)
+        private void MovieSaveButton_Click(object sender, EventArgs e)
         {
+            this.movieSaveButton.Enabled = false;
+
             MovieTheatre theatre = new MovieTheatre();
 
             SqlConnection conn = new SqlConnection
@@ -144,6 +146,36 @@ namespace MovieTownFinalProject
                         conn.Close();
                     }
                 }
+            }
+        }
+
+        private void MovieDeleteButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MovieTheatre theatre = new MovieTheatre();
+
+                SqlConnection conn = new SqlConnection
+                {
+                    ConnectionString =
+                      "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                      "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                };
+
+                SqlCommand command = new SqlCommand($"DELETE FROM Movie WHERE MovieId = @movieId", conn);
+                command.Parameters.AddWithValue("@movieId", this.movieIdTextBox.Text);
+
+                conn.Open();
+
+                command.ExecuteReader();
+
+                MessageBox.Show("Movie Deleted!");
+
+                BindingList<string> allMovies = this.GetMovies();
+
+                this.MovieListBox.DataSource = allMovies;
+
+                conn.Close();
             }
         }
     }

@@ -188,7 +188,7 @@
             this.movieSaveButton.TabIndex = 50;
             this.movieSaveButton.Text = "Save";
             this.movieSaveButton.UseVisualStyleBackColor = true;
-            this.movieSaveButton.Click += new System.EventHandler(this.movieSaveButton_Click);
+            this.movieSaveButton.Click += new System.EventHandler(this.MovieSaveButton_Click);
             // 
             // movieAddButton
             // 
@@ -208,6 +208,7 @@
             this.movieDeleteButton.TabIndex = 52;
             this.movieDeleteButton.Text = "Delete";
             this.movieDeleteButton.UseVisualStyleBackColor = true;
+            this.movieDeleteButton.Click += new System.EventHandler(this.MovieDeleteButton_Click);
             // 
             // EditButton
             // 
