@@ -192,7 +192,7 @@
             this.addShowTimeButton.TabIndex = 51;
             this.addShowTimeButton.Text = "Add";
             this.addShowTimeButton.UseVisualStyleBackColor = false;
-            this.addShowTimeButton.Click += new System.EventHandler(this.addShowTimeButton_Click);
+            this.addShowTimeButton.Click += new System.EventHandler(this.AddShowTimeButton_Click);
             // 
             // editShowTimeButton
             // 
@@ -243,7 +243,7 @@
             this.saveShowTimeButton.TabIndex = 54;
             this.saveShowTimeButton.Text = "Save";
             this.saveShowTimeButton.UseVisualStyleBackColor = false;
-            this.saveShowTimeButton.Click += new System.EventHandler(this.saveShowTimeButton_Click);
+            this.saveShowTimeButton.Click += new System.EventHandler(this.SaveShowTimeButton_Click);
             // 
             // ShowTimeListBox
             // 

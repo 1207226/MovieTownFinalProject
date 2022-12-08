@@ -44,6 +44,10 @@ namespace MovieTownFinalProject
             this.ShowTimeListBox.DataSource = allShowtimes;
         }
 
+        /// <summary>
+        /// Get ShowTime from data base to bindinglist.
+        /// </summary>
+        /// <returns>Show time in bindinglist.</returns>
         private BindingList<string> GetShowtimes()
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -83,7 +87,12 @@ namespace MovieTownFinalProject
             this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
         }
 
-        private void addShowTimeButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Add new show time to database.
+        /// </summary>
+        /// <param name="sender">Add button is clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void AddShowTimeButton_Click(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
 
@@ -113,7 +122,12 @@ namespace MovieTownFinalProject
             this.saveEdit = 1;
         }
 
-        private void saveShowTimeButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Save new and edited show times to database. 
+        /// </summary>
+        /// <param name="sender">Save Button Clicked.</param>
+        /// <param name="e">Execption.</param>
+        private void SaveShowTimeButton_Click(object sender, EventArgs e)
         {
             this.saveShowTimeButton.Enabled = false;
 
@@ -127,6 +141,9 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Function to add the show time.
+        /// </summary>
         private void AddShowtime()
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -166,6 +183,10 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Create list of movies.
+        /// </summary>
+        /// <returns>List of movies.</returns>
         private BindingList<string> GetMovies()
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -180,6 +201,9 @@ namespace MovieTownFinalProject
             return allMovies;
         }
 
+        /// <summary>
+        /// Function to edit the show time.
+        /// </summary>
         private void EditShowtime()
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -227,6 +251,11 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Update the information under the list box to display selected value. 
+        /// </summary>
+        /// <param name="sender">A list box index is selected.</param>
+        /// <param name="e">Execption.</param>
         private void ShowTimeListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -253,6 +282,11 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Deleted a selected show time.
+        /// </summary>
+        /// <param name="sender">Deleted Button is Clicked.</param>
+        /// <param name="e">Execption.</param>
         private void deleteShowTimeButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete this showtime", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -283,6 +317,11 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Allows the editing of a showtime.
+        /// </summary>
+        /// <param name="sender">Edit button is clicked.</param>
+        /// <param name="e">Execption.</param>
         private void editShowTimeButton_Click(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
