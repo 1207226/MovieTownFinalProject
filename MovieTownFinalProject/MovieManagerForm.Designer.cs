@@ -202,7 +202,7 @@
             // 
             // movieDeleteButton
             // 
-            this.movieDeleteButton.Location = new System.Drawing.Point(321, 396);
+            this.movieDeleteButton.Location = new System.Drawing.Point(541, 396);
             this.movieDeleteButton.Name = "movieDeleteButton";
             this.movieDeleteButton.Size = new System.Drawing.Size(75, 26);
             this.movieDeleteButton.TabIndex = 52;
@@ -212,12 +212,13 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(541, 396);
+            this.EditButton.Location = new System.Drawing.Point(322, 393);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 29);
             this.EditButton.TabIndex = 53;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // MovieListBox
             // 

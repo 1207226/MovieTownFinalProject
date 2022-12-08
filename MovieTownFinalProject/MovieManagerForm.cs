@@ -23,6 +23,8 @@ namespace MovieTownFinalProject
     /// </summary>
     public partial class MovieManagerForm : Form
     {
+        private int saveEdit = 1;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MovieManagerForm"/> class.
         /// </summary>
@@ -107,12 +109,66 @@ namespace MovieTownFinalProject
             this.movieNameTextBox.Enabled = true;
             this.movieGenreComboBox.Enabled = true;
             this.movieSaveButton.Enabled = true;
+
+            saveEdit = 1;
         }
 
         private void MovieSaveButton_Click(object sender, EventArgs e)
         {
             this.movieSaveButton.Enabled = false;
 
+            if (this.saveEdit == 1)
+            {
+                this.AddMovie();
+            }
+            else
+            {
+                this.EditMovie();
+            }
+            
+        }
+
+        private void MovieDeleteButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MovieTheatre theatre = new MovieTheatre();
+
+                SqlConnection conn = new SqlConnection
+                {
+                    ConnectionString =
+                      "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                      "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                };
+
+                SqlCommand command = new SqlCommand($"DELETE FROM Movie WHERE MovieId = @movieId", conn);
+                command.Parameters.AddWithValue("@movieId", this.movieIdTextBox.Text);
+
+                conn.Open();
+
+                command.ExecuteReader();
+
+                MessageBox.Show("Movie Deleted!");
+
+                BindingList<string> allMovies = this.GetMovies();
+
+                this.MovieListBox.DataSource = allMovies;
+
+                conn.Close();
+            }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            this.movieNameTextBox.Enabled = true;
+            this.movieGenreComboBox.Enabled = true;
+            this.movieSaveButton.Enabled = true;
+
+            saveEdit = 2;
+        }
+
+        public void AddMovie()
+        {
             MovieTheatre theatre = new MovieTheatre();
 
             SqlConnection conn = new SqlConnection
@@ -149,33 +205,42 @@ namespace MovieTownFinalProject
             }
         }
 
-        private void MovieDeleteButton_Click(object sender, EventArgs e)
+        public void EditMovie()
         {
-            if (MessageBox.Show("Are you sure you want to delete " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                MovieTheatre theatre = new MovieTheatre();
+            MovieTheatre theatre = new MovieTheatre();
 
-                SqlConnection conn = new SqlConnection
+            if (MessageBox.Show("Are you sure you want to edit " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string movieName = this.movieNameTextBox.Text;
+                foreach (Genre genre in theatre.Genres)
                 {
-                    ConnectionString =
+                    if (genre.GenreName == this.movieGenreComboBox.Text)
+                    {
+                        SqlConnection conn = new SqlConnection
+                        {
+                            ConnectionString =
                       "Data Source=(LocalDB)\\MSSQLLocalDB;" +
                       "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
-                };
+                        };
 
-                SqlCommand command = new SqlCommand($"DELETE FROM Movie WHERE MovieId = @movieId", conn);
-                command.Parameters.AddWithValue("@movieId", this.movieIdTextBox.Text);
+                        SqlCommand command = new SqlCommand($"UPDATE Movie SET MovieName = @movieName, MovieGenre = @movieGenre WHERE MovieId = @movieId", conn);
+                        command.Parameters.AddWithValue("@movieId", this.movieIdTextBox.Text);
+                        command.Parameters.AddWithValue("@movieName", movieName);
+                        command.Parameters.AddWithValue("@movieGenre", genre.GenreId);
 
-                conn.Open();
+                        conn.Open();
 
-                command.ExecuteReader();
+                        command.ExecuteReader();
 
-                MessageBox.Show("Movie Deleted!");
+                        MessageBox.Show("Movie Edited!");
 
-                BindingList<string> allMovies = this.GetMovies();
+                        BindingList<string> allMovies = this.GetMovies();
 
-                this.MovieListBox.DataSource = allMovies;
+                        this.MovieListBox.DataSource = allMovies;
 
-                conn.Close();
+                        conn.Close();
+                    }
+                }
             }
         }
     }
