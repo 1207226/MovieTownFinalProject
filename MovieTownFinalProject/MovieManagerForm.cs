@@ -59,6 +59,10 @@ namespace MovieTownFinalProject
             this.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private BindingList<string> GetMovies()
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -73,6 +77,11 @@ namespace MovieTownFinalProject
             return allMovies;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -92,6 +101,11 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MovieAddButton_Click(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -109,6 +123,11 @@ namespace MovieTownFinalProject
             this.movieSaveButton.Enabled = true;
         }
 
+        /// <summary>
+        /// Saves the Movie entry, or edited information to the database.
+        /// </summary>
+        /// <param name="sender">Save Button is Clicked.</param>
+        /// <param name="e">Exception.</param>
         private void MovieSaveButton_Click(object sender, EventArgs e)
         {
             this.movieSaveButton.Enabled = false;
@@ -149,6 +168,12 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Delete the selected movie entry.
+        /// </summary>
+        /// <param name="sender"> The Delete Button was Clicked.</param>
+        /// <param name="e">Execption.</param>
+        /// <remarks>Opens a message box the validate the user input.</remarks>
         private void MovieDeleteButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
