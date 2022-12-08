@@ -51,7 +51,7 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Opens the Show Room Manager Form and Closes the Selection Menu Form.
         /// </summary>
-        /// <param name="sender">Button clicked.</param>
+        /// <param name="sender">Back Button clicked.</param>
         /// <param name="e">Execption.</param>
         private void BackButton_Click(object sender, EventArgs e)
         {
@@ -62,9 +62,9 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// 
+        /// Creates a binding list, and add the data base movie to it.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>All the Movies from the data base.</returns>
         private BindingList<string> GetMovies()
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -80,10 +80,10 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// 
+        /// Changes the information displayed in the movie text boxes to reflect the list box selection.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">An Index of the List Box is selected.</param>
+        /// <param name="e">Execption.</param>
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -104,10 +104,10 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// 
+        /// Clears the movie text boxes to allow for user input.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The Add Button is Clicked.</param>
+        /// <param name="e">Execption.</param>
         private void MovieAddButton_Click(object sender, EventArgs e)
         {
             MovieTheatre theatre = new MovieTheatre();
@@ -124,7 +124,7 @@ namespace MovieTownFinalProject
             this.movieGenreComboBox.Enabled = true;
             this.movieSaveButton.Enabled = true;
 
-            saveEdit = 1;
+            this.saveEdit = 1;
         }
 
         /// <summary>
@@ -144,9 +144,14 @@ namespace MovieTownFinalProject
             {
                 this.EditMovie();
             }
-            
         }
 
+        /// <summary>
+        /// Delete the selected movie entry.
+        /// </summary>
+        /// <param name="sender"> The Delete Button was Clicked.</param>
+        /// <param name="e">Execption.</param>
+        /// <remarks>Opens a message box the validate the user input.</remarks>
         private void MovieDeleteButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete " + this.movieNameTextBox.Text, "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -177,16 +182,24 @@ namespace MovieTownFinalProject
             }
         }
 
+        /// <summary>
+        /// Enables the save button, the text box, and combo box to edit the a movie entry.
+        /// </summary>
+        /// <param name="sender">Edit Button Clicked.</param>
+        /// <param name="e">Exception.</param>
         private void EditButton_Click(object sender, EventArgs e)
         {
             this.movieNameTextBox.Enabled = true;
             this.movieGenreComboBox.Enabled = true;
             this.movieSaveButton.Enabled = true;
 
-            saveEdit = 2;
+            this.saveEdit = 2;
         }
 
-        public void AddMovie()
+        /// <summary>
+        /// Function that adds a new entry to the movie data base, and resets the movie binding list.
+        /// </summary>
+        private void AddMovie()
         {
             MovieTheatre theatre = new MovieTheatre();
 
@@ -199,7 +212,6 @@ namespace MovieTownFinalProject
 
             if (this.movieNameTextBox.Text != string.Empty)
             {
-
                 foreach (Genre genre in theatre.Genres)
                 {
                     if (genre.GenreName == this.movieGenreComboBox.Text)
@@ -224,7 +236,10 @@ namespace MovieTownFinalProject
             }
         }
 
-        public void EditMovie()
+        /// <summary>
+        /// Function that edits the entry of a selected movie to the data base, and reset the movie binding list.
+        /// </summary>
+        private void EditMovie()
         {
             MovieTheatre theatre = new MovieTheatre();
 
