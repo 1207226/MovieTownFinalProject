@@ -15,7 +15,7 @@ namespace MovieTownFinalProject
         /// <param name="movieId">System's name for the movie.</param>
         /// <param name="movieName">Visible name for the movie.</param>
         /// <param name="movieGenre">Movie's genre.</param>
-        public Movie(int movieId, string movieName, string movieGenre)
+        public Movie(int movieId, string movieName, Genre movieGenre)
         {
             this.MovieId = movieId;
             this.MovieName = movieName;
@@ -35,6 +35,6 @@ namespace MovieTownFinalProject
         /// <summary>
         /// Gets or sets the movie's genre.
         /// </summary>
-        public string MovieGenre { get; set; }
+        public Genre MovieGenre { get; set; }
     }
 }

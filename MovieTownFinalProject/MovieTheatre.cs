@@ -25,6 +25,7 @@ namespace MovieTownFinalProject
         private BindingList<Room> _rooms = new BindingList<Room>();
         private BindingList<User> _users = new BindingList<User>();
         private BindingList<Showtime> _showtimes = new BindingList<Showtime>();
+        private BindingList<Genre> _genres = new BindingList<Genre>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MovieTheatre"/> class.
@@ -33,6 +34,7 @@ namespace MovieTownFinalProject
         {
             this._rooms = this.Rooms;
             this._users = this.Users;
+            this._genres = this.Genres;
             this._movies = this.Movies;
         }
 
@@ -148,6 +150,43 @@ namespace MovieTownFinalProject
             }
         }
 
+        public BindingList<Genre> Genres
+        {
+            get
+            {
+                if (this._genres.Count == 0)
+                {
+                    SqlCommand command = new SqlCommand("SELECT * FROM Genre", this.conn);
+
+                    this.conn.Close();
+                    this.conn.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int genreId = int.Parse(reader["GenreId"].ToString());
+
+                        string genreName = reader["GenreName"].ToString();
+
+                        Genre newGenre = new Genre(genreId, genreName);
+
+                        this._genres.Add(newGenre);
+                    }
+
+                    reader.Close();
+
+                    this.conn.Close();
+
+                    return this._genres;
+                }
+                else
+                {
+                    return this._genres;
+                }
+            }
+        }
+
         /// <summary>
         /// Gets list of movies.
         /// </summary>
@@ -170,11 +209,19 @@ namespace MovieTownFinalProject
 
                         string movieName = reader["MovieName"].ToString();
 
-                        string movieGenre = reader["movieGenre"].ToString();
+                        int genreId = int.Parse(reader["movieGenre"].ToString());
 
-                        Movie newMovie = new Movie(movieId, movieName, movieGenre);
+                        foreach (Genre tempGenre in this.Genres)
+                        {
+                            if (tempGenre.GenreId == genreId)
+                            {
+                                Genre genre = tempGenre;
 
-                        this._movies.Add(newMovie);
+                                Movie newMovie = new Movie(movieId, movieName, genre);
+
+                                this._movies.Add(newMovie);
+                            }
+                        }
                     }
 
                     reader.Close();
