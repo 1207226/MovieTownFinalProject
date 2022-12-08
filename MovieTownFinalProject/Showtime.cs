@@ -32,7 +32,7 @@ namespace MovieTownFinalProject
         public int ShowtimeId { get; }
 
         /// <summary>
-        /// Gets or sets  the Movie name for the Showtime.
+        /// Gets or sets the Movie name for the Showtime.
         /// </summary>
         public Movie ShowtimeMovie { get; set; }
 
