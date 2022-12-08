@@ -25,7 +25,8 @@ namespace MovieTownFinalProject
         public ClientMovieSelectionForm()
         {
             this.InitializeComponent();
-this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
+
+            this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
         }
 
         /// <summary>
@@ -58,7 +59,7 @@ this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
             {
                 if (showtime.ShowtimeDate >= selectedDate && showtime.ShowtimeDate.Date == selectedDate.Date)
                 {
-                    currentMovies.Add(showtime.ShowtimeMovie.MovieName + " " + showtime.ShowtimeDate.ToShortTimeString());
+                    currentMovies.Add(showtime.ShowtimeMovie.MovieName + " at " + showtime.ShowtimeDate.ToShortTimeString());
                 }
             }
 
@@ -69,7 +70,7 @@ this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
         {
             if (this.showtimeListBox.SelectedItems.Count == 1)
             {
-                MessageBox.Show("You purchased " + ticketPurchaseLable.Text + " tickets for " + this.showtimeListBox.SelectedValue.ToString());
+                MessageBox.Show("You purchased " + ticketPurchaseLable.Text + " ticket(s) for " + this.showtimeListBox.SelectedValue.ToString() + " on " + this.movieDateTimePicker.Value.Date.ToString("MMMM dd"));
             }
             else
             {
@@ -99,8 +100,6 @@ this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
             if (ticketNumber == 10)
             {
                 this.addTicketButton.Enabled = false;
-                ManagerLogInForm.ScreenShake(this);
-                MessageBox.Show("Cannot select more then 10 tickets.");
             }
         }
 
@@ -121,11 +120,9 @@ this.showtimeListBox.DataSource = this.GetShowtimes(DateTime.Now);
                 this.addTicketButton.Enabled = true;
             }
 
-            if (ticketNumber == 0)
+            if (ticketNumber == 1)
             {
                 this.reduceTicketButton.Enabled = false;
-                ManagerLogInForm.ScreenShake(this);
-                MessageBox.Show("Cannot select less then 0 ticket.");
             }
         }
     }
