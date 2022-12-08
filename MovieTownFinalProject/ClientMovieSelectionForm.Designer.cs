@@ -32,7 +32,7 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.logOutButton = new System.Windows.Forms.Button();
-            this.ticketPurchaseLable = new System.Windows.Forms.Label();
+            this.ticketPurchaseLabel = new System.Windows.Forms.Label();
             this.availibilityButton = new System.Windows.Forms.Button();
             this.reduceTicketButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,16 +82,16 @@
             this.logOutButton.UseVisualStyleBackColor = false;
             this.logOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
-            // ticketPurchaseLable
+            // ticketPurchaseLabel
             // 
-            this.ticketPurchaseLable.AutoSize = true;
-            this.ticketPurchaseLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticketPurchaseLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
-            this.ticketPurchaseLable.Location = new System.Drawing.Point(354, 630);
-            this.ticketPurchaseLable.Name = "ticketPurchaseLable";
-            this.ticketPurchaseLable.Size = new System.Drawing.Size(24, 25);
-            this.ticketPurchaseLable.TabIndex = 12;
-            this.ticketPurchaseLable.Text = "1";
+            this.ticketPurchaseLabel.AutoSize = true;
+            this.ticketPurchaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ticketPurchaseLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(22)))), ((int)(((byte)(21)))));
+            this.ticketPurchaseLabel.Location = new System.Drawing.Point(354, 630);
+            this.ticketPurchaseLabel.Name = "ticketPurchaseLabel";
+            this.ticketPurchaseLabel.Size = new System.Drawing.Size(24, 25);
+            this.ticketPurchaseLabel.TabIndex = 12;
+            this.ticketPurchaseLabel.Text = "1";
             // 
             // availibilityButton
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.reduceTicketButton);
             this.Controls.Add(this.availibilityButton);
-            this.Controls.Add(this.ticketPurchaseLable);
+            this.Controls.Add(this.ticketPurchaseLabel);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.pictureBoxLogo);
@@ -206,7 +206,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button logOutButton;
-        private System.Windows.Forms.Label ticketPurchaseLable;
+        private System.Windows.Forms.Label ticketPurchaseLabel;
         private System.Windows.Forms.Button availibilityButton;
         private System.Windows.Forms.Button reduceTicketButton;
         private System.Windows.Forms.Label label2;

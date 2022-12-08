@@ -32,7 +32,7 @@
             System.Windows.Forms.Label showtimeIdLabel;
             System.Windows.Forms.Label movieIdLabel;
             System.Windows.Forms.Label roomIdLabel;
-            System.Windows.Forms.Label showtimeLabel;
+            System.Windows.Forms.Label showtimeDateLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageShowTimeForm));
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.backButton = new System.Windows.Forms.Button();
@@ -42,18 +42,19 @@
             this.showtimeTableAdapter = new MovieTownFinalProject.MovieTownDbDataSetTableAdapters.ShowtimeTableAdapter();
             this.tableAdapterManager = new MovieTownFinalProject.MovieTownDbDataSetTableAdapters.TableAdapterManager();
             this.showtimeIdTextBox = new System.Windows.Forms.TextBox();
-            this.movieIdTextBox = new System.Windows.Forms.TextBox();
-            this.roomIdTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.addShowTimeButton = new System.Windows.Forms.Button();
             this.editShowTimeButton = new System.Windows.Forms.Button();
             this.deleteShowTimeButton = new System.Windows.Forms.Button();
             this.saveShowTimeButton = new System.Windows.Forms.Button();
             this.ShowTimeListBox = new System.Windows.Forms.ListBox();
+            this.showtimeDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.showtimeTimeDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.movieComboBox = new System.Windows.Forms.ComboBox();
+            this.roomComboBox = new System.Windows.Forms.ComboBox();
             showtimeIdLabel = new System.Windows.Forms.Label();
             movieIdLabel = new System.Windows.Forms.Label();
             roomIdLabel = new System.Windows.Forms.Label();
-            showtimeLabel = new System.Windows.Forms.Label();
+            showtimeDateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieTownDbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showtimeBindingSource)).BeginInit();
@@ -92,16 +93,16 @@
             roomIdLabel.TabIndex = 46;
             roomIdLabel.Text = "Room :";
             // 
-            // showtimeLabel
+            // showtimeDateLabel
             // 
-            showtimeLabel.AutoSize = true;
-            showtimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            showtimeLabel.Location = new System.Drawing.Point(112, 756);
-            showtimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            showtimeLabel.Name = "showtimeLabel";
-            showtimeLabel.Size = new System.Drawing.Size(113, 25);
-            showtimeLabel.TabIndex = 48;
-            showtimeLabel.Text = "Showtime:";
+            showtimeDateLabel.AutoSize = true;
+            showtimeDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            showtimeDateLabel.Location = new System.Drawing.Point(112, 756);
+            showtimeDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            showtimeDateLabel.Name = "showtimeDateLabel";
+            showtimeDateLabel.Size = new System.Drawing.Size(113, 25);
+            showtimeDateLabel.TabIndex = 48;
+            showtimeDateLabel.Text = "Showtime:";
             // 
             // pictureBoxLogo
             // 
@@ -168,42 +169,13 @@
             // showtimeIdTextBox
             // 
             this.showtimeIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.showtimeBindingSource, "ShowtimeId", true));
+            this.showtimeIdTextBox.Enabled = false;
             this.showtimeIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showtimeIdTextBox.Location = new System.Drawing.Point(351, 599);
             this.showtimeIdTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.showtimeIdTextBox.Name = "showtimeIdTextBox";
             this.showtimeIdTextBox.Size = new System.Drawing.Size(265, 30);
             this.showtimeIdTextBox.TabIndex = 43;
-            // 
-            // movieIdTextBox
-            // 
-            this.movieIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.showtimeBindingSource, "MovieId", true));
-            this.movieIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movieIdTextBox.Location = new System.Drawing.Point(351, 649);
-            this.movieIdTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.movieIdTextBox.Name = "movieIdTextBox";
-            this.movieIdTextBox.Size = new System.Drawing.Size(265, 30);
-            this.movieIdTextBox.TabIndex = 45;
-            // 
-            // roomIdTextBox
-            // 
-            this.roomIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.showtimeBindingSource, "RoomId", true));
-            this.roomIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomIdTextBox.Location = new System.Drawing.Point(351, 704);
-            this.roomIdTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.roomIdTextBox.Name = "roomIdTextBox";
-            this.roomIdTextBox.Size = new System.Drawing.Size(265, 30);
-            this.roomIdTextBox.TabIndex = 47;
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.showtimeBindingSource, "RoomId", true));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(352, 753);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 30);
-            this.textBox1.TabIndex = 49;
             // 
             // addShowTimeButton
             // 
@@ -220,6 +192,7 @@
             this.addShowTimeButton.TabIndex = 51;
             this.addShowTimeButton.Text = "Add";
             this.addShowTimeButton.UseVisualStyleBackColor = false;
+            this.addShowTimeButton.Click += new System.EventHandler(this.addShowTimeButton_Click);
             // 
             // editShowTimeButton
             // 
@@ -236,6 +209,7 @@
             this.editShowTimeButton.TabIndex = 52;
             this.editShowTimeButton.Text = "Edit";
             this.editShowTimeButton.UseVisualStyleBackColor = false;
+            this.editShowTimeButton.Click += new System.EventHandler(this.editShowTimeButton_Click);
             // 
             // deleteShowTimeButton
             // 
@@ -252,6 +226,7 @@
             this.deleteShowTimeButton.TabIndex = 53;
             this.deleteShowTimeButton.Text = "Delete";
             this.deleteShowTimeButton.UseVisualStyleBackColor = false;
+            this.deleteShowTimeButton.Click += new System.EventHandler(this.deleteShowTimeButton_Click);
             // 
             // saveShowTimeButton
             // 
@@ -268,6 +243,7 @@
             this.saveShowTimeButton.TabIndex = 54;
             this.saveShowTimeButton.Text = "Save";
             this.saveShowTimeButton.UseVisualStyleBackColor = false;
+            this.saveShowTimeButton.Click += new System.EventHandler(this.saveShowTimeButton_Click);
             // 
             // ShowTimeListBox
             // 
@@ -277,6 +253,50 @@
             this.ShowTimeListBox.Name = "ShowTimeListBox";
             this.ShowTimeListBox.Size = new System.Drawing.Size(501, 180);
             this.ShowTimeListBox.TabIndex = 60;
+            this.ShowTimeListBox.SelectedIndexChanged += new System.EventHandler(this.ShowTimeListBox_SelectedIndexChanged);
+            // 
+            // showtimeDateDateTimePicker
+            // 
+            this.showtimeDateDateTimePicker.CustomFormat = "yyyy-dd-MM";
+            this.showtimeDateDateTimePicker.Enabled = false;
+            this.showtimeDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.showtimeDateDateTimePicker.Location = new System.Drawing.Point(351, 758);
+            this.showtimeDateDateTimePicker.MinDate = new System.DateTime(1989, 12, 4, 0, 0, 0, 0);
+            this.showtimeDateDateTimePicker.Name = "showtimeDateDateTimePicker";
+            this.showtimeDateDateTimePicker.Size = new System.Drawing.Size(154, 22);
+            this.showtimeDateDateTimePicker.TabIndex = 61;
+            this.showtimeDateDateTimePicker.Value = new System.DateTime(2022, 12, 7, 21, 37, 59, 0);
+            // 
+            // showtimeTimeDateTimePicker
+            // 
+            this.showtimeTimeDateTimePicker.CustomFormat = "hh:mm tt";
+            this.showtimeTimeDateTimePicker.Enabled = false;
+            this.showtimeTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.showtimeTimeDateTimePicker.Location = new System.Drawing.Point(511, 758);
+            this.showtimeTimeDateTimePicker.MinDate = new System.DateTime(2000, 12, 7, 21, 22, 0, 0);
+            this.showtimeTimeDateTimePicker.Name = "showtimeTimeDateTimePicker";
+            this.showtimeTimeDateTimePicker.ShowUpDown = true;
+            this.showtimeTimeDateTimePicker.Size = new System.Drawing.Size(105, 22);
+            this.showtimeTimeDateTimePicker.TabIndex = 62;
+            this.showtimeTimeDateTimePicker.Value = new System.DateTime(2022, 12, 7, 21, 38, 4, 0);
+            // 
+            // movieComboBox
+            // 
+            this.movieComboBox.Enabled = false;
+            this.movieComboBox.FormattingEnabled = true;
+            this.movieComboBox.Location = new System.Drawing.Point(352, 656);
+            this.movieComboBox.Name = "movieComboBox";
+            this.movieComboBox.Size = new System.Drawing.Size(265, 24);
+            this.movieComboBox.TabIndex = 63;
+            // 
+            // roomComboBox
+            // 
+            this.roomComboBox.Enabled = false;
+            this.roomComboBox.FormattingEnabled = true;
+            this.roomComboBox.Location = new System.Drawing.Point(352, 711);
+            this.roomComboBox.Name = "roomComboBox";
+            this.roomComboBox.Size = new System.Drawing.Size(265, 24);
+            this.roomComboBox.TabIndex = 64;
             // 
             // ManageShowTimeForm
             // 
@@ -284,19 +304,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(152)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(732, 846);
+            this.Controls.Add(this.roomComboBox);
+            this.Controls.Add(this.movieComboBox);
+            this.Controls.Add(this.showtimeTimeDateTimePicker);
+            this.Controls.Add(this.showtimeDateDateTimePicker);
             this.Controls.Add(this.ShowTimeListBox);
             this.Controls.Add(this.saveShowTimeButton);
             this.Controls.Add(this.deleteShowTimeButton);
             this.Controls.Add(this.editShowTimeButton);
             this.Controls.Add(this.addShowTimeButton);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(showtimeIdLabel);
             this.Controls.Add(this.showtimeIdTextBox);
             this.Controls.Add(movieIdLabel);
-            this.Controls.Add(this.movieIdTextBox);
             this.Controls.Add(roomIdLabel);
-            this.Controls.Add(this.roomIdTextBox);
-            this.Controls.Add(showtimeLabel);
+            this.Controls.Add(showtimeDateLabel);
             this.Controls.Add(this.showRoomLabel);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.pictureBoxLogo);
@@ -322,13 +343,14 @@
         private MovieTownDbDataSetTableAdapters.ShowtimeTableAdapter showtimeTableAdapter;
         private MovieTownDbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox showtimeIdTextBox;
-        private System.Windows.Forms.TextBox movieIdTextBox;
-        private System.Windows.Forms.TextBox roomIdTextBox;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button addShowTimeButton;
         private System.Windows.Forms.Button editShowTimeButton;
         private System.Windows.Forms.Button deleteShowTimeButton;
         private System.Windows.Forms.Button saveShowTimeButton;
         private System.Windows.Forms.ListBox ShowTimeListBox;
+        private System.Windows.Forms.DateTimePicker showtimeDateDateTimePicker;
+        private System.Windows.Forms.DateTimePicker showtimeTimeDateTimePicker;
+        private System.Windows.Forms.ComboBox movieComboBox;
+        private System.Windows.Forms.ComboBox roomComboBox;
     }
 }

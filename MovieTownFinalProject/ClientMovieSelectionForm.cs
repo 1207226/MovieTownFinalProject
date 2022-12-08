@@ -70,7 +70,7 @@ namespace MovieTownFinalProject
         {
             if (this.showtimeListBox.SelectedItems.Count == 1)
             {
-                MessageBox.Show("You purchased " + ticketPurchaseLable.Text + " ticket(s) for " + this.showtimeListBox.SelectedValue.ToString() + " on " + this.movieDateTimePicker.Value.Date.ToString("MMMM dd"));
+                MessageBox.Show("You purchased " + this.ticketPurchaseLabel.Text + " ticket(s) for " + this.showtimeListBox.SelectedValue.ToString() + " on " + this.movieDateTimePicker.Value.Date.ToString("MMMM dd"));
             }
             else
             {
@@ -88,12 +88,12 @@ namespace MovieTownFinalProject
         /// <remarks> A limit of 10 tickets is being implimented.</remarks>
         private void AddTicketButton_Click(object sender, EventArgs e)
         {
-            int ticketNumber = int.Parse(this.ticketPurchaseLable.Text);
+            int ticketNumber = int.Parse(this.ticketPurchaseLabel.Text);
 
             if (ticketNumber < 10)
             {
                 ticketNumber++;
-                this.ticketPurchaseLable.Text = ticketNumber.ToString();
+                this.ticketPurchaseLabel.Text = ticketNumber.ToString();
                 this.reduceTicketButton.Enabled = true;
             }
 
@@ -111,12 +111,12 @@ namespace MovieTownFinalProject
         /// <remarks> A mininum of 1 ticket is being held.</remarks>
         private void ReduceTicketButton_Click(object sender, EventArgs e)
         {
-            int ticketNumber = int.Parse(this.ticketPurchaseLable.Text);
+            int ticketNumber = int.Parse(this.ticketPurchaseLabel.Text);
 
             if (ticketNumber > 0)
             {
                 ticketNumber--;
-                this.ticketPurchaseLable.Text = ticketNumber.ToString();
+                this.ticketPurchaseLabel.Text = ticketNumber.ToString();
                 this.addTicketButton.Enabled = true;
             }
 
