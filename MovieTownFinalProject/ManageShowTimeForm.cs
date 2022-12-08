@@ -8,6 +8,7 @@ namespace MovieTownFinalProject
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
+    using System.Data.SqlClient;
     using System.Drawing;
     using System.Linq;
     using System.Text;
@@ -19,6 +20,8 @@ namespace MovieTownFinalProject
     /// </summary>
     public partial class ManageShowTimeForm : Form
     {
+        private int saveEdit = 1;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ManageShowTimeForm"/> class.
         /// </summary>
@@ -34,9 +37,25 @@ namespace MovieTownFinalProject
         /// <param name="e">Execption.</param>
         private void ManageShowTimeForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'movieTownDbDataSet.Showtime' table. You can move, or remove it, as needed.
-            this.showtimeTableAdapter.Fill(this.movieTownDbDataSet.Showtime);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
+
+            BindingList<string> allShowtimes = this.GetShowtimes();
+
+            this.ShowTimeListBox.DataSource = allShowtimes;
+        }
+
+        private BindingList<string> GetShowtimes()
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            BindingList<string> allShowtimes = new BindingList<string>();
+
+            foreach (Showtime showtime in theatre.Showtimes)
+            {
+                allShowtimes.Add(showtime.ShowtimeId + " Movie: " + showtime.ShowtimeMovie.MovieName + " Room: " + showtime.ShowtimeRoom.RoomName + " Date: " + showtime.ShowtimeDate.ToShortDateString() + " " + showtime.ShowtimeDate.ToShortTimeString());
+            }
+
+            return allShowtimes;
         }
 
         /// <summary>
@@ -62,6 +81,229 @@ namespace MovieTownFinalProject
             this.Validate();
             this.showtimeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.movieTownDbDataSet);
+        }
+
+        private void addShowTimeButton_Click(object sender, EventArgs e)
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            this.showtimeIdTextBox.Text = string.Empty;
+            this.movieComboBox.Text = string.Empty;
+            this.roomComboBox.Text = string.Empty;
+
+            foreach (Movie movie in theatre.Movies)
+            {
+                this.movieComboBox.Items.Add(movie.MovieName);
+            }
+
+            foreach (Room room in theatre.Rooms)
+            {
+                this.roomComboBox.Items.Add(room.RoomName);
+            }
+
+            this.showtimeDateDateTimePicker.Value = DateTime.Today;
+            this.showtimeTimeDateTimePicker.Value = DateTime.Today;
+
+            this.movieComboBox.Enabled = true;
+            this.roomComboBox.Enabled = true;
+            this.showtimeDateDateTimePicker.Enabled = true;
+            this.showtimeTimeDateTimePicker.Enabled = true;
+            this.saveShowTimeButton.Enabled = true;
+
+            this.saveEdit = 1;
+        }
+
+        private void saveShowTimeButton_Click(object sender, EventArgs e)
+        {
+            this.saveShowTimeButton.Enabled = false;
+
+            if (this.saveEdit == 1)
+            {
+                this.AddShowtime();
+            }
+            else
+            {
+                this.EditShowtime();
+            }
+        }
+
+        private void AddShowtime()
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            SqlConnection conn = new SqlConnection
+            {
+                ConnectionString =
+                  "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                  "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+            };
+
+            foreach (Movie movie in theatre.Movies)
+            {
+                if (movie.MovieName == this.movieComboBox.Text)
+                {
+                    foreach (Room room in theatre.Rooms)
+                    {
+                        if (room.RoomName == this.roomComboBox.Text)
+                        {
+                            SqlCommand command = new SqlCommand($"INSERT INTO Showtime (MovieId, RoomId, Showtime) VALUES (@movieId, @roomId, @showtime)", conn);
+                            command.Parameters.AddWithValue("@movieId", movie.MovieId);
+                            command.Parameters.AddWithValue("@roomId", room.RoomId);
+                            command.Parameters.AddWithValue("@showtime", this.showtimeDateDateTimePicker.Value.Date + this.showtimeDateDateTimePicker.Value.TimeOfDay);
+
+                            conn.Open();
+
+                            command.ExecuteReader();
+
+                            MessageBox.Show("Showtime Added!");
+
+                            this.ShowTimeListBox.DataSource = this.GetShowtimes();
+
+                            conn.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        private BindingList<string> GetMovies()
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            BindingList<string> allMovies = new BindingList<string>();
+
+            foreach (Movie movie in theatre.Movies)
+            {
+                allMovies.Add(movie.MovieName);
+            }
+
+            return allMovies;
+        }
+
+        private void EditShowtime()
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            if (MessageBox.Show("Are you sure you want to edit this showtime", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                foreach (Movie movie in theatre.Movies)
+                {
+                    if (movie.MovieName == this.movieComboBox.Text)
+                    {
+                        int movieId = movie.MovieId;
+
+                        foreach (Room room in theatre.Rooms)
+                        {
+                            if (room.RoomName == this.roomComboBox.Text)
+                            {
+                                int roomId = room.RoomId;
+
+                                SqlConnection conn = new SqlConnection
+                                {
+                                    ConnectionString =
+                                        "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                                        "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                                };
+
+                                SqlCommand command = new SqlCommand($"UPDATE Showtime SET MovieId = @movieId, RoomId = @roomId, Showtime = @showtime WHERE ShowtimeId = @showtimeId", conn);
+                                command.Parameters.AddWithValue("@showtimeId", this.showtimeIdTextBox.Text);
+                                command.Parameters.AddWithValue("@movieId", movieId);
+                                command.Parameters.AddWithValue("@roomId", roomId);
+                                command.Parameters.AddWithValue("@showtime", this.showtimeDateDateTimePicker.Value.Date + this.showtimeDateDateTimePicker.Value.TimeOfDay);
+
+                                conn.Open();
+
+                                command.ExecuteReader();
+
+                                MessageBox.Show("Showtime Edited!");
+
+                                this.ShowTimeListBox.DataSource = this.GetShowtimes();
+
+                                conn.Close();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ShowTimeListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            int showtimeId = int.Parse(this.ShowTimeListBox.SelectedItem.ToString().Substring(0, this.ShowTimeListBox.SelectedItem.ToString().IndexOf(" ")));
+
+            foreach (Showtime showtime in theatre.Showtimes)
+            {
+                if (showtime.ShowtimeId == showtimeId)
+                {
+                    this.showtimeIdTextBox.Text = showtimeId.ToString();
+                    this.movieComboBox.Text = showtime.ShowtimeMovie.MovieName;
+                    this.roomComboBox.Text = showtime.ShowtimeRoom.RoomName;
+                    this.showtimeDateDateTimePicker.Value = showtime.ShowtimeDate.Date;
+                    this.showtimeTimeDateTimePicker.Value = showtime.ShowtimeDate;
+
+                    this.showtimeIdTextBox.Enabled = false;
+                    this.movieComboBox.Enabled = false;
+                    this.roomComboBox.Enabled = false;
+                    this.showtimeDateDateTimePicker.Enabled = false;
+                    this.showtimeTimeDateTimePicker.Enabled = false;
+                    this.saveShowTimeButton.Enabled = false;
+                }
+            }
+        }
+
+        private void deleteShowTimeButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this showtime", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MovieTheatre theatre = new MovieTheatre();
+
+                SqlConnection conn = new SqlConnection
+                {
+                    ConnectionString =
+                      "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                      "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                };
+
+                SqlCommand command = new SqlCommand($"DELETE FROM Showtime WHERE ShowtimeId = @showtimeId", conn);
+                command.Parameters.AddWithValue("@showtimeId", this.showtimeIdTextBox.Text);
+
+                conn.Open();
+
+                command.ExecuteReader();
+
+                MessageBox.Show("Showtime Deleted!");
+
+                BindingList<string> allShowtimes = this.GetShowtimes();
+
+                this.ShowTimeListBox.DataSource = allShowtimes;
+
+                conn.Close();
+            }
+        }
+
+        private void editShowTimeButton_Click(object sender, EventArgs e)
+        {
+            MovieTheatre theatre = new MovieTheatre();
+
+            this.movieComboBox.Enabled = true;
+            this.roomComboBox.Enabled = true;
+            this.saveShowTimeButton.Enabled = true;
+            this.showtimeDateDateTimePicker.Enabled = true;
+            this.showtimeTimeDateTimePicker.Enabled = true;
+
+            foreach (Movie movie in theatre.Movies)
+            {
+                this.movieComboBox.Items.Add(movie.MovieName);
+            }
+
+            foreach (Room room in theatre.Rooms)
+            {
+                this.roomComboBox.Items.Add(room.RoomName);
+            }
+
+            this.saveEdit = 2;
         }
     }
 }
