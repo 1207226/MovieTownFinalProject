@@ -36,6 +36,8 @@ namespace MovieTownFinalProject
         {
             // TODO: This line of code loads data into the 'movieTownDbDataSet.Room' table. You can move, or remove it, as needed.
             this.roomTableAdapter.Fill(this.movieTownDbDataSet.Room);
+            // TODO: This line of code loads data into the 'movieTownDbDataSet.Room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.movieTownDbDataSet.Room);
             this.backButton.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -53,11 +55,11 @@ namespace MovieTownFinalProject
         }
 
         /// <summary>
-        /// Saves the change made to the Room data.
+        /// Take the value inserted into the text boxes and saves it to the data base.
         /// </summary>
-        /// <param name="sender">Save Button Clicked.</param>
+        /// <param name="sender">The Save Button is Clicked.</param>
         /// <param name="e">Execption.</param>
-        private void RoomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void RoomBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.roomBindingSource.EndEdit();

@@ -253,8 +253,8 @@ namespace MovieTownFinalProject
                         SqlConnection conn = new SqlConnection
                         {
                             ConnectionString =
-                      "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                      "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
+                            "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                            "Initial Catalog=C:\\MOVIETOWNDB\\MOVIETOWNDB.MDF;",
                         };
 
                         SqlCommand command = new SqlCommand($"UPDATE Movie SET MovieName = @movieName, MovieGenre = @movieGenre WHERE MovieId = @movieId", conn);
